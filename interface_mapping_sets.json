@@ -1,0 +1,142 @@
+{
+    "PIMSet_IF_DcmSample_Adapter_RIF1_IF_DcmSample_Provider_SIF1": {
+        "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Adapter_RIF1_IF_DcmSample_Provider_SIF1",
+        "object_type": "PORT-INTERFACE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "PIM_VDP_DcmAD_RVDP1_VDP_DcmSP_SVDP1": {
+            "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Adapter_RIF1_IF_DcmSample_Provider_SIF1/PIM_VDP_DcmAD_RVDP1_VDP_DcmSP_SVDP1",
+            "object_type": "VARIABLE-AND-PARAMETER-INTERFACE-MAPPING",
+            "outter_element_tag": "/PORT-INTERFACE-MAPPINGS",
+            "FIRST-DATA-PROTOTYPE-REF": {
+                "value": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_RIF1/VDP_DcmAD_RVDP1",
+                "object_type": "FIRST-DATA-PROTOTYPE-REF",
+                "outter_element_tag": "/DATA-MAPPINGS/DATA-PROTOTYPE-MAPPING",
+                "attributes": [
+                    {
+                        "DEST": "VARIABLE-DATA-PROTOTYPE"
+                    }
+                ]
+            },
+            "SECOND-DATA-PROTOTYPE-REF": {
+                "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_SIF1/VDP_DcmSP_SVDP1",
+                "object_type": "SECOND-DATA-PROTOTYPE-REF",
+                "outter_element_tag": "/DATA-MAPPINGS/DATA-PROTOTYPE-MAPPING",
+                "attributes": [
+                    {
+                        "DEST": "VARIABLE-DATA-PROTOTYPE"
+                    }
+                ]
+            }
+        }
+    },
+    "PIMSet_IF_DcmSample_Provider_RIF1_IF_DcmSample_Requester_SIF1": {
+        "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Provider_RIF1_IF_DcmSample_Requester_SIF1",
+        "object_type": "PORT-INTERFACE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "PIM_VDP_DcmSP_RVDP1_VDP_DcmSR_SVDP1": {
+            "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Provider_RIF1_IF_DcmSample_Requester_SIF1/PIM_VDP_DcmSP_RVDP1_VDP_DcmSR_SVDP1",
+            "object_type": "VARIABLE-AND-PARAMETER-INTERFACE-MAPPING",
+            "outter_element_tag": "/PORT-INTERFACE-MAPPINGS",
+            "FIRST-DATA-PROTOTYPE-REF": {
+                "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_RIF1/VDP_DcmSP_RVDP1",
+                "object_type": "FIRST-DATA-PROTOTYPE-REF",
+                "outter_element_tag": "/DATA-MAPPINGS/DATA-PROTOTYPE-MAPPING",
+                "attributes": [
+                    {
+                        "DEST": "VARIABLE-DATA-PROTOTYPE"
+                    }
+                ]
+            },
+            "SECOND-DATA-PROTOTYPE-REF": {
+                "value": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_SIF1/VDP_DcmSR_SVDP1",
+                "object_type": "SECOND-DATA-PROTOTYPE-REF",
+                "outter_element_tag": "/DATA-MAPPINGS/DATA-PROTOTYPE-MAPPING",
+                "attributes": [
+                    {
+                        "DEST": "VARIABLE-DATA-PROTOTYPE"
+                    }
+                ]
+            }
+        }
+    },
+    "PIMSet_IF_DcmSample_Requester_RIF2_IF_DcmSample_Adapter_SIF1": {
+        "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Requester_RIF2_IF_DcmSample_Adapter_SIF1",
+        "object_type": "PORT-INTERFACE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "PIM_CSO_DcmSR_CSO1_CSO_DcmAD_CSO1": {
+            "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Requester_RIF2_IF_DcmSample_Adapter_SIF1/PIM_CSO_DcmSR_CSO1_CSO_DcmAD_CSO1",
+            "object_type": "CLIENT-SERVER-INTERFACE-MAPPING",
+            "outter_element_tag": "/PORT-INTERFACE-MAPPINGS",
+            "FIRST-DATA-PROTOTYPE-REF": {
+                "value": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF2/CSO_DcmSR_CSO1/APD_DcmSR_CSO1_APD1",
+                "object_type": "FIRST-DATA-PROTOTYPE-REF",
+                "outter_element_tag": "/OPERATION-MAPPINGS/CLIENT-SERVER-OPERATION-MAPPING/ARGUMENT-MAPPINGS/DATA-PROTOTYPE-MAPPING",
+                "attributes": [
+                    {
+                        "DEST": "ARGUMENT-DATA-PROTOTYPE"
+                    }
+                ]
+            },
+            "SECOND-DATA-PROTOTYPE-REF": {
+                "value": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1/CSO_DcmAD_CSO1/APD_DcmAD_CSO1_APD1",
+                "object_type": "SECOND-DATA-PROTOTYPE-REF",
+                "outter_element_tag": "/OPERATION-MAPPINGS/CLIENT-SERVER-OPERATION-MAPPING/ARGUMENT-MAPPINGS/DATA-PROTOTYPE-MAPPING",
+                "attributes": [
+                    {
+                        "DEST": "ARGUMENT-DATA-PROTOTYPE"
+                    }
+                ]
+            },
+            "FIRST-OPERATION-REF": {
+                "value": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF2/CSO_DcmSR_CSO1",
+                "object_type": "FIRST-OPERATION-REF",
+                "outter_element_tag": "/OPERATION-MAPPINGS/CLIENT-SERVER-OPERATION-MAPPING",
+                "attributes": [
+                    {
+                        "DEST": "CLIENT-SERVER-OPERATION"
+                    }
+                ]
+            },
+            "SECOND-OPERATION-REF": {
+                "value": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1/CSO_DcmAD_CSO1",
+                "object_type": "SECOND-OPERATION-REF",
+                "outter_element_tag": "/OPERATION-MAPPINGS/CLIENT-SERVER-OPERATION-MAPPING",
+                "attributes": [
+                    {
+                        "DEST": "CLIENT-SERVER-OPERATION"
+                    }
+                ]
+            }
+        }
+    },
+    "PIMSet_IF_DcmSample_Requester_RIF1_IF_DcmSample_Provider_SIF1": {
+        "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Requester_RIF1_IF_DcmSample_Provider_SIF1",
+        "object_type": "PORT-INTERFACE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "PIM_VDP_DcmSR_RVDP1_VDP_DcmSP_SVDP1": {
+            "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Requester_RIF1_IF_DcmSample_Provider_SIF1/PIM_VDP_DcmSR_RVDP1_VDP_DcmSP_SVDP1",
+            "object_type": "VARIABLE-AND-PARAMETER-INTERFACE-MAPPING",
+            "outter_element_tag": "/PORT-INTERFACE-MAPPINGS",
+            "FIRST-DATA-PROTOTYPE-REF": {
+                "value": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF1/VDP_DcmSR_RVDP1",
+                "object_type": "FIRST-DATA-PROTOTYPE-REF",
+                "outter_element_tag": "/DATA-MAPPINGS/DATA-PROTOTYPE-MAPPING",
+                "attributes": [
+                    {
+                        "DEST": "VARIABLE-DATA-PROTOTYPE"
+                    }
+                ]
+            },
+            "SECOND-DATA-PROTOTYPE-REF": {
+                "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_SIF1/VDP_DcmSP_SVDP1",
+                "object_type": "SECOND-DATA-PROTOTYPE-REF",
+                "outter_element_tag": "/DATA-MAPPINGS/DATA-PROTOTYPE-MAPPING",
+                "attributes": [
+                    {
+                        "DEST": "VARIABLE-DATA-PROTOTYPE"
+                    }
+                ]
+            }
+        }
+    }
+}

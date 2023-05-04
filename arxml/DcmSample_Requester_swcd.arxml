@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>RB</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>PT</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>PCT_DcmSample_Requester</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <APPLICATION-SW-COMPONENT-TYPE>
+                      <SHORT-NAME>DcmSample_Requester</SHORT-NAME>
+                      <PORTS>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>PP_DcmSR_PP1</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_SIF1</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>RP_DcmSR_RP1</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF1</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>RP_DcmSR_RP2</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF2</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                      </PORTS>
+                      <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR>
+                          <SHORT-NAME>IB_DcmSR_IB1</SHORT-NAME>
+                          <DATA-TYPE-MAPPING-REFS>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/RB/PT/PCT_DcmSample_Requester/DataTypeMappingSets/DTMS_DcmSR_uint8</DATA-TYPE-MAPPING-REF>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/RB/PT/PCT_DcmSample_Adapter/DataTypeMappingSets/DTMS_DcmAD_uint8</DATA-TYPE-MAPPING-REF>
+                          </DATA-TYPE-MAPPING-REFS>
+                          <EVENTS>
+                            <TIMING-EVENT>
+                              <SHORT-NAME>TE_DcmSR_TE1</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/IB_DcmSR_IB1/RE_DcmSR_RE1</START-ON-EVENT-REF>
+                              <PERIOD>1.0</PERIOD>
+                            </TIMING-EVENT>
+                          </EVENTS>
+                          <RUNNABLES>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>RE_DcmSR_RE1</SHORT-NAME>
+                              <DATA-RECEIVE-POINT-BY-VALUES>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>DRP_DcmSR_DRP1</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/RP_DcmSR_RP1</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF1/VDP_DcmSR_RVDP1</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-RECEIVE-POINT-BY-VALUES>
+                              <DATA-SEND-POINTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>DSP_DcmSR_DSP1</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/PP_DcmSR_PP1</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_SIF1/VDP_DcmSR_SVDP1</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-SEND-POINTS>
+                              <SERVER-CALL-POINTS>
+                                <SYNCHRONOUS-SERVER-CALL-POINT UUID="0da6e1db-6739-451a-8dd0-a7f7fa1463ac">
+                                  <SHORT-NAME>SSCP_DCMSR_SSCP1</SHORT-NAME>
+                                  <OPERATION-IREF>
+                                    <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/RP_DcmSR_RP2</CONTEXT-R-PORT-REF>
+                                    <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF2/CSO_DcmSR_CSO1</TARGET-REQUIRED-OPERATION-REF>
+                                  </OPERATION-IREF>
+                                </SYNCHRONOUS-SERVER-CALL-POINT>
+                              </SERVER-CALL-POINTS>
+                              <SYMBOL>DcmSample_Requester_1000ms</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                          </RUNNABLES>
+                        </SWC-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </APPLICATION-SW-COMPONENT-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                  <ELEMENTS>
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>IF_DcmSample_Requester_SIF1</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>VDP_DcmSR_SVDP1</SHORT-NAME>
+                          <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSR_uint8</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>IF_DcmSample_Requester_RIF1</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>VDP_DcmSR_RVDP1</SHORT-NAME>
+                          <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSR_uint8</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <CLIENT-SERVER-INTERFACE>
+                      <SHORT-NAME>IF_DcmSample_Requester_RIF2</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <OPERATIONS>
+                        <CLIENT-SERVER-OPERATION>
+                          <SHORT-NAME>CSO_DcmSR_CSO1</SHORT-NAME>
+                          <ARGUMENTS>
+                            <ARGUMENT-DATA-PROTOTYPE>
+                              <SHORT-NAME>APD_DcmSR_CSO1_APD1</SHORT-NAME>
+                              <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                              </SW-DATA-DEF-PROPS>
+                              <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSR_uint8</TYPE-TREF>
+                              <DIRECTION>OUT</DIRECTION>
+                            </ARGUMENT-DATA-PROTOTYPE>
+                          </ARGUMENTS>
+                          <POSSIBLE-ERROR-REFS>
+                            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF2/E_NOT_OK</POSSIBLE-ERROR-REF>
+                            <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF2/E_OK</POSSIBLE-ERROR-REF>
+                          </POSSIBLE-ERROR-REFS>
+                        </CLIENT-SERVER-OPERATION>
+                      </OPERATIONS>
+                      <POSSIBLE-ERRORS>
+                        <APPLICATION-ERROR>
+                          <SHORT-NAME>E_OK</SHORT-NAME>
+                          <ERROR-CODE>0</ERROR-CODE>
+                        </APPLICATION-ERROR>
+                        <APPLICATION-ERROR>
+                          <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                          <ERROR-CODE>1</ERROR-CODE>
+                        </APPLICATION-ERROR>
+                      </POSSIBLE-ERRORS>
+                    </CLIENT-SERVER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>ApplicationDataTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <APPLICATION-PRIMITIVE-DATA-TYPE>
+                      <SHORT-NAME>ADT_DcmSR_uint8</SHORT-NAME>
+                      <CATEGORY>VALUE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </APPLICATION-PRIMITIVE-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>IDT_DcmSR_uint8</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                  <ELEMENTS>
+                    <DATA-TYPE-MAPPING-SET>
+                      <SHORT-NAME>DTMS_DcmSR_uint8</SHORT-NAME>
+                      <DATA-TYPE-MAPS>
+                        <DATA-TYPE-MAP>
+                          <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSR_uint8</APPLICATION-DATA-TYPE-REF>
+                          <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/RB/PT/PCT_DcmSample_Requester/ImplementationDataTypes/IDT_DcmSR_uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                        </DATA-TYPE-MAP>
+                      </DATA-TYPE-MAPS>
+                    </DATA-TYPE-MAPPING-SET>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>PortInterfaceMappingSets</SHORT-NAME>
+                  <ELEMENTS>
+                    <PORT-INTERFACE-MAPPING-SET>
+                      <SHORT-NAME>PIMSet_IF_DcmSample_Requester_RIF2_IF_DcmSample_Adapter_SIF1</SHORT-NAME>
+                      <PORT-INTERFACE-MAPPINGS>
+                        <CLIENT-SERVER-INTERFACE-MAPPING>
+                          <SHORT-NAME>PIM_CSO_DcmSR_CSO1_CSO_DcmAD_CSO1</SHORT-NAME>
+                          <OPERATION-MAPPINGS>
+                            <CLIENT-SERVER-OPERATION-MAPPING>
+                              <ARGUMENT-MAPPINGS>
+                                <DATA-PROTOTYPE-MAPPING>
+                                  <FIRST-DATA-PROTOTYPE-REF DEST="ARGUMENT-DATA-PROTOTYPE">/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF2/CSO_DcmSR_CSO1/APD_DcmSR_CSO1_APD1</FIRST-DATA-PROTOTYPE-REF>
+                                  <SECOND-DATA-PROTOTYPE-REF DEST="ARGUMENT-DATA-PROTOTYPE">/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1/CSO_DcmAD_CSO1/APD_DcmAD_CSO1_APD1</SECOND-DATA-PROTOTYPE-REF>
+                                </DATA-PROTOTYPE-MAPPING>
+                              </ARGUMENT-MAPPINGS>
+                              <FIRST-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF2/CSO_DcmSR_CSO1</FIRST-OPERATION-REF>
+                              <SECOND-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1/CSO_DcmAD_CSO1</SECOND-OPERATION-REF>
+                            </CLIENT-SERVER-OPERATION-MAPPING>
+                          </OPERATION-MAPPINGS>
+                        </CLIENT-SERVER-INTERFACE-MAPPING>
+                      </PORT-INTERFACE-MAPPINGS>
+                    </PORT-INTERFACE-MAPPING-SET>
+                    <PORT-INTERFACE-MAPPING-SET>
+                      <SHORT-NAME>PIMSet_IF_DcmSample_Requester_RIF1_IF_DcmSample_Provider_SIF1</SHORT-NAME>
+                      <PORT-INTERFACE-MAPPINGS>
+                        <VARIABLE-AND-PARAMETER-INTERFACE-MAPPING>
+                          <SHORT-NAME>PIM_VDP_DcmSR_RVDP1_VDP_DcmSP_SVDP1</SHORT-NAME>
+                          <DATA-MAPPINGS>
+                            <DATA-PROTOTYPE-MAPPING>
+                              <FIRST-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF1/VDP_DcmSR_RVDP1</FIRST-DATA-PROTOTYPE-REF>
+                              <SECOND-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_SIF1/VDP_DcmSP_SVDP1</SECOND-DATA-PROTOTYPE-REF>
+                            </DATA-PROTOTYPE-MAPPING>
+                          </DATA-MAPPINGS>
+                        </VARIABLE-AND-PARAMETER-INTERFACE-MAPPING>
+                      </PORT-INTERFACE-MAPPINGS>
+                    </PORT-INTERFACE-MAPPING-SET>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

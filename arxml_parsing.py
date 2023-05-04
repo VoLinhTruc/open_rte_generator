@@ -108,9 +108,87 @@ def fullArxmlToJsonParsing(arxml_path, json_path):
         mergeJsonData(root_json_obj, json_obj)
     exportJsonObjectToFile(root_json_obj, json_path + "/root.json")
 
+def getObjectByType(root_json):
+    pass
+
+def getObjName(obj):
+    object_name = ""
+    if "object_path" in obj:
+        splitted_path = obj["object_path"].split('/')
+        object_name = splitted_path[len(splitted_path) - 1]
+    return object_name 
+
+def getObjectByType(obj, key, objects={}):
+    
+    if isinstance(obj, dict):
+        if "object_type" in obj:
+            if obj["object_type"] == key:
+                objects[getObjName(obj)] = obj
+        for value in obj.values():
+            getObjectByType(value, key, objects)
+    elif isinstance(obj, list):
+        for item in obj:
+            getObjectByType(item, key, objects)
+    return objects
+
+def getSWComponents(obj):
+    return getObjectByType(obj, "APPLICATION-SW-COMPONENT-TYPE", {})
+
+def getClientServerInterfaces(obj):
+    return getObjectByType(obj, "CLIENT-SERVER-INTERFACE", {})
+
+def getSenderReceiverInterfaces(obj):
+    return getObjectByType(obj, "SENDER-RECEIVER-INTERFACE", {})
+
+def getInterfacesMappingSets(obj):
+    return getObjectByType(obj, "PORT-INTERFACE-MAPPING-SET", {})
+
+def getApplicationDataType(obj):
+    return getObjectByType(obj, "APPLICATION-PRIMITIVE-DATA-TYPE", {})
+
+def getImplementationDataType(obj):
+    return getObjectByType(obj, "IMPLEMENTATION-DATA-TYPE", {})
+
+def getDataTypeMappingSet(obj):
+    return getObjectByType(obj, "DATA-TYPE-MAPPING-SET", {})
 
 if __name__ == "__main__":
     arxml_path = current_path + "/arxml"
     json_path = current_path + "/json"
 
     fullArxmlToJsonParsing(arxml_path, json_path)
+    
+    root_json = None
+    with open(json_path + "\\root.json", 'r') as f:
+        root_json = json.load(f)
+    
+    
+    sw_components = getSWComponents(root_json)
+    with open('sw_components.json', 'w') as f:
+        json_string = json.dumps(sw_components, indent=4)
+        f.write("%s\n" % json_string)
+
+    client_server_interfaces = getClientServerInterfaces(root_json)
+    with open('client_server_interfaces.json', 'w') as f:
+        json_string = json.dumps(client_server_interfaces, indent=4)
+        f.write("%s\n" % json_string)
+
+    sender_receiver_interfaces = getSenderReceiverInterfaces(root_json)
+    with open('sender_receiver_interfaces.json', 'w') as f:
+        json_string = json.dumps(sender_receiver_interfaces, indent=4)
+        f.write("%s\n" % json_string)
+
+    interface_mapping_sets = getInterfacesMappingSets(root_json)
+    with open('interface_mapping_sets.json', 'w') as f:
+        json_string = json.dumps(interface_mapping_sets, indent=4)
+        f.write("%s\n" % json_string)
+
+    application_datatypes = getApplicationDataType(root_json)
+    with open('application_datatypes.json', 'w') as f:
+        json_string = json.dumps(application_datatypes, indent=4)
+        f.write("%s\n" % json_string)
+
+    datatypes_mapping_sets = getDataTypeMappingSet(root_json)
+    with open('datatypes_mapping_sets.json', 'w') as f:
+        json_string = json.dumps(datatypes_mapping_sets, indent=4)
+        f.write("%s\n" % json_string)

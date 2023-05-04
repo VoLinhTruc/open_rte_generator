@@ -1,0 +1,77 @@
+{
+    "DTMS_DcmAD_uint8": {
+        "object_path": "/RB/PT/PCT_DcmSample_Adapter/DataTypeMappingSets/DTMS_DcmAD_uint8",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_DcmSample_Adapter/ApplicationDataTypes/ADT_DcmAD_uint8",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_DcmSample_Adapter/ImplementationDataTypes/IDT_DcmAD_uint8",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
+    "DTMS_DcmSP_uint8": {
+        "object_path": "/RB/PT/PCT_DcmSample_Provider/DataTypeMappingSets/DTMS_DcmSP_uint8",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSP_uint8",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_DcmSample_Provider/ImplementationDataTypes/IDT_DcmSP_uint8",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
+    "DTMS_DcmSR_uint8": {
+        "object_path": "/RB/PT/PCT_DcmSample_Requester/DataTypeMappingSets/DTMS_DcmSR_uint8",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSR_uint8",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_DcmSample_Requester/ImplementationDataTypes/IDT_DcmSR_uint8",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    }
+}

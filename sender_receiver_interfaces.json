@@ -1,0 +1,127 @@
+{
+    "IF_DcmSample_Adapter_RIF1": {
+        "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_RIF1",
+        "object_type": "SENDER-RECEIVER-INTERFACE",
+        "outter_element_tag": "/ELEMENTS",
+        "IS-SERVICE": {
+            "value": "false",
+            "object_type": "IS-SERVICE",
+            "outter_element_tag": ""
+        },
+        "VDP_DcmAD_RVDP1": {
+            "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_RIF1/VDP_DcmAD_RVDP1",
+            "object_type": "VARIABLE-DATA-PROTOTYPE",
+            "outter_element_tag": "/DATA-ELEMENTS",
+            "TYPE-TREF": {
+                "value": "/RB/PT/PCT_DcmSample_Adapter/ApplicationDataTypes/ADT_DcmAD_uint8",
+                "object_type": "TYPE-TREF",
+                "outter_element_tag": "",
+                "attributes": [
+                    {
+                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                    }
+                ]
+            }
+        }
+    },
+    "IF_DcmSample_Provider_SIF1": {
+        "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_SIF1",
+        "object_type": "SENDER-RECEIVER-INTERFACE",
+        "outter_element_tag": "/ELEMENTS",
+        "IS-SERVICE": {
+            "value": "false",
+            "object_type": "IS-SERVICE",
+            "outter_element_tag": ""
+        },
+        "VDP_DcmSP_SVDP1": {
+            "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_SIF1/VDP_DcmSP_SVDP1",
+            "object_type": "VARIABLE-DATA-PROTOTYPE",
+            "outter_element_tag": "/DATA-ELEMENTS",
+            "TYPE-TREF": {
+                "value": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSP_uint8",
+                "object_type": "TYPE-TREF",
+                "outter_element_tag": "",
+                "attributes": [
+                    {
+                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                    }
+                ]
+            }
+        }
+    },
+    "IF_DcmSample_Provider_RIF1": {
+        "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_RIF1",
+        "object_type": "SENDER-RECEIVER-INTERFACE",
+        "outter_element_tag": "/ELEMENTS",
+        "IS-SERVICE": {
+            "value": "false",
+            "object_type": "IS-SERVICE",
+            "outter_element_tag": ""
+        },
+        "VDP_DcmSP_RVDP1": {
+            "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_RIF1/VDP_DcmSP_RVDP1",
+            "object_type": "VARIABLE-DATA-PROTOTYPE",
+            "outter_element_tag": "/DATA-ELEMENTS",
+            "TYPE-TREF": {
+                "value": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSP_uint8",
+                "object_type": "TYPE-TREF",
+                "outter_element_tag": "",
+                "attributes": [
+                    {
+                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                    }
+                ]
+            }
+        }
+    },
+    "IF_DcmSample_Requester_SIF1": {
+        "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_SIF1",
+        "object_type": "SENDER-RECEIVER-INTERFACE",
+        "outter_element_tag": "/ELEMENTS",
+        "IS-SERVICE": {
+            "value": "false",
+            "object_type": "IS-SERVICE",
+            "outter_element_tag": ""
+        },
+        "VDP_DcmSR_SVDP1": {
+            "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_SIF1/VDP_DcmSR_SVDP1",
+            "object_type": "VARIABLE-DATA-PROTOTYPE",
+            "outter_element_tag": "/DATA-ELEMENTS",
+            "TYPE-TREF": {
+                "value": "/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSR_uint8",
+                "object_type": "TYPE-TREF",
+                "outter_element_tag": "",
+                "attributes": [
+                    {
+                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                    }
+                ]
+            }
+        }
+    },
+    "IF_DcmSample_Requester_RIF1": {
+        "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF1",
+        "object_type": "SENDER-RECEIVER-INTERFACE",
+        "outter_element_tag": "/ELEMENTS",
+        "IS-SERVICE": {
+            "value": "false",
+            "object_type": "IS-SERVICE",
+            "outter_element_tag": ""
+        },
+        "VDP_DcmSR_RVDP1": {
+            "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_RIF1/VDP_DcmSR_RVDP1",
+            "object_type": "VARIABLE-DATA-PROTOTYPE",
+            "outter_element_tag": "/DATA-ELEMENTS",
+            "TYPE-TREF": {
+                "value": "/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSR_uint8",
+                "object_type": "TYPE-TREF",
+                "outter_element_tag": "",
+                "attributes": [
+                    {
+                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                    }
+                ]
+            }
+        }
+    }
+}

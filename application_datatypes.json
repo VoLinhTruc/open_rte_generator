@@ -1,0 +1,47 @@
+{
+    "ADT_DcmAD_uint8": {
+        "object_path": "/RB/PT/PCT_DcmSample_Adapter/ApplicationDataTypes/ADT_DcmAD_uint8",
+        "object_type": "APPLICATION-PRIMITIVE-DATA-TYPE",
+        "outter_element_tag": "/ELEMENTS",
+        "CATEGORY": {
+            "value": "VALUE",
+            "object_type": "CATEGORY",
+            "outter_element_tag": ""
+        },
+        "SW-CALIBRATION-ACCESS": {
+            "value": "READ-ONLY",
+            "object_type": "SW-CALIBRATION-ACCESS",
+            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL"
+        }
+    },
+    "ADT_DcmSP_uint8": {
+        "object_path": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSP_uint8",
+        "object_type": "APPLICATION-PRIMITIVE-DATA-TYPE",
+        "outter_element_tag": "/ELEMENTS",
+        "CATEGORY": {
+            "value": "VALUE",
+            "object_type": "CATEGORY",
+            "outter_element_tag": ""
+        },
+        "SW-CALIBRATION-ACCESS": {
+            "value": "READ-ONLY",
+            "object_type": "SW-CALIBRATION-ACCESS",
+            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL"
+        }
+    },
+    "ADT_DcmSR_uint8": {
+        "object_path": "/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSR_uint8",
+        "object_type": "APPLICATION-PRIMITIVE-DATA-TYPE",
+        "outter_element_tag": "/ELEMENTS",
+        "CATEGORY": {
+            "value": "VALUE",
+            "object_type": "CATEGORY",
+            "outter_element_tag": ""
+        },
+        "SW-CALIBRATION-ACCESS": {
+            "value": "READ-ONLY",
+            "object_type": "SW-CALIBRATION-ACCESS",
+            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL"
+        }
+    }
+}

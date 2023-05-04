@@ -1,0 +1,62 @@
+{
+    "IDT_DcmAD_uint8": {
+        "object_path": "/RB/PT/PCT_DcmSample_Adapter/ImplementationDataTypes/IDT_DcmAD_uint8",
+        "object_type": "IMPLEMENTATION-DATA-TYPE",
+        "outter_element_tag": "/ELEMENTS",
+        "CATEGORY": {
+            "value": "TYPE_REFERENCE",
+            "object_type": "CATEGORY",
+            "outter_element_tag": ""
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/AUTOSAR_Platform/ImplementationDataTypes/uint8",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
+    "IDT_DcmSP_uint8": {
+        "object_path": "/RB/PT/PCT_DcmSample_Provider/ImplementationDataTypes/IDT_DcmSP_uint8",
+        "object_type": "IMPLEMENTATION-DATA-TYPE",
+        "outter_element_tag": "/ELEMENTS",
+        "CATEGORY": {
+            "value": "TYPE_REFERENCE",
+            "object_type": "CATEGORY",
+            "outter_element_tag": ""
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/AUTOSAR_Platform/ImplementationDataTypes/uint8",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
+    "IDT_DcmSR_uint8": {
+        "object_path": "/RB/PT/PCT_DcmSample_Requester/ImplementationDataTypes/IDT_DcmSR_uint8",
+        "object_type": "IMPLEMENTATION-DATA-TYPE",
+        "outter_element_tag": "/ELEMENTS",
+        "CATEGORY": {
+            "value": "TYPE_REFERENCE",
+            "object_type": "CATEGORY",
+            "outter_element_tag": ""
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/AUTOSAR_Platform/ImplementationDataTypes/uint8",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    }
+}

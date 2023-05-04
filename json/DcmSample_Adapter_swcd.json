@@ -10,39 +10,54 @@
             "object_path": "/RB/PT",
             "object_type": "AR-PACKAGE",
             "outter_element_tag": "/AR-PACKAGES",
-            "PCT_DcmSample_Provider": {
-                "object_path": "/RB/PT/PCT_DcmSample_Provider",
+            "PCT_DcmSample_Adapter": {
+                "object_path": "/RB/PT/PCT_DcmSample_Adapter",
                 "object_type": "AR-PACKAGE",
                 "outter_element_tag": "/AR-PACKAGES",
                 "SwComponentTypes": {
-                    "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes",
+                    "object_path": "/RB/PT/PCT_DcmSample_Adapter/SwComponentTypes",
                     "object_type": "AR-PACKAGE",
                     "outter_element_tag": "/AR-PACKAGES",
-                    "DcmSample_Provider": {
-                        "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider",
+                    "DcmSample_Adapter": {
+                        "object_path": "/RB/PT/PCT_DcmSample_Adapter/SwComponentTypes/DcmSample_Adapter",
                         "object_type": "APPLICATION-SW-COMPONENT-TYPE",
                         "outter_element_tag": "/ELEMENTS",
-                        "PP_DcmSP_PP1": {
-                            "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/PP_DcmSP_PP1",
+                        "PP_DcmAD_PP1": {
+                            "object_path": "/RB/PT/PCT_DcmSample_Adapter/SwComponentTypes/DcmSample_Adapter/PP_DcmAD_PP1",
                             "object_type": "P-PORT-PROTOTYPE",
                             "outter_element_tag": "/PORTS",
+                            "OPERATION-REF": {
+                                "value": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1/CSO_DcmAD_CSO1",
+                                "object_type": "OPERATION-REF",
+                                "outter_element_tag": "/PROVIDED-COM-SPECS/SERVER-COM-SPEC",
+                                "attributes": [
+                                    {
+                                        "DEST": "CLIENT-SERVER-OPERATION"
+                                    }
+                                ]
+                            },
+                            "QUEUE-LENGTH": {
+                                "value": "1",
+                                "object_type": "QUEUE-LENGTH",
+                                "outter_element_tag": "/PROVIDED-COM-SPECS/SERVER-COM-SPEC"
+                            },
                             "PROVIDED-INTERFACE-TREF": {
-                                "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_SIF1",
+                                "value": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1",
                                 "object_type": "PROVIDED-INTERFACE-TREF",
                                 "outter_element_tag": "",
                                 "attributes": [
                                     {
-                                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                                        "DEST": "CLIENT-SERVER-INTERFACE"
                                     }
                                 ]
                             }
                         },
-                        "RP_DcmSP_RP1": {
-                            "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/RP_DcmSP_RP1",
+                        "RP_DcmAD_RP1": {
+                            "object_path": "/RB/PT/PCT_DcmSample_Adapter/SwComponentTypes/DcmSample_Adapter/RP_DcmAD_RP1",
                             "object_type": "R-PORT-PROTOTYPE",
                             "outter_element_tag": "/PORTS",
                             "REQUIRED-INTERFACE-TREF": {
-                                "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_RIF1",
+                                "value": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_RIF1",
                                 "object_type": "REQUIRED-INTERFACE-TREF",
                                 "outter_element_tag": "",
                                 "attributes": [
@@ -52,12 +67,12 @@
                                 ]
                             }
                         },
-                        "IB_DcmSP_IB1": {
-                            "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSP_IB1",
+                        "IB_DcmAD_IB1": {
+                            "object_path": "/RB/PT/PCT_DcmSample_Adapter/SwComponentTypes/DcmSample_Adapter/IB_DcmAD_IB1",
                             "object_type": "SWC-INTERNAL-BEHAVIOR",
                             "outter_element_tag": "/INTERNAL-BEHAVIORS",
                             "DATA-TYPE-MAPPING-REF": {
-                                "value": "/RB/PT/PCT_DcmSample_Provider/DataTypeMappingSets/DTMS_DcmSP_uint8",
+                                "value": "/RB/PT/PCT_DcmSample_Adapter/DataTypeMappingSets/DTMS_DcmAD_uint8",
                                 "object_type": "DATA-TYPE-MAPPING-REF",
                                 "outter_element_tag": "/DATA-TYPE-MAPPING-REFS",
                                 "attributes": [
@@ -66,12 +81,12 @@
                                     }
                                 ]
                             },
-                            "TE_DcmSP_TE1": {
-                                "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSP_IB1/TE_DcmSP_TE1",
-                                "object_type": "TIMING-EVENT",
+                            "OIE_DcmAD_OIE1": {
+                                "object_path": "/RB/PT/PCT_DcmSample_Adapter/SwComponentTypes/DcmSample_Adapter/IB_DcmAD_IB1/OIE_DcmAD_OIE1",
+                                "object_type": "OPERATION-INVOKED-EVENT",
                                 "outter_element_tag": "/EVENTS",
                                 "START-ON-EVENT-REF": {
-                                    "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSP_IB1/RE_DcmSP_RE1",
+                                    "value": "/RB/PT/PCT_DcmSample_Adapter/SwComponentTypes/DcmSample_Adapter/IB_DcmAD_IB1/RE_DcmAD_RE1",
                                     "object_type": "START-ON-EVENT-REF",
                                     "outter_element_tag": "",
                                     "attributes": [
@@ -80,22 +95,47 @@
                                         }
                                     ]
                                 },
-                                "PERIOD": {
-                                    "value": "1.0",
-                                    "object_type": "PERIOD",
-                                    "outter_element_tag": ""
+                                "CONTEXT-P-PORT-REF": {
+                                    "value": "/RB/PT/PCT_DcmSample_Adapter/SwComponentTypes/DcmSample_Adapter/PP_DcmAD_PP1",
+                                    "object_type": "CONTEXT-P-PORT-REF",
+                                    "outter_element_tag": "/OPERATION-IREF",
+                                    "attributes": [
+                                        {
+                                            "DEST": "P-PORT-PROTOTYPE"
+                                        }
+                                    ]
+                                },
+                                "TARGET-PROVIDED-OPERATION-REF": {
+                                    "value": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1/CSO_DcmAD_CSO1",
+                                    "object_type": "TARGET-PROVIDED-OPERATION-REF",
+                                    "outter_element_tag": "/OPERATION-IREF",
+                                    "attributes": [
+                                        {
+                                            "DEST": "CLIENT-SERVER-OPERATION"
+                                        }
+                                    ]
                                 }
                             },
-                            "RE_DcmSP_RE1": {
-                                "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSP_IB1/RE_DcmSP_RE1",
+                            "RE_DcmAD_RE1": {
+                                "object_path": "/RB/PT/PCT_DcmSample_Adapter/SwComponentTypes/DcmSample_Adapter/IB_DcmAD_IB1/RE_DcmAD_RE1",
                                 "object_type": "RUNNABLE-ENTITY",
                                 "outter_element_tag": "/RUNNABLES",
-                                "DRP_DcmSP_DRP1": {
-                                    "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSP_IB1/RE_DcmSP_RE1/DRP_DcmSP_DRP1",
+                                "SYMBOL": {
+                                    "value": "DcmSample_Adapter_SRV1",
+                                    "object_type": "SYMBOL",
+                                    "outter_element_tag": ""
+                                },
+                                "CAN-BE-INVOKED-CONCURRENTLY": {
+                                    "value": "true",
+                                    "object_type": "CAN-BE-INVOKED-CONCURRENTLY",
+                                    "outter_element_tag": ""
+                                },
+                                "DRP_DcmAD_DRP1": {
+                                    "object_path": "/RB/PT/PCT_DcmSample_Adapter/SwComponentTypes/DcmSample_Adapter/IB_DcmAD_IB1/RE_DcmAD_RE1/DRP_DcmAD_DRP1",
                                     "object_type": "VARIABLE-ACCESS",
                                     "outter_element_tag": "/DATA-RECEIVE-POINT-BY-VALUES",
                                     "PORT-PROTOTYPE-REF": {
-                                        "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/RP_DcmSP_RP1",
+                                        "value": "/RB/PT/PCT_DcmSample_Adapter/SwComponentTypes/DcmSample_Adapter/RP_DcmAD_RP1",
                                         "object_type": "PORT-PROTOTYPE-REF",
                                         "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
                                         "attributes": [
@@ -105,7 +145,7 @@
                                         ]
                                     },
                                     "TARGET-DATA-PROTOTYPE-REF": {
-                                        "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_RIF1/VDP_DcmSP_RVDP1",
+                                        "value": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_RIF1/VDP_DcmAD_RVDP1",
                                         "object_type": "TARGET-DATA-PROTOTYPE-REF",
                                         "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
                                         "attributes": [
@@ -114,47 +154,17 @@
                                             }
                                         ]
                                     }
-                                },
-                                "DSP_DcmSP_DSP1": {
-                                    "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSP_IB1/RE_DcmSP_RE1/DSP_DcmSP_DSP1",
-                                    "object_type": "VARIABLE-ACCESS",
-                                    "outter_element_tag": "/DATA-SEND-POINTS",
-                                    "PORT-PROTOTYPE-REF": {
-                                        "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/PP_DcmSP_PP1",
-                                        "object_type": "PORT-PROTOTYPE-REF",
-                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
-                                        "attributes": [
-                                            {
-                                                "DEST": "P-PORT-PROTOTYPE"
-                                            }
-                                        ]
-                                    },
-                                    "TARGET-DATA-PROTOTYPE-REF": {
-                                        "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_SIF1/VDP_DcmSP_SVDP1",
-                                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
-                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
-                                        "attributes": [
-                                            {
-                                                "DEST": "VARIABLE-DATA-PROTOTYPE"
-                                            }
-                                        ]
-                                    }
-                                },
-                                "SYMBOL": {
-                                    "value": "DcmSample_Provider_1000ms",
-                                    "object_type": "SYMBOL",
-                                    "outter_element_tag": ""
                                 }
                             }
                         }
                     }
                 },
                 "PortInterfaces": {
-                    "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces",
+                    "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces",
                     "object_type": "AR-PACKAGE",
                     "outter_element_tag": "/AR-PACKAGES",
-                    "IF_DcmSample_Provider_SIF1": {
-                        "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_SIF1",
+                    "IF_DcmSample_Adapter_RIF1": {
+                        "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_RIF1",
                         "object_type": "SENDER-RECEIVER-INTERFACE",
                         "outter_element_tag": "/ELEMENTS",
                         "IS-SERVICE": {
@@ -162,12 +172,12 @@
                             "object_type": "IS-SERVICE",
                             "outter_element_tag": ""
                         },
-                        "VDP_DcmSP_SVDP1": {
-                            "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_SIF1/VDP_DcmSP_SVDP1",
+                        "VDP_DcmAD_RVDP1": {
+                            "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_RIF1/VDP_DcmAD_RVDP1",
                             "object_type": "VARIABLE-DATA-PROTOTYPE",
                             "outter_element_tag": "/DATA-ELEMENTS",
                             "TYPE-TREF": {
-                                "value": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSP_uint8",
+                                "value": "/RB/PT/PCT_DcmSample_Adapter/ApplicationDataTypes/ADT_DcmAD_uint8",
                                 "object_type": "TYPE-TREF",
                                 "outter_element_tag": "",
                                 "attributes": [
@@ -178,38 +188,83 @@
                             }
                         }
                     },
-                    "IF_DcmSample_Provider_RIF1": {
-                        "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_RIF1",
-                        "object_type": "SENDER-RECEIVER-INTERFACE",
+                    "IF_DcmSample_Adapter_SIF1": {
+                        "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1",
+                        "object_type": "CLIENT-SERVER-INTERFACE",
                         "outter_element_tag": "/ELEMENTS",
                         "IS-SERVICE": {
                             "value": "false",
                             "object_type": "IS-SERVICE",
                             "outter_element_tag": ""
                         },
-                        "VDP_DcmSP_RVDP1": {
-                            "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_RIF1/VDP_DcmSP_RVDP1",
-                            "object_type": "VARIABLE-DATA-PROTOTYPE",
-                            "outter_element_tag": "/DATA-ELEMENTS",
-                            "TYPE-TREF": {
-                                "value": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSP_uint8",
-                                "object_type": "TYPE-TREF",
-                                "outter_element_tag": "",
+                        "CSO_DcmAD_CSO1": {
+                            "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1/CSO_DcmAD_CSO1",
+                            "object_type": "CLIENT-SERVER-OPERATION",
+                            "outter_element_tag": "/OPERATIONS",
+                            "APD_DcmAD_CSO1_APD1": {
+                                "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1/CSO_DcmAD_CSO1/APD_DcmAD_CSO1_APD1",
+                                "object_type": "ARGUMENT-DATA-PROTOTYPE",
+                                "outter_element_tag": "/ARGUMENTS",
+                                "SW-IMPL-POLICY": {
+                                    "value": "STANDARD",
+                                    "object_type": "SW-IMPL-POLICY",
+                                    "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL"
+                                },
+                                "TYPE-TREF": {
+                                    "value": "/RB/PT/PCT_DcmSample_Adapter/ApplicationDataTypes/ADT_DcmAD_uint8",
+                                    "object_type": "TYPE-TREF",
+                                    "outter_element_tag": "",
+                                    "attributes": [
+                                        {
+                                            "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                        }
+                                    ]
+                                },
+                                "DIRECTION": {
+                                    "value": "OUT",
+                                    "object_type": "DIRECTION",
+                                    "outter_element_tag": ""
+                                }
+                            },
+                            "POSSIBLE-ERROR-REF": {
+                                "value": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1/E_OK",
+                                "object_type": "POSSIBLE-ERROR-REF",
+                                "outter_element_tag": "/POSSIBLE-ERROR-REFS",
                                 "attributes": [
                                     {
-                                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                        "DEST": "APPLICATION-ERROR"
                                     }
                                 ]
+                            }
+                        },
+                        "E_OK": {
+                            "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1/E_OK",
+                            "object_type": "APPLICATION-ERROR",
+                            "outter_element_tag": "/POSSIBLE-ERRORS",
+                            "ERROR-CODE": {
+                                "value": "0",
+                                "object_type": "ERROR-CODE",
+                                "outter_element_tag": ""
+                            }
+                        },
+                        "E_NOT_OK": {
+                            "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_SIF1/E_NOT_OK",
+                            "object_type": "APPLICATION-ERROR",
+                            "outter_element_tag": "/POSSIBLE-ERRORS",
+                            "ERROR-CODE": {
+                                "value": "1",
+                                "object_type": "ERROR-CODE",
+                                "outter_element_tag": ""
                             }
                         }
                     }
                 },
                 "ApplicationDataTypes": {
-                    "object_path": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes",
+                    "object_path": "/RB/PT/PCT_DcmSample_Adapter/ApplicationDataTypes",
                     "object_type": "AR-PACKAGE",
                     "outter_element_tag": "/AR-PACKAGES",
-                    "ADT_DcmSP_uint8": {
-                        "object_path": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSP_uint8",
+                    "ADT_DcmAD_uint8": {
+                        "object_path": "/RB/PT/PCT_DcmSample_Adapter/ApplicationDataTypes/ADT_DcmAD_uint8",
                         "object_type": "APPLICATION-PRIMITIVE-DATA-TYPE",
                         "outter_element_tag": "/ELEMENTS",
                         "CATEGORY": {
@@ -225,11 +280,11 @@
                     }
                 },
                 "ImplementationDataTypes": {
-                    "object_path": "/RB/PT/PCT_DcmSample_Provider/ImplementationDataTypes",
+                    "object_path": "/RB/PT/PCT_DcmSample_Adapter/ImplementationDataTypes",
                     "object_type": "AR-PACKAGE",
                     "outter_element_tag": "/AR-PACKAGES",
-                    "IDT_DcmSP_uint8": {
-                        "object_path": "/RB/PT/PCT_DcmSample_Provider/ImplementationDataTypes/IDT_DcmSP_uint8",
+                    "IDT_DcmAD_uint8": {
+                        "object_path": "/RB/PT/PCT_DcmSample_Adapter/ImplementationDataTypes/IDT_DcmAD_uint8",
                         "object_type": "IMPLEMENTATION-DATA-TYPE",
                         "outter_element_tag": "/ELEMENTS",
                         "CATEGORY": {
@@ -250,15 +305,15 @@
                     }
                 },
                 "DataTypeMappingSets": {
-                    "object_path": "/RB/PT/PCT_DcmSample_Provider/DataTypeMappingSets",
+                    "object_path": "/RB/PT/PCT_DcmSample_Adapter/DataTypeMappingSets",
                     "object_type": "AR-PACKAGE",
                     "outter_element_tag": "/AR-PACKAGES",
-                    "DTMS_DcmSP_uint8": {
-                        "object_path": "/RB/PT/PCT_DcmSample_Provider/DataTypeMappingSets/DTMS_DcmSP_uint8",
+                    "DTMS_DcmAD_uint8": {
+                        "object_path": "/RB/PT/PCT_DcmSample_Adapter/DataTypeMappingSets/DTMS_DcmAD_uint8",
                         "object_type": "DATA-TYPE-MAPPING-SET",
                         "outter_element_tag": "/ELEMENTS",
                         "APPLICATION-DATA-TYPE-REF": {
-                            "value": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSP_uint8",
+                            "value": "/RB/PT/PCT_DcmSample_Adapter/ApplicationDataTypes/ADT_DcmAD_uint8",
                             "object_type": "APPLICATION-DATA-TYPE-REF",
                             "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
                             "attributes": [
@@ -268,7 +323,7 @@
                             ]
                         },
                         "IMPLEMENTATION-DATA-TYPE-REF": {
-                            "value": "/RB/PT/PCT_DcmSample_Provider/ImplementationDataTypes/IDT_DcmSP_uint8",
+                            "value": "/RB/PT/PCT_DcmSample_Adapter/ImplementationDataTypes/IDT_DcmAD_uint8",
                             "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
                             "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
                             "attributes": [
@@ -280,19 +335,19 @@
                     }
                 },
                 "PortInterfaceMappingSets": {
-                    "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaceMappingSets",
+                    "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaceMappingSets",
                     "object_type": "AR-PACKAGE",
                     "outter_element_tag": "/AR-PACKAGES",
-                    "PIMSet_IF_DcmSample_Provider_RIF1_IF_DcmSample_Requester_SIF1": {
-                        "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Provider_RIF1_IF_DcmSample_Requester_SIF1",
+                    "PIMSet_IF_DcmSample_Adapter_RIF1_IF_DcmSample_Provider_SIF1": {
+                        "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Adapter_RIF1_IF_DcmSample_Provider_SIF1",
                         "object_type": "PORT-INTERFACE-MAPPING-SET",
                         "outter_element_tag": "/ELEMENTS",
-                        "PIM_VDP_DcmSP_RVDP1_VDP_DcmSR_SVDP1": {
-                            "object_path": "/RB/PT/PCT_DcmSample_Provider/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Provider_RIF1_IF_DcmSample_Requester_SIF1/PIM_VDP_DcmSP_RVDP1_VDP_DcmSR_SVDP1",
+                        "PIM_VDP_DcmAD_RVDP1_VDP_DcmSP_SVDP1": {
+                            "object_path": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaceMappingSets/PIMSet_IF_DcmSample_Adapter_RIF1_IF_DcmSample_Provider_SIF1/PIM_VDP_DcmAD_RVDP1_VDP_DcmSP_SVDP1",
                             "object_type": "VARIABLE-AND-PARAMETER-INTERFACE-MAPPING",
                             "outter_element_tag": "/PORT-INTERFACE-MAPPINGS",
                             "FIRST-DATA-PROTOTYPE-REF": {
-                                "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_RIF1/VDP_DcmSP_RVDP1",
+                                "value": "/RB/PT/PCT_DcmSample_Adapter/PortInterfaces/IF_DcmSample_Adapter_RIF1/VDP_DcmAD_RVDP1",
                                 "object_type": "FIRST-DATA-PROTOTYPE-REF",
                                 "outter_element_tag": "/DATA-MAPPINGS/DATA-PROTOTYPE-MAPPING",
                                 "attributes": [
@@ -302,7 +357,7 @@
                                 ]
                             },
                             "SECOND-DATA-PROTOTYPE-REF": {
-                                "value": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_SIF1/VDP_DcmSR_SVDP1",
+                                "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_SIF1/VDP_DcmSP_SVDP1",
                                 "object_type": "SECOND-DATA-PROTOTYPE-REF",
                                 "outter_element_tag": "/DATA-MAPPINGS/DATA-PROTOTYPE-MAPPING",
                                 "attributes": [
