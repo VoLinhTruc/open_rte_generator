@@ -1,0 +1,32 @@
+{
+    "CPT_DcmSample_Provider": {
+        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Provider",
+        "object_type": "SW-COMPONENT-PROTOTYPE",
+        "outter_element_tag": "/COMPONENTS",
+        "TYPE-TREF": {
+            "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider",
+            "object_type": "TYPE-TREF",
+            "outter_element_tag": "",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-SW-COMPONENT-TYPE"
+                }
+            ]
+        }
+    },
+    "CPT_DcmSample_Requester": {
+        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Requester",
+        "object_type": "SW-COMPONENT-PROTOTYPE",
+        "outter_element_tag": "/COMPONENTS",
+        "TYPE-TREF": {
+            "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester",
+            "object_type": "TYPE-TREF",
+            "outter_element_tag": "",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-SW-COMPONENT-TYPE"
+                }
+            ]
+        }
+    }
+}

@@ -2,12 +2,25 @@
 #ifndef RTE_H
 #define RTE_H
 
+#include "Rte_Type.h"
+
 #ifndef RTE_E_OK
-#ifndef RTE_E_OK ((Std_ReturnType)0x01)
+#define RTE_E_OK ((Std_ReturnType)0x01)
 #endif // RTE_E_OK
 
 #ifndef RTE_E_NOT_OK
-#ifndef RTE_E_NOT_OK ((Std_ReturnType)0x00)
+#define RTE_E_NOT_OK ((Std_ReturnType)0x00)
 #endif // RTE_E_NOT_OK
+
+IDT_DcmSample_Requester_uint8 DcmSample_Provider_RP_DcmSample_Provider_RP1_VDP_DcmSample_Requester_Var1;
+IDT_DcmSample_Provider_uint8 DcmSample_Requester_RP_DcmSample_Requester_RP1_VDP_DcmSample_Provider_Var1;
+Std_ReturnType DcmSample_Provider_PP_DcmSample_Provider_PP1_VDP_DcmSample_Provider_Var1;
+Std_ReturnType DcmSample_Requester_PP_DcmSample_Requester_PP1_VDP_DcmSample_Requester_Var1;
+
+IDT_DcmSample_Requester_uint8 Rte_DRead_DcmSample_Provider_RP_DcmSample_Provider_RP1_VDP_DcmSample_Requester_Var1(void );
+Std_ReturnType Rte_Write_DcmSample_Provider_PP_DcmSample_Provider_PP1_VDP_DcmSample_Provider_Var1(IDT_DcmSample_Provider_uint8 data);
+IDT_DcmSample_Provider_uint8 Rte_DRead_DcmSample_Requester_RP_DcmSample_Requester_RP1_VDP_DcmSample_Provider_Var1(void );
+Std_ReturnType Rte_Write_DcmSample_Requester_PP_DcmSample_Requester_PP1_VDP_DcmSample_Requester_Var1(IDT_DcmSample_Requester_uint8 data);
+
 
 #endif // RTE

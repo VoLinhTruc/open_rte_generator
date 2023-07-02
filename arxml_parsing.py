@@ -42,6 +42,7 @@ data_point_api = {
 
 receive_data_point_by_value_api_list = []
 send_data_point_by_value_api_list = []
+connector_list = []
 
 def writeToLogFile(content):
     with open('std_out.json', 'a') as f:
@@ -82,6 +83,15 @@ def genJsonFromXml(xml_ele, json_obj, json_object_path = '', outter_element_tag 
                 outter_element_tag = ""
             elif (getElementTagWithoutNameSpace(xml_ele) != "AUTOSAR"):
                     outter_element_tag = outter_element_tag + "/" + getElementTagWithoutNameSpace(xml_ele)
+                    
+            if("CONTEXT-COMPONENT-REF" in json_obj):
+                if json_obj["CONTEXT-COMPONENT-REF"]["outter_element_tag"] == "/PROVIDER-IREF":
+                    json_obj["CONTEXT-COMPONENT-REF-PROVIDER"] = json_obj["CONTEXT-COMPONENT-REF"]
+                    del json_obj["CONTEXT-COMPONENT-REF"]
+                elif json_obj["CONTEXT-COMPONENT-REF"]["outter_element_tag"] == "/REQUESTER-IREF":
+                    json_obj["CONTEXT-COMPONENT-REF-REQUESTER"] = json_obj["CONTEXT-COMPONENT-REF"]
+                    del json_obj["CONTEXT-COMPONENT-REF"]
+                    
             genJsonFromXml(child_ele, json_obj, json_object_path, outter_element_tag)
             outter_element_tag = backup_outter_element_tag
     else:
@@ -207,6 +217,12 @@ def getImplementationDataType(obj):
 def getDataTypeMappingSet(obj):
     return getObjectByType(obj, "DATA-TYPE-MAPPING-SET", {})
 
+def getComponentPrototype(obj):
+    return getObjectByType(obj, "SW-COMPONENT-PROTOTYPE", {})
+
+def getConnector(obj):
+    return getObjectByType(obj, "ASSEMBLY-SW-CONNECTOR", {})
+
 def extractRteObject(root_rte_obj):  
     if not os.path.exists("output/object_extract"):
         os.makedirs("output/object_extract")
@@ -240,6 +256,16 @@ def extractRteObject(root_rte_obj):
         json_string = json.dumps(datatypes_mapping_sets, indent=4)
         f.write("%s\n" % json_string)   
 
+    connectors = getConnector(root_json)
+    with open('output/object_extract/connector.json', 'w') as f:
+        json_string = json.dumps(connectors, indent=4)
+        f.write("%s\n" % json_string)
+
+    component_prototype = getComponentPrototype(root_json)
+    with open('output/object_extract/component_prototype.json', 'w') as f:
+        json_string = json.dumps(component_prototype, indent=4)
+        f.write("%s\n" % json_string)
+
 # -------------------------------------------------------------------------------
 
 def writeToHdrFileTheAntiReIncludeWrapperStart(h_file):
@@ -250,11 +276,32 @@ def writeToHdrFileTheAntiReIncludeWrapperStart(h_file):
     h_file.write("#define " + macro)
     h_file.write("\n\n")
     
+
+def writeToHdrFileIncludeBlock(h_file):
+    h_file.write('#include "Rte_Type.h"')
+    h_file.write('\n\n')
+    
+    
 def writeToHdrFileTheAntiReIncludeWrapperEnd(h_file):
     macro  = os.path.splitext(os.path.basename(h_file.name))[0].upper()
     h_file.write("\n")
     h_file.write("#endif // " + macro)  
 
+def generateStdTypeHeaderFile():
+    if not os.path.exists(GEN_SWC_INCLUDE_FILE_PATH):
+        os.makedirs(GEN_SWC_INCLUDE_FILE_PATH)
+
+    file_obj = open(GEN_SWC_INCLUDE_FILE_PATH + "Std_Types.h", 'w')
+    writeToHdrFileTheAntiReIncludeWrapperStart(file_obj)
+    file_obj.write("typedef unsigned char   uint8;")
+    file_obj.write("\n")
+    file_obj.write("typedef uint8           Std_ReturnType;")
+    file_obj.write("\n\n")    
+    writeToHdrFileTheAntiReIncludeWrapperEnd(file_obj)
+
+    file_obj.close()
+    
+    
 def generateRteHeaderFileForComponent(root_json):
     component_container_obj = getSWComponents(root_json)
     if isinstance(component_container_obj, dict):
@@ -304,7 +351,7 @@ def getDataPointByPortRefPath(swcomponent, port_path):
 def getDataMappings(root_obj):
     data_mapping_sets = getDataTypeMappingSet(root_obj)
     
-def getDataReceivePointByValueAPI(data_point_value, rte_root_obj, component_value, file, port_key):
+def getDataReceivePointByValueApi(data_point_value, rte_root_obj, component_value, port_key):
     data_element_path = data_point_value["TARGET-DATA-PROTOTYPE-REF"]["value"]
     data_element = getJsonObjectFromRefPath(rte_root_obj, data_element_path)
     data_element_name = getObjName(data_element)
@@ -324,10 +371,21 @@ def getDataReceivePointByValueAPI(data_point_value, rte_root_obj, component_valu
     port_api_arg_type = "void"
     port_api_arg_value = ""
     api = port_api_type + " " + port_api_header + "_" + port_api_p + "_" + port_api_o + "(" + port_api_arg_type + " " + port_api_arg_value + ")"
-    receive_data_point_by_value_api_list.append({data_point_api["port_api_type"]: port_api_type, data_point_api["port_api_header"]: port_api_header, data_point_api["port_api_p"]: port_api_p, data_point_api["port_api_o"]: port_api_o, data_point_api["port_api_arg_type"]: port_api_arg_type, data_point_api["port_api_arg_value"]: port_api_arg_value})
+    receive_data_point_by_value_api_list.append( \
+        {data_point_api["port_api_type"]: port_api_type, \
+            data_point_api["port_api_header"]: port_api_header, \
+            data_point_api["port_api_p"]: port_api_p, \
+            data_point_api["port_api_o"]: port_api_o, \
+            data_point_api["port_api_arg_type"]: port_api_arg_type, \
+            data_point_api["port_api_arg_value"]: port_api_arg_value, \
+            "component_name": getObjName(component_value), \
+            "port_name": port_key, \
+            "api": api, \
+            "final_variable_name": port_api_p + "_"  + port_api_o \
+        })
     return api + ";"
     
-def generateDataSendPointAPI(data_point_value, rte_root_obj, component_value, file, port_key):
+def generateDataSendPointApi(data_point_value, rte_root_obj, component_value, port_key):
     data_element_path = data_point_value["TARGET-DATA-PROTOTYPE-REF"]["value"]
     data_element = getJsonObjectFromRefPath(rte_root_obj, data_element_path)
     data_element_name = getObjName(data_element)
@@ -347,10 +405,21 @@ def generateDataSendPointAPI(data_point_value, rte_root_obj, component_value, fi
     port_api_arg_type = mapped_implementation_data_type_name
     port_api_arg_value = "data"
     api = port_api_type + " " + port_api_header + "_" + port_api_p + "_" + port_api_o + "(" + port_api_arg_type + " " + port_api_arg_value + ")"
-    send_data_point_by_value_api_list.append({data_point_api["port_api_type"]: port_api_type, data_point_api["port_api_header"]: port_api_header, data_point_api["port_api_p"]: port_api_p, data_point_api["port_api_o"]: port_api_o, data_point_api["port_api_arg_type"]: port_api_arg_type, data_point_api["port_api_arg_value"]: port_api_arg_value})
+    send_data_point_by_value_api_list.append(\
+        {data_point_api["port_api_type"]: port_api_type, \
+            data_point_api["port_api_header"]: port_api_header, \
+            data_point_api["port_api_p"]: port_api_p, \
+            data_point_api["port_api_o"]: port_api_o, \
+            data_point_api["port_api_arg_type"]: port_api_arg_type, \
+            data_point_api["port_api_arg_value"]: port_api_arg_value, \
+            "component_name": getObjName(component_value), \
+            "port_name": port_key, \
+            "api": api, \
+            "final_variable_name": port_api_p + "_"  + port_api_o \
+        })
     return api + ";"
     
-def getPortAPIFromPortList(component_value, port_list, rte_root_obj, file):
+def getPortApiFromPortList(component_value, port_list, rte_root_obj):
     ret = []
     port_api_type = ""
     port_api_header = ""
@@ -368,10 +437,10 @@ def getPortAPIFromPortList(component_value, port_list, rte_root_obj, file):
             data_point_key = data_point[0]
             data_point_value = data_point[1]
             if data_point_value["outter_element_tag"] == "/DATA-RECEIVE-POINT-BY-VALUES":
-                api = getDataReceivePointByValueAPI(data_point_value, rte_root_obj, component_value, file, port_key)
+                api = getDataReceivePointByValueApi(data_point_value, rte_root_obj, component_value, port_key)
                 data_receive_point_by_value_api_list.append(api)
             elif data_point_value["outter_element_tag"] == "/DATA-SEND-POINTS":
-                api = generateDataSendPointAPI(data_point_value, rte_root_obj, component_value, file, port_key)
+                api = generateDataSendPointApi(data_point_value, rte_root_obj, component_value, port_key)
                 data_send_point_api_list.append(api)
     for api in data_receive_point_by_value_api_list:
         ret.append(api)
@@ -381,40 +450,131 @@ def getPortAPIFromPortList(component_value, port_list, rte_root_obj, file):
 
     
     
-def getPortAPIFromComponent(rte_root_obj, file):
+def getPortApiFromComponent(rte_root_obj):
     ret = []
     swcomponents = getSWComponents(rte_root_obj)
     for component in swcomponents.items(): 
         component_key = component[0]
         component_value = component[1]
         ports = getPorts(component_value)
-        ret = ret + getPortAPIFromPortList(component_value, ports, rte_root_obj, file)
+        ret = ret + getPortApiFromPortList(component_value, ports, rte_root_obj)
     return ret
+    
+
+def updateConnectorList(rte_root_obj):
+    connectors = getConnector(rte_root_obj)
+    component_prototype = getComponentPrototype(rte_root_obj)
+    for connector in connectors.items():
+        connector_name = connector[0]
+        connector_value = connector[1]
+        
+        provider_component_prototype_name = getObjNameFromPath(connector_value["CONTEXT-COMPONENT-REF-PROVIDER"]["value"])
+        provider_component_name = getObjNameFromPath(component_prototype[provider_component_prototype_name]["TYPE-TREF"]["value"])
+        provider_port_name = getObjNameFromPath(connector_value["TARGET-P-PORT-REF"]["value"])
+        
+        requester_component_prototype_name = getObjNameFromPath(connector_value["CONTEXT-COMPONENT-REF-REQUESTER"]["value"])
+        requester_component_name = getObjNameFromPath(component_prototype[requester_component_prototype_name]["TYPE-TREF"]["value"])
+        requester_port_name = getObjNameFromPath(connector_value["TARGET-R-PORT-REF"]["value"])
+        
+        connector_list.append(\
+            {\
+              "provider_component_name": provider_component_name, \
+              "provider_port_name": provider_port_name, \
+              "requester_component_name": requester_component_name, \
+              "requester_port_name": requester_port_name, \
+            }\
+        )
+
 
 def writeToScrFileIncludeBlock(c_file):
+    # include_files = getFilesByExtension(GEN_SWC_INCLUDE_FILE_PATH, 'h')
+    # for include_file in include_files:
+    #     file_base_name = os.path.basename(include_file)
+    #     c_file.write('#include "' + file_base_name + '"')
+    #     c_file.write("\n")
+    c_file.write('#include "Rte.h"')
     c_file.write("\n")
-    include_files = getFilesByExtension(GEN_SWC_INCLUDE_FILE_PATH, 'h')
-    for include_file in include_files:
-        file_base_name = os.path.basename(include_file)
-        c_file.write('#include "' + file_base_name + '"')
-        c_file.write("\n")
-    c_file.write("\n")
+    c_file.write('#include "Rte_Type.h"')
+    c_file.write("\n\n")
    
     
-def writeToScrPortApi(c_file, port_apis):
+def writeToScrFilePortApi(c_file, port_apis):
     for port_api in port_apis:
         c_file.write(port_api)
         c_file.write("\n")
+    c_file.write("\n")
+
+    
+def writeToScrDateApi(c_file, rte_root_obj, connector_list, receive_data_list, send_data_list):
+    updateConnectorList(rte_root_obj)
+    provide_request_pair = []
+    for connector in connector_list:
+        for send_data in send_data_list:
+            if (send_data["component_name"] == connector["provider_component_name"]) and (send_data["port_name"] == connector["provider_port_name"]):
+                for receive_data in receive_data_list:
+                    if (receive_data["component_name"] == connector["requester_component_name"]) and (receive_data["port_name"] == connector["requester_port_name"]):
+                        provide_request_pair.append(\
+                            {
+                                "provider": send_data, \
+                                "requester": receive_data \
+                            }
+                        )
+    
+    for send_data in send_data_list:
+        code_for_assigning_data_to_requester_data_point = ""
+        for data_pair in provide_request_pair:
+            if data_pair["provider"] == send_data:
+                code_for_assigning_data_to_requester_data_point = code_for_assigning_data_to_requester_data_point + \
+                    data_pair["requester"]["final_variable_name"] + " = " + send_data["final_variable_name"] + ";\n"        
+        funciton_definition = \
+        """""" + send_data["api"] + """
+        {
+            Std_ReturnType rtn;
+            
+            rtn = RTE_E_OK;
+            
+            """ + send_data["final_variable_name"] + """ = data;\n
+            """ + code_for_assigning_data_to_requester_data_point + """
+            return rtn;
+        }
+                """ + "\n"
+        c_file.write(funciton_definition)
+    
+    for receive_data in receive_data_list:
+        funciton_definition = \
+        """""" + receive_data["api"] + """
+        {
+            IDT_DcmSample_Provider_uint8 rtn;
+
+            rtn = """ + receive_data["final_variable_name"] + """;
+
+            return rtn;
+        }
+                """ + "\n"
+        c_file.write(funciton_definition)
+        
+    
+def writeToHdrFileDataDefinition(c_file, receive_data_list, send_data_list):
+    for receive_data in receive_data_list:
+        data_definition = receive_data["port_api_type"] + " " +  receive_data["final_variable_name"] + ";"
+        c_file.write(data_definition)
+        c_file.write("\n")
+    for send_data in send_data_list:
+        data_definition = send_data["port_api_type"] + " " +  send_data["final_variable_name"] + ";"
+        c_file.write(data_definition)
+        c_file.write("\n")
+    c_file.write("\n")
    
     
 def writeToRteMainHdrFileDefineMacroBlock(file):
     file.write("#ifndef RTE_E_OK\n")
-    file.write("#ifndef RTE_E_OK ((Std_ReturnType)0x01)\n")
+    file.write("#define RTE_E_OK ((Std_ReturnType)0x01)\n")
     file.write("#endif // RTE_E_OK\n")
     file.write("\n")
     file.write("#ifndef RTE_E_NOT_OK\n")
-    file.write("#ifndef RTE_E_NOT_OK ((Std_ReturnType)0x00)\n")
-    file.write("#endif // RTE_E_NOT_OK\n")
+    file.write("#define RTE_E_NOT_OK ((Std_ReturnType)0x00)\n")
+    file.write("#endif // RTE_E_NOT_OK\n\n")
+    
     
 def writeToRteMainHdrFileDefineTypedefBlock(file_obj, rte_root_obj):
     impl_type_list = getImplementationDataType(rte_root_obj)
@@ -432,20 +592,31 @@ def generateRteTypeHeaderFile(rte_root_obj):
         os.makedirs(GEN_SWC_INCLUDE_FILE_PATH)
 
     file_obj = open(GEN_SWC_INCLUDE_FILE_PATH + "Rte_Type.h", 'w')
+    
     writeToHdrFileTheAntiReIncludeWrapperStart(file_obj)
+    file_obj.write('#include "Std_Types.h"')
+    file_obj.write("\n\n")
     writeToRteMainHdrFileDefineTypedefBlock(file_obj, rte_root_obj)
     writeToHdrFileTheAntiReIncludeWrapperEnd(file_obj)
 
     file_obj.close()
     
-    
+
 def generateRteMainHeaderFile(rte_root_obj):
     if not os.path.exists(GEN_SWC_INCLUDE_FILE_PATH):
         os.makedirs(GEN_SWC_INCLUDE_FILE_PATH)
 
     file_obj = open(GEN_SWC_INCLUDE_FILE_PATH + "Rte.h", 'w')
+    
+    # run getPortApiFromComponent to update value for receive_data_point_by_value_api_list and send_data_point_by_value_api_list 
+    # getPortApiFromComponent must be run once
+    port_apis = getPortApiFromComponent(rte_root_obj)
+    
     writeToHdrFileTheAntiReIncludeWrapperStart(file_obj)
+    writeToHdrFileIncludeBlock(file_obj)
     writeToRteMainHdrFileDefineMacroBlock(file_obj)
+    writeToHdrFileDataDefinition(file_obj, receive_data_point_by_value_api_list, send_data_point_by_value_api_list)
+    writeToScrFilePortApi(file_obj, port_apis)
     writeToHdrFileTheAntiReIncludeWrapperEnd(file_obj)
 
     file_obj.close()
@@ -458,18 +629,8 @@ def generateRteMainSourceFile(rte_root_obj):
     file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "Rte.c", 'w')
 
     writeToScrFileIncludeBlock(file_obj)
-    port_api = getPortAPIFromComponent(rte_root_obj, file_obj)
+    writeToScrDateApi(file_obj, rte_root_obj, connector_list, receive_data_point_by_value_api_list, send_data_point_by_value_api_list)
     
-    # data element information is gotten after getPortAPIFromComponent, they are stored in receive_data_point_by_value_api_list and send_data_point_by_value_api_list
-    # define C variable represent those data elements here
-    # print(receive_data_point_by_value_api_list)
-    # writeToLogFile(receive_data_point_by_value_api_list)
-    writeToLogFile(send_data_point_by_value_api_list)
-        
-    # port API prototype will be write after variable definition
-    print(port_api)
-    writeToScrPortApi(file_obj, port_api)
-
     file_obj.close()
 
 
@@ -484,7 +645,8 @@ if __name__ == "__main__":
         root_json = json.load(f)
     
     extractRteObject(root_json)
-        
+
+    generateStdTypeHeaderFile()
     generateRteHeaderFileForComponent(root_json)
     generateRteTypeHeaderFile(root_json)
     generateRteMainHeaderFile(root_json)

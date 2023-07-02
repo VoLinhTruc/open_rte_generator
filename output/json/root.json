@@ -559,6 +559,141 @@
                     "object_type": "AR-PACKAGE",
                     "outter_element_tag": "/AR-PACKAGES"
                 }
+            },
+            "PCT_TopLvlComposition": {
+                "object_path": "/RB/PT/PCT_TopLvlComposition",
+                "object_type": "AR-PACKAGE",
+                "outter_element_tag": "/AR-PACKAGES",
+                "SwComponentTypes": {
+                    "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "TopLvlComposition": {
+                        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition",
+                        "object_type": "COMPOSITION-SW-COMPONENT-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "CPT_DcmSample_Provider": {
+                            "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Provider",
+                            "object_type": "SW-COMPONENT-PROTOTYPE",
+                            "outter_element_tag": "/COMPONENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-SW-COMPONENT-TYPE"
+                                    }
+                                ]
+                            }
+                        },
+                        "CPT_DcmSample_Requester": {
+                            "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Requester",
+                            "object_type": "SW-COMPONENT-PROTOTYPE",
+                            "outter_element_tag": "/COMPONENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-SW-COMPONENT-TYPE"
+                                    }
+                                ]
+                            }
+                        },
+                        "ASC_CPT_DcmSample_Requester_PP_DcmSample_Requester_PP1_CPT_DcmSample_Provider_RP_DcmSample_Provider_RP1": {
+                            "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/ASC_CPT_DcmSample_Requester_PP_DcmSample_Requester_PP1_CPT_DcmSample_Provider_RP_DcmSample_Provider_RP1",
+                            "object_type": "ASSEMBLY-SW-CONNECTOR",
+                            "outter_element_tag": "/CONNECTORS",
+                            "CONTEXT-COMPONENT-REF-PROVIDER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Requester",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-P-PORT-REF": {
+                                "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/PP_DcmSample_Requester_PP1",
+                                "object_type": "TARGET-P-PORT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "P-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "CONTEXT-COMPONENT-REF-REQUESTER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Provider",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-R-PORT-REF": {
+                                "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/RP_DcmSample_Provider_RP1",
+                                "object_type": "TARGET-R-PORT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "R-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            }
+                        },
+                        "ASC_CPT_DcmSample_Provider_PP_DcmSample_Provider_PP1_CPT_DcmSample_Requester_RP_DcmSample_Requester_RP1": {
+                            "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/ASC_CPT_DcmSample_Provider_PP_DcmSample_Provider_PP1_CPT_DcmSample_Requester_RP_DcmSample_Requester_RP1",
+                            "object_type": "ASSEMBLY-SW-CONNECTOR",
+                            "outter_element_tag": "/CONNECTORS",
+                            "CONTEXT-COMPONENT-REF-PROVIDER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Provider",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-P-PORT-REF": {
+                                "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/PP_DcmSample_Provider_PP1",
+                                "object_type": "TARGET-P-PORT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "P-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "CONTEXT-COMPONENT-REF-REQUESTER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Requester",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-R-PORT-REF": {
+                                "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/RP_DcmSample_Requester_RP1",
+                                "object_type": "TARGET-R-PORT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "R-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
             }
         }
     }
