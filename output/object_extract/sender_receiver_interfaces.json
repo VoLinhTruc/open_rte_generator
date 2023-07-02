@@ -1,0 +1,52 @@
+{
+    "IF_DcmSample_Provider_IF1": {
+        "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Provider_IF1",
+        "object_type": "SENDER-RECEIVER-INTERFACE",
+        "outter_element_tag": "/ELEMENTS",
+        "IS-SERVICE": {
+            "value": "false",
+            "object_type": "IS-SERVICE",
+            "outter_element_tag": ""
+        },
+        "VDP_DcmSample_Provider_Var1": {
+            "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Provider_IF1/VDP_DcmSample_Provider_Var1",
+            "object_type": "VARIABLE-DATA-PROTOTYPE",
+            "outter_element_tag": "/DATA-ELEMENTS",
+            "TYPE-TREF": {
+                "value": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSample_Provider_uint8",
+                "object_type": "TYPE-TREF",
+                "outter_element_tag": "",
+                "attributes": [
+                    {
+                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                    }
+                ]
+            }
+        }
+    },
+    "IF_DcmSample_Requester_IF1": {
+        "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_IF1",
+        "object_type": "SENDER-RECEIVER-INTERFACE",
+        "outter_element_tag": "/ELEMENTS",
+        "IS-SERVICE": {
+            "value": "false",
+            "object_type": "IS-SERVICE",
+            "outter_element_tag": ""
+        },
+        "VDP_DcmSample_Requester_Var1": {
+            "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_IF1/VDP_DcmSample_Requester_Var1",
+            "object_type": "VARIABLE-DATA-PROTOTYPE",
+            "outter_element_tag": "/DATA-ELEMENTS",
+            "TYPE-TREF": {
+                "value": "/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSample_Requester_uint8",
+                "object_type": "TYPE-TREF",
+                "outter_element_tag": "",
+                "attributes": [
+                    {
+                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                    }
+                ]
+            }
+        }
+    }
+}

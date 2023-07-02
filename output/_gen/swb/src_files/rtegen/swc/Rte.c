@@ -1,0 +1,10 @@
+
+#include "Rte.h"
+#include "Rte_DcmSample_Provider.h"
+#include "Rte_DcmSample_Requester.h"
+#include "Rte_Type.h"
+
+IDT_DcmSample_Requester_uint8 Rte_DRead_DcmSample_Provider_RP_DcmSample_Provider_RP1_VDP_DcmSample_Requester_Var1(void );
+Std_ReturnType Rte_Write_DcmSample_Provider_PP_DcmSample_Provider_PP1_VDP_DcmSample_Provider_Var1(IDT_DcmSample_Provider_uint8 data);
+IDT_DcmSample_Provider_uint8 Rte_DRead_DcmSample_Requester_RP_DcmSample_Requester_RP1_VDP_DcmSample_Provider_Var1(void );
+Std_ReturnType Rte_Write_DcmSample_Requester_PP_DcmSample_Requester_PP1_VDP_DcmSample_Requester_Var1(IDT_DcmSample_Requester_uint8 data);

@@ -1,0 +1,52 @@
+{
+    "DTMS_DcmSample_Provider": {
+        "object_path": "/RB/PT/PCT_DcmSample_Provider/DataTypeMappingSets/DTMS_DcmSample_Provider",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSample_Requester_uint8",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_DcmSample_Requester/ImplementationDataTypes/IDT_DcmSample_Requester_uint8",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
+    "DTMS_DcmSample_Requester": {
+        "object_path": "/RB/PT/PCT_DcmSample_Requester/DataTypeMappingSets/DTMS_DcmSample_Requester",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSample_Provider_uint8",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_DcmSample_Provider/ImplementationDataTypes/IDT_DcmSample_Provider_uint8",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    }
+}
