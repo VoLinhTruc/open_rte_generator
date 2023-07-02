@@ -224,45 +224,45 @@ def getConnector(obj):
     return getObjectByType(obj, "ASSEMBLY-SW-CONNECTOR", {})
 
 def extractRteObject(root_rte_obj):  
-    if not os.path.exists("output/object_extract"):
-        os.makedirs("output/object_extract")
+    if not os.path.exists("output/json/object_extract"):
+        os.makedirs("output/json/object_extract")
     sw_components = getSWComponents(root_json)
-    with open('output/object_extract/sw_components.json', 'w') as f:
+    with open('output/json/object_extract/sw_components.json', 'w') as f:
         json_string = json.dumps(sw_components, indent=4)
         f.write("%s\n" % json_string)
 
     client_server_interfaces = getClientServerInterfaces(root_json)
-    with open('output/object_extract/client_server_interfaces.json', 'w') as f:
+    with open('output/json/object_extract/client_server_interfaces.json', 'w') as f:
         json_string = json.dumps(client_server_interfaces, indent=4)
         f.write("%s\n" % json_string)
 
     sender_receiver_interfaces = getSenderReceiverInterfaces(root_json)
-    with open('output/object_extract/sender_receiver_interfaces.json', 'w') as f:
+    with open('output/json/object_extract/sender_receiver_interfaces.json', 'w') as f:
         json_string = json.dumps(sender_receiver_interfaces, indent=4)
         f.write("%s\n" % json_string)
 
     interface_mapping_sets = getInterfacesMappingSets(root_json)
-    with open('output/object_extract/interface_mapping_sets.json', 'w') as f:
+    with open('output/json/object_extract/interface_mapping_sets.json', 'w') as f:
         json_string = json.dumps(interface_mapping_sets, indent=4)
         f.write("%s\n" % json_string)
 
     application_datatypes = getApplicationDataType(root_json)
-    with open('output/object_extract/application_datatypes.json', 'w') as f:
+    with open('output/json/object_extract/application_datatypes.json', 'w') as f:
         json_string = json.dumps(application_datatypes, indent=4)
         f.write("%s\n" % json_string)
 
     datatypes_mapping_sets = getDataTypeMappingSet(root_json)
-    with open('output/object_extract/datatypes_mapping_sets.json', 'w') as f:
+    with open('output/json/object_extract/datatypes_mapping_sets.json', 'w') as f:
         json_string = json.dumps(datatypes_mapping_sets, indent=4)
         f.write("%s\n" % json_string)   
 
     connectors = getConnector(root_json)
-    with open('output/object_extract/connector.json', 'w') as f:
+    with open('output/json/object_extract/connector.json', 'w') as f:
         json_string = json.dumps(connectors, indent=4)
         f.write("%s\n" % json_string)
 
     component_prototype = getComponentPrototype(root_json)
-    with open('output/object_extract/component_prototype.json', 'w') as f:
+    with open('output/json/object_extract/component_prototype.json', 'w') as f:
         json_string = json.dumps(component_prototype, indent=4)
         f.write("%s\n" % json_string)
 
