@@ -314,7 +314,36 @@ def generateRteHeaderFileForComponent(root_json):
                 os.makedirs(GEN_SWC_INCLUDE_FILE_PATH)
             with open(GEN_SWC_INCLUDE_FILE_PATH + header_file_name, 'w') as f:
                 writeToHdrFileTheAntiReIncludeWrapperStart(f)
-                # ...
+                
+                for receive_data in receive_data_point_by_value_api_list:
+                    if receive_data["component_name"] == obj_name:
+                        f.write(\
+                            "#define " + 
+                            receive_data["port_api_header"] + "_" + \
+                            receive_data["port_name"] + "_" + \
+                            receive_data["port_api_o"] + \
+                            "(" + receive_data["port_api_arg_value"] + ") " + \
+                            receive_data["port_api_header"] + "_" + \
+                            receive_data["port_api_p"] + "_" + \
+                            receive_data["port_api_o"] + \
+                            "(" + receive_data["port_api_arg_value"] + ") " + \
+                            "\n" \
+                        )
+                for send_data in send_data_point_by_value_api_list:
+                    if send_data["component_name"] == obj_name:
+                        f.write(\
+                            "#define " + 
+                            send_data["port_api_header"] + "_" + \
+                            send_data["port_name"] + "_" + \
+                            send_data["port_api_o"] + \
+                            "(" + send_data["port_api_arg_value"] + ") " + \
+                            send_data["port_api_header"] + "_" + \
+                            send_data["port_api_p"] + "_" + \
+                            send_data["port_api_o"] + \
+                            "(" + send_data["port_api_arg_value"] + ") " + \
+                            "\n" \
+                        )
+                        
                 writeToHdrFileTheAntiReIncludeWrapperEnd(f)     
 
 # -------------------------------------------------------------------------------
@@ -602,15 +631,11 @@ def generateRteTypeHeaderFile(rte_root_obj):
     file_obj.close()
     
 
-def generateRteMainHeaderFile(rte_root_obj):
+def generateRteMainHeaderFile(port_apis):
     if not os.path.exists(GEN_SWC_INCLUDE_FILE_PATH):
         os.makedirs(GEN_SWC_INCLUDE_FILE_PATH)
 
     file_obj = open(GEN_SWC_INCLUDE_FILE_PATH + "Rte.h", 'w')
-    
-    # run getPortApiFromComponent to update value for receive_data_point_by_value_api_list and send_data_point_by_value_api_list 
-    # getPortApiFromComponent must be run once
-    port_apis = getPortApiFromComponent(rte_root_obj)
     
     writeToHdrFileTheAntiReIncludeWrapperStart(file_obj)
     writeToHdrFileIncludeBlock(file_obj)
@@ -645,9 +670,13 @@ if __name__ == "__main__":
         root_json = json.load(f)
     
     extractRteObject(root_json)
+    
+    # run getPortApiFromComponent to update value for receive_data_point_by_value_api_list and send_data_point_by_value_api_list 
+    # getPortApiFromComponent must be run once
+    port_apis = getPortApiFromComponent(root_json)
 
     generateStdTypeHeaderFile()
     generateRteHeaderFileForComponent(root_json)
     generateRteTypeHeaderFile(root_json)
-    generateRteMainHeaderFile(root_json)
+    generateRteMainHeaderFile(port_apis)
     generateRteMainSourceFile(root_json)
