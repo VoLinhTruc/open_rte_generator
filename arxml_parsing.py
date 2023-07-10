@@ -710,7 +710,7 @@ def generateRteToTaskMappingSourceFile(rte_root_obj):
     if not os.path.exists(GEN_SWC_SOURCE_FILE_PATH):
         os.makedirs(GEN_SWC_SOURCE_FILE_PATH)
 
-    file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "OS_Task.c", 'w')
+    file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "RTE_Event_To_Task_Mapping.c", 'w')
 
     for os_task in os_tasks.items():
         for funciton in os_task[1]:
