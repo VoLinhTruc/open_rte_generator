@@ -43,6 +43,7 @@ data_point_api = {
 receive_data_point_by_value_api_list = []
 send_data_point_by_value_api_list = []
 connector_list = []
+event_to_task_mapping_list = []
 
 def writeToLogFile(content):
     with open('std_out.json', 'a') as f:
@@ -83,14 +84,23 @@ def genJsonFromXml(xml_ele, json_obj, json_object_path = '', outter_element_tag 
                 outter_element_tag = ""
             elif (getElementTagWithoutNameSpace(xml_ele) != "AUTOSAR"):
                     outter_element_tag = outter_element_tag + "/" + getElementTagWithoutNameSpace(xml_ele)
-                    
+
+            # additional process to get connector correctly
             if("CONTEXT-COMPONENT-REF" in json_obj):
-                if json_obj["CONTEXT-COMPONENT-REF"]["outter_element_tag"] == "/PROVIDER-IREF":
+                if (json_obj["CONTEXT-COMPONENT-REF"]["outter_element_tag"] == "/PROVIDER-IREF"):
                     json_obj["CONTEXT-COMPONENT-REF-PROVIDER"] = json_obj["CONTEXT-COMPONENT-REF"]
                     del json_obj["CONTEXT-COMPONENT-REF"]
-                elif json_obj["CONTEXT-COMPONENT-REF"]["outter_element_tag"] == "/REQUESTER-IREF":
+                elif (json_obj["CONTEXT-COMPONENT-REF"]["outter_element_tag"] == "/REQUESTER-IREF"):
                     json_obj["CONTEXT-COMPONENT-REF-REQUESTER"] = json_obj["CONTEXT-COMPONENT-REF"]
                     del json_obj["CONTEXT-COMPONENT-REF"]
+            
+            # Additional process to get RteEventToTaskMapping correctly  
+            if ("VALUE-REF" in json_obj):
+                json_obj["VALUE-REF-" + json_obj["VALUE-REF"]["attributes"][0]["DEST"]] = json_obj["VALUE-REF"]
+                del json_obj["VALUE-REF"]   
+            if ("DEFINITION-REF" in json_obj):
+                json_obj["DEFINITION-REF-" + json_obj["DEFINITION-REF"]["attributes"][0]["DEST"]] = json_obj["DEFINITION-REF"]
+                del json_obj["DEFINITION-REF"] 
                     
             genJsonFromXml(child_ele, json_obj, json_object_path, outter_element_tag)
             outter_element_tag = backup_outter_element_tag
@@ -159,6 +169,7 @@ def fullArxmlToJsonParsing(input_arxml_path, output_json_path):
         json_file_name = os.path.basename(arxml_file).split('.')[0] + ".json"
         json_file_path = output_json_path + "/" + json_file_name
         arxmlToJsonParsing(arxml_file, json_file_path)
+    os.remove(output_json_path + "/root.json")
     root_json_obj = {}
     json_files = getFilesByExtension(output_json_path, 'json')
     for json_file in json_files:
@@ -514,6 +525,30 @@ def updateConnectorList(rte_root_obj):
             }\
         )
 
+def updateEventToTaskMappingList(rte_root_obj):
+    ecuc_containter_value_list = getObjectByType(rte_root_obj, "ECUC-CONTAINER-VALUE", {})
+    for ecuc_containter_value in ecuc_containter_value_list.items():
+        ecuc_containter_value_key = ecuc_containter_value[0]
+        ecuc_containter_value_value = ecuc_containter_value[1]
+        if "DEFINITION-REF-ECUC-PARAM-CONF-CONTAINER-DEF" in ecuc_containter_value_value:
+            if ecuc_containter_value_value["DEFINITION-REF-ECUC-PARAM-CONF-CONTAINER-DEF"]["value"].split("/")[-1] == "RteEventToTaskMapping":
+                event_to_task_mapping_list
+                event_to_task_mapping_name = getObjNameFromPath(ecuc_containter_value_value["object_path"])
+                event = getJsonObjectFromRefPath(rte_root_obj, ecuc_containter_value_value["VALUE-REF-TIMING-EVENT"]["value"])
+                runnable = getJsonObjectFromRefPath(rte_root_obj, event["START-ON-EVENT-REF"]["value"])
+                function_name = runnable["SYMBOL"]["value"]
+                os_task = getObjNameFromPath(ecuc_containter_value_value["VALUE-REF"]["value"])
+                event_position_in_task = ecuc_containter_value_value["VALUE"]["value"]
+                
+                event_to_task_mapping_list.append({ \
+                    "event_to_task_mapping_name": event_to_task_mapping_name, \
+                    "event": event, \
+                    "runnable": runnable, \
+                    "function_name": function_name, \
+                    "os_task": os_task, \
+                    "event_position_in_task": event_position_in_task
+                })
+        
 
 def writeToScrFileIncludeBlock(c_file):
     # include_files = getFilesByExtension(GEN_SWC_INCLUDE_FILE_PATH, 'h')
@@ -659,6 +694,46 @@ def generateRteMainSourceFile(rte_root_obj):
     file_obj.close()
 
 
+def generateRteToTaskMappingSourceFile(rte_root_obj):
+    updateEventToTaskMappingList(rte_root_obj)
+    os_tasks = {}
+    for mapping in event_to_task_mapping_list:
+        if mapping["os_task"] not in os_tasks:
+            os_tasks[mapping["os_task"]] = []
+            os_tasks[mapping["os_task"]].append({"function_name": mapping["function_name"], "position": mapping["event_position_in_task"]})
+        else:
+            os_tasks[mapping["os_task"]].append({"function_name": mapping["function_name"], "position": mapping["event_position_in_task"]})
+        sorted_list = sorted(os_tasks[mapping["os_task"]], key=lambda x: int(x["position"]))
+        os_tasks[mapping["os_task"]] = sorted_list
+    writeToLogFile(json.dumps(os_tasks, indent=4))
+    
+    if not os.path.exists(GEN_SWC_SOURCE_FILE_PATH):
+        os.makedirs(GEN_SWC_SOURCE_FILE_PATH)
+
+    file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "OS_Task.c", 'w')
+
+    for os_task in os_tasks.items():
+        for funciton in os_task[1]:
+            function_name = funciton["function_name"]
+            file_obj.write("extern void " + function_name + "();")
+            file_obj.write("\n")
+    file_obj.write("\n")
+        
+    for os_task in os_tasks.items():
+        os_task_name = os_task[0]
+        file_obj.write("void " + os_task_name + "(void)")
+        file_obj.write("{")
+        file_obj.write("\n")
+        
+        for funciton in os_task[1]:
+            function_name = funciton["function_name"]
+            file_obj.write("\t(void) " + function_name + "();")
+            file_obj.write("\n")
+        file_obj.write("}")
+        file_obj.write("\n\n")
+    
+    file_obj.close()
+
 if __name__ == "__main__":
     input_arxml_path = current_path + "\\input\\arxml"
     output_json_path = current_path + "/output/json"
@@ -680,3 +755,4 @@ if __name__ == "__main__":
     generateRteTypeHeaderFile(root_json)
     generateRteMainHeaderFile(port_apis)
     generateRteMainSourceFile(root_json)
+    generateRteToTaskMappingSourceFile(root_json)
