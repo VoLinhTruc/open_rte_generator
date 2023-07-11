@@ -16,5 +16,7 @@ void esc_stack_EventList_OS_1000ms_Task( void * pvParameters )
 	}
 }
 
-xTaskCreate(esc_stack_EventList_OS_1000ms_Task, "esc_stack_EventList_OS_1000ms_Task", 1000, NULL, );
+void setup() {
+void setup() {
+	xTaskCreate(esc_stack_EventList_OS_1000ms_Task, "esc_stack_EventList_OS_1000ms_Task", 1000, NULL, );
 

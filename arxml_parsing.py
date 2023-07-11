@@ -178,8 +178,11 @@ def fullArxmlToJsonParsing(input_arxml_path, output_json_path):
         # create json file name base on arxml file base name
         json_file_name = os.path.basename(arxml_file).split('.')[0] + ".json"
         json_file_path = output_json_path + "/" + json_file_name
+        if not os.path.exists(output_json_path):
+            os.makedirs(output_json_path)
         arxmlToJsonParsing(arxml_file, json_file_path)
-    os.remove(output_json_path + "/root.json")
+    if os.path.exists(output_json_path + "/root.json"):
+        os.remove(output_json_path + "/root.json")
     root_json_obj = {}
     json_files = getFilesByExtension(output_json_path, 'json')
     for json_file in json_files:
@@ -187,6 +190,9 @@ def fullArxmlToJsonParsing(input_arxml_path, output_json_path):
         with open(json_file, 'r') as f:
             json_obj = json.load(f)
         mergeJsonData(root_json_obj, json_obj)
+        
+    if not os.path.exists(output_json_path):
+        os.makedirs(output_json_path)
     exportJsonObjectToFile(root_json_obj, output_json_path + "/root.json")
 
 # -------------------------------------------------------------------------------
