@@ -1,0 +1,260 @@
+{
+    "xmlns": "http://autosar.org/schema/r4.0",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "schemaLocation": "http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd",
+    "ADMIN-DATA": {
+        "value": "\n",
+        "object_type": "ADMIN-DATA",
+        "outter_element_tag": ""
+    },
+    "RB": {
+        "object_path": "/RB",
+        "object_type": "AR-PACKAGE",
+        "outter_element_tag": "/AR-PACKAGES",
+        "UBK": {
+            "object_path": "/RB/UBK",
+            "object_type": "AR-PACKAGE",
+            "outter_element_tag": "/AR-PACKAGES",
+            "Project": {
+                "object_path": "/RB/UBK/Project",
+                "object_type": "AR-PACKAGE",
+                "outter_element_tag": "/AR-PACKAGES",
+                "EcucModuleConfigurationValuess": {
+                    "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "CanTrcv": {
+                        "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/CanTrcv",
+                        "object_type": "ECUC-MODULE-CONFIGURATION-VALUES",
+                        "outter_element_tag": "/ELEMENTS",
+                        "SD": {
+                            "value": "<0::CanTrcv_Forward.mwe#CanTrcv_Forward",
+                            "object_type": "SD",
+                            "outter_element_tag": "/ADMIN-DATA/SDGS/SDG",
+                            "attributes": [
+                                {
+                                    "GID": "FWD_INFO"
+                                }
+                            ]
+                        },
+                        "DEFINITION-REF-CanTrcv": {
+                            "value": "/AUTOSAR_CanTrcv/EcucModuleDefs/CanTrcv",
+                            "object_type": "DEFINITION-REF",
+                            "outter_element_tag": "",
+                            "attributes": [
+                                {
+                                    "DEST": "ECUC-MODULE-DEF"
+                                }
+                            ]
+                        },
+                        "esc_stack_cfg": {
+                            "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/CanTrcv/esc_stack_cfg",
+                            "object_type": "ECUC-CONTAINER-VALUE",
+                            "outter_element_tag": "/CONTAINERS",
+                            "SD": {
+                                "value": "<2::esc_stack_process.pm#esc_stack_Forward",
+                                "object_type": "SD",
+                                "outter_element_tag": "/ADMIN-DATA/SDGS/SDG",
+                                "attributes": [
+                                    {
+                                        "GID": "FWD_INFO"
+                                    }
+                                ]
+                            },
+                            "DEFINITION-REF-esc_stack_cfg": {
+                                "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                    }
+                                ]
+                            },
+                            "esc_stackDTtable": {
+                                "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/CanTrcv/esc_stack_cfg/esc_stackDTtable",
+                                "object_type": "ECUC-CONTAINER-VALUE",
+                                "outter_element_tag": "/SUB-CONTAINERS",
+                                "DEFINITION-REF-esc_stackDTtable": {
+                                    "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackDTtable",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                        }
+                                    ]
+                                },
+                                "esc_stack_EventList_OS_1000ms_Task": {
+                                    "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/CanTrcv/esc_stack_cfg/esc_stackDTtable/esc_stack_EventList_OS_1000ms_Task",
+                                    "object_type": "ECUC-CONTAINER-VALUE",
+                                    "outter_element_tag": "/SUB-CONTAINERS",
+                                    "DEFINITION-REF-esc_stackEventGen_Entry": {
+                                        "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry",
+                                        "object_type": "DEFINITION-REF",
+                                        "outter_element_tag": "",
+                                        "attributes": [
+                                            {
+                                                "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                            }
+                                        ]
+                                    },
+                                    "DEFINITION-REF-esc_EventType": {
+                                        "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_EventType",
+                                        "object_type": "DEFINITION-REF",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                        "attributes": [
+                                            {
+                                                "DEST": "ECUC-STRING-PARAM-DEF"
+                                            }
+                                        ]
+                                    },
+                                    "VALUE-esc_EventType": {
+                                        "value": "T",
+                                        "object_type": "VALUE",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                    },
+                                    "DEFINITION-REF-esc_TaskCycle": {
+                                        "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskCycle",
+                                        "object_type": "DEFINITION-REF",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                        "attributes": [
+                                            {
+                                                "DEST": "ECUC-STRING-PARAM-DEF"
+                                            }
+                                        ]
+                                    },
+                                    "VALUE-esc_TaskCycle": {
+                                        "value": "1000",
+                                        "object_type": "VALUE",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                    },
+                                    "DEFINITION-REF-esc_TaskMessRaster": {
+                                        "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskMessRaster",
+                                        "object_type": "DEFINITION-REF",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                        "attributes": [
+                                            {
+                                                "DEST": "ECUC-STRING-PARAM-DEF"
+                                            }
+                                        ]
+                                    },
+                                    "VALUE-esc_TaskMessRaster": {
+                                        "value": "1000ms",
+                                        "object_type": "VALUE",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                    },
+                                    "DEFINITION-REF-esc_VirtualTaskName": {
+                                        "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_VirtualTaskName",
+                                        "object_type": "DEFINITION-REF",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                        "attributes": [
+                                            {
+                                                "DEST": "ECUC-STRING-PARAM-DEF"
+                                            }
+                                        ]
+                                    },
+                                    "VALUE-esc_VirtualTaskName": {
+                                        "value": "OS_1000ms_Task",
+                                        "object_type": "VALUE",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                    },
+                                    "esc_stack_Event_1Q1_1000ms_T": {
+                                        "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/CanTrcv/esc_stack_cfg/esc_stackDTtable/esc_stack_EventList_OS_1000ms_Task/esc_stack_Event_1Q1_1000ms_T",
+                                        "object_type": "ECUC-CONTAINER-VALUE",
+                                        "outter_element_tag": "/SUB-CONTAINERS",
+                                        "DEFINITION-REF-esc_TaskListArr": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "DEFINITION-REF-esc_stack_Pop_Event": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_Pop_Event",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-STRING-PARAM-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "VALUE-esc_stack_Pop_Event": {
+                                            "value": "T_ESC_PopSampTime_Proc_1Q1_1000ms",
+                                            "object_type": "VALUE",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                        },
+                                        "DEFINITION-REF-esc_stack_Push_Event": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_Push_Event",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-STRING-PARAM-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "VALUE-esc_stack_Push_Event": {
+                                            "value": "T_ESC_PushSampTime_TSync_Proc_1Q1_1000ms",
+                                            "object_type": "VALUE",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                        },
+                                        "DEFINITION-REF-esc_stack_task_AppID": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_task_AppID",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-STRING-PARAM-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "VALUE-esc_stack_task_AppID": {
+                                            "value": "OsApp_1_Q_1",
+                                            "object_type": "VALUE",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                        },
+                                        "DEFINITION-REF-esc_stack_task_EcucCoreID": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_task_EcucCoreID",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-STRING-PARAM-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "VALUE-esc_stack_task_EcucCoreID": {
+                                            "value": "1",
+                                            "object_type": "VALUE",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                        },
+                                        "DEFINITION-REF-esc_stack_taskname": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_taskname",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-STRING-PARAM-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "VALUE-esc_stack_taskname": {
+                                            "value": "OS_1Q1_1000ms_Task",
+                                            "object_type": "VALUE",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

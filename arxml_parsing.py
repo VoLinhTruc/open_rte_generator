@@ -44,6 +44,13 @@ receive_data_point_by_value_api_list = []
 send_data_point_by_value_api_list = []
 connector_list = []
 event_to_task_mapping_list = []
+task_info_list = []
+
+
+
+latest_def_ref = ""
+
+
 
 def writeToLogFile(content):
     with open('std_out.json', 'a') as f:
@@ -65,6 +72,7 @@ def arxmlToJsonParsing(arxml_file_path, json_file_path):
     
     
 def genJsonFromXml(xml_ele, json_obj, json_object_path = '', outter_element_tag = ''):
+    global latest_def_ref
     if (getElementTagWithoutNameSpace(xml_ele) == "AUTOSAR"):
         json_obj["xmlns"] = xml_ele.nsmap.get(None)
         json_obj["xsi"] = xml_ele.nsmap.get('xsi')
@@ -93,21 +101,23 @@ def genJsonFromXml(xml_ele, json_obj, json_object_path = '', outter_element_tag 
                 elif (json_obj["CONTEXT-COMPONENT-REF"]["outter_element_tag"] == "/REQUESTER-IREF"):
                     json_obj["CONTEXT-COMPONENT-REF-REQUESTER"] = json_obj["CONTEXT-COMPONENT-REF"]
                     del json_obj["CONTEXT-COMPONENT-REF"]
-            
-            # Additional process to get RteEventToTaskMapping correctly  
-            if ("VALUE-REF" in json_obj):
-                json_obj["VALUE-REF-" + json_obj["VALUE-REF"]["attributes"][0]["DEST"]] = json_obj["VALUE-REF"]
-                del json_obj["VALUE-REF"]   
-            if ("DEFINITION-REF" in json_obj):
-                json_obj["DEFINITION-REF-" + json_obj["DEFINITION-REF"]["attributes"][0]["DEST"]] = json_obj["DEFINITION-REF"]
-                del json_obj["DEFINITION-REF"] 
                     
             genJsonFromXml(child_ele, json_obj, json_object_path, outter_element_tag)
             outter_element_tag = backup_outter_element_tag
     else:
         if (getElementTagWithoutNameSpace(xml_ele) != "SHORT-NAME"):
-            json_obj[getElementTagWithoutNameSpace(xml_ele)] = {}
-            json_obj = json_obj[getElementTagWithoutNameSpace(xml_ele)]
+            # Additional process to get DEFINITION-REF and VALUE corresponse to the còniguration correctly   
+            additional_element_tag = ""
+            if getElementTagWithoutNameSpace(xml_ele) == "DEFINITION-REF":
+                additional_element_tag = "-" + xml_ele.text.split("/")[-1]
+                latest_def_ref = xml_ele.text.split("/")[-1]
+            if getElementTagWithoutNameSpace(xml_ele) == "VALUE-REF":
+                additional_element_tag = "-" + latest_def_ref
+            if getElementTagWithoutNameSpace(xml_ele) == "VALUE":
+                additional_element_tag = "-" + latest_def_ref
+                
+            json_obj[getElementTagWithoutNameSpace(xml_ele) + additional_element_tag] = {}
+            json_obj = json_obj[getElementTagWithoutNameSpace(xml_ele) + additional_element_tag]
             json_obj["value"] = xml_ele.text
             json_obj["object_type"] = getElementTagWithoutNameSpace(xml_ele)
             json_obj["outter_element_tag"] = outter_element_tag
@@ -530,25 +540,55 @@ def updateEventToTaskMappingList(rte_root_obj):
     for ecuc_containter_value in ecuc_containter_value_list.items():
         ecuc_containter_value_key = ecuc_containter_value[0]
         ecuc_containter_value_value = ecuc_containter_value[1]
-        if "DEFINITION-REF-ECUC-PARAM-CONF-CONTAINER-DEF" in ecuc_containter_value_value:
-            if ecuc_containter_value_value["DEFINITION-REF-ECUC-PARAM-CONF-CONTAINER-DEF"]["value"].split("/")[-1] == "RteEventToTaskMapping":
-                event_to_task_mapping_list
-                event_to_task_mapping_name = getObjNameFromPath(ecuc_containter_value_value["object_path"])
-                event = getJsonObjectFromRefPath(rte_root_obj, ecuc_containter_value_value["VALUE-REF-TIMING-EVENT"]["value"])
-                runnable = getJsonObjectFromRefPath(rte_root_obj, event["START-ON-EVENT-REF"]["value"])
-                function_name = runnable["SYMBOL"]["value"]
-                os_task = getObjNameFromPath(ecuc_containter_value_value["VALUE-REF"]["value"])
-                event_position_in_task = ecuc_containter_value_value["VALUE"]["value"]
-                
-                event_to_task_mapping_list.append({ \
-                    "event_to_task_mapping_name": event_to_task_mapping_name, \
-                    "event": event, \
-                    "runnable": runnable, \
-                    "function_name": function_name, \
-                    "os_task": os_task, \
-                    "event_position_in_task": event_position_in_task
-                })
+        if "DEFINITION-REF-RteEventToTaskMapping" in ecuc_containter_value_value:
+            event_to_task_mapping_name = getObjNameFromPath(ecuc_containter_value_value["object_path"])
+            event = getJsonObjectFromRefPath(rte_root_obj, ecuc_containter_value_value["VALUE-REF-RteEventRef"]["value"])
+            runnable = getJsonObjectFromRefPath(rte_root_obj, event["START-ON-EVENT-REF"]["value"])
+            function_name = runnable["SYMBOL"]["value"]
+            os_task = getObjNameFromPath(ecuc_containter_value_value["VALUE-REF-RteMappedToTaskRef"]["value"])
+            event_position_in_task = ecuc_containter_value_value["VALUE-RtePositionInTask"]["value"]
+            
+            event_to_task_mapping_list.append({ \
+                "event_to_task_mapping_name": event_to_task_mapping_name, \
+                "event": event, \
+                "runnable": runnable, \
+                "function_name": function_name, \
+                "os_task": os_task, \
+                "event_position_in_task": event_position_in_task
+            })
         
+def updateTaskInfoList(rte_root_obj):
+    task_info = {}
+    task_table = getJsonObjectFromRefPath(rte_root_obj, "/RB/UBK/Project/EcucModuleConfigurationValuess/CanTrcv/esc_stack_cfg/esc_stackDTtable")
+    for task in task_table.items():
+        task_key = task[0]
+        task_value = task[1]
+        os_task_name = ""
+        task_name = ""
+        cycle_time = 0
+        if type(task_value) is dict and "object_path" in task_value:
+            os_task_name = task_key
+        if "VALUE-esc_TaskCycle" in task_value:
+            cycle_time = task_value["VALUE-esc_TaskCycle"]["value"]
+        if type(task_value) is dict:
+            for task_properties in task_value.items():
+                task_properties_key = task_properties[0]
+                task_properties_value = task_properties[1]
+                if "VALUE-esc_stack_taskname" in task_properties_value:
+                    task_name = task_properties_value["VALUE-esc_stack_taskname"]["value"]
+        
+        if os_task_name != "" and task_name != "" and cycle_time != 0:
+            task_info["os_task_name"] = os_task_name
+            task_info["task_name"] = task_name
+            task_info["cycle_time"] = cycle_time
+            task_info_list.append(task_info)
+    os = getJsonObjectFromRefPath(rte_root_obj, "/RB/UBK/Project/EcucModuleConfigurationValuess/Os")
+    for task in os.items():
+        task_key = task[0]
+        task_value = task[1]
+        for task_info in task_info_list:
+            if task_key == task_info["task_name"]:
+                task_info["priority"] = task_value["VALUE-OsTaskPriority"]["value"]
 
 def writeToScrFileIncludeBlock(c_file):
     # include_files = getFilesByExtension(GEN_SWC_INCLUDE_FILE_PATH, 'h')
@@ -694,7 +734,7 @@ def generateRteMainSourceFile(rte_root_obj):
     file_obj.close()
 
 
-def generateRteToTaskMappingSourceFile(rte_root_obj):
+def generateRteEventToTaskMappingSourceFile(rte_root_obj):
     updateEventToTaskMappingList(rte_root_obj)
     os_tasks = {}
     for mapping in event_to_task_mapping_list:
@@ -705,7 +745,6 @@ def generateRteToTaskMappingSourceFile(rte_root_obj):
             os_tasks[mapping["os_task"]].append({"function_name": mapping["function_name"], "position": mapping["event_position_in_task"]})
         sorted_list = sorted(os_tasks[mapping["os_task"]], key=lambda x: int(x["position"]))
         os_tasks[mapping["os_task"]] = sorted_list
-    writeToLogFile(json.dumps(os_tasks, indent=4))
     
     if not os.path.exists(GEN_SWC_SOURCE_FILE_PATH):
         os.makedirs(GEN_SWC_SOURCE_FILE_PATH)
@@ -721,7 +760,7 @@ def generateRteToTaskMappingSourceFile(rte_root_obj):
         
     for os_task in os_tasks.items():
         os_task_name = os_task[0]
-        file_obj.write("void " + os_task_name + "(void)")
+        file_obj.write("void " + os_task_name + "()")
         file_obj.write("{")
         file_obj.write("\n")
         
@@ -731,6 +770,57 @@ def generateRteToTaskMappingSourceFile(rte_root_obj):
             file_obj.write("\n")
         file_obj.write("}")
         file_obj.write("\n\n")
+    
+    file_obj.close()
+    
+    
+def generateRteOsTaskDefinition(rte_root_obj):
+    updateTaskInfoList(root_json)
+    
+    if not os.path.exists(GEN_SWC_SOURCE_FILE_PATH):
+        os.makedirs(GEN_SWC_SOURCE_FILE_PATH)
+
+    file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "main.c", 'w')
+    
+    file_obj.write('#include "freertos/FreeRTOS.h"\n')
+    file_obj.write('#include "freertos/FreeRTOS.h"')
+    file_obj.write("\n\n")
+    
+    for task_info in task_info_list:
+        task_name = task_info["task_name"]
+        file_obj.write("extern void " + task_name + "();")
+        file_obj.write("\n")
+    file_obj.write("\n")
+    
+    for task_info in task_info_list:
+        file_obj.write("void " + task_info["os_task_name"] + "( void * pvParameters )\n")
+        file_obj.write("{")
+        file_obj.write("\n")
+        file_obj.write("\tTickType_t xLastWakeTime;\n")
+        file_obj.write("\tconst TickType_t xFrequency = " + str(int(int(task_info["cycle_time"])/1000)) + ";\n")
+        file_obj.write("\n")
+        file_obj.write("\tfor(;;)")
+        file_obj.write("\n")
+        file_obj.write("\t{")
+        file_obj.write("\n")
+        file_obj.write("\t\t(void) " + task_info["task_name"] + "();")
+        file_obj.write("\n")
+        file_obj.write("\n")
+        file_obj.write("\t\tvTaskDelayUntil( &xLastWakeTime, xFrequency );")
+        file_obj.write("\n")
+        file_obj.write("\t}")
+        file_obj.write("\n")
+        file_obj.write("}")
+        file_obj.write("\n")
+    file_obj.write("\n")
+    
+    file_obj.write("void setup() {\n")
+    file_obj.write("void setup() {\n")
+        
+    for task_info in task_info_list:
+        file_obj.write('\txTaskCreate(' + task_info["os_task_name"] + ', "' + task_info["os_task_name"] + '", 1000, NULL, ' + ');')
+        file_obj.write("\n")
+    file_obj.write("\n")
     
     file_obj.close()
 
@@ -755,4 +845,5 @@ if __name__ == "__main__":
     generateRteTypeHeaderFile(root_json)
     generateRteMainHeaderFile(port_apis)
     generateRteMainSourceFile(root_json)
-    generateRteToTaskMappingSourceFile(root_json)
+    generateRteEventToTaskMappingSourceFile(root_json)
+    generateRteOsTaskDefinition(root_json)

@@ -22,7 +22,7 @@
                         "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Rte",
                         "object_type": "ECUC-MODULE-CONFIGURATION-VALUES",
                         "outter_element_tag": "/ELEMENTS",
-                        "DEFINITION-REF-ECUC-MODULE-DEF": {
+                        "DEFINITION-REF-Rte": {
                             "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte",
                             "object_type": "DEFINITION-REF",
                             "outter_element_tag": "",
@@ -36,7 +36,7 @@
                             "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Rte/CPT_DcmSample_Provider",
                             "object_type": "ECUC-CONTAINER-VALUE",
                             "outter_element_tag": "/CONTAINERS",
-                            "DEFINITION-REF-ECUC-PARAM-CONF-CONTAINER-DEF": {
+                            "DEFINITION-REF-RteSwComponentInstance": {
                                 "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance",
                                 "object_type": "DEFINITION-REF",
                                 "outter_element_tag": "",
@@ -46,7 +46,7 @@
                                     }
                                 ]
                             },
-                            "DEFINITION-REF-ECUC-FOREIGN-REFERENCE-DEF": {
+                            "DEFINITION-REF-RteSoftwareComponentInstanceRef": {
                                 "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteSoftwareComponentInstanceRef",
                                 "object_type": "DEFINITION-REF",
                                 "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
@@ -56,7 +56,7 @@
                                     }
                                 ]
                             },
-                            "VALUE-REF-SW-COMPONENT-PROTOTYPE": {
+                            "VALUE-REF-RteSoftwareComponentInstanceRef": {
                                 "value": "/RB/PT/PCT_MDG1_FlatView/SwComponentTypes/MDG1_FlatView/CPT_DcmSample_Provider",
                                 "object_type": "VALUE-REF",
                                 "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
@@ -70,7 +70,7 @@
                                 "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Rte/CPT_DcmSample_Provider/TE_DcmSample_Provider_TE1",
                                 "object_type": "ECUC-CONTAINER-VALUE",
                                 "outter_element_tag": "/SUB-CONTAINERS",
-                                "DEFINITION-REF-ECUC-PARAM-CONF-CONTAINER-DEF": {
+                                "DEFINITION-REF-RteEventToTaskMapping": {
                                     "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping",
                                     "object_type": "DEFINITION-REF",
                                     "outter_element_tag": "",
@@ -80,7 +80,52 @@
                                         }
                                     ]
                                 },
-                                "DEFINITION-REF-ECUC-INTEGER-PARAM-DEF": {
+                                "DEFINITION-REF-RteActivationOffset": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteActivationOffset",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-FLOAT-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteActivationOffset": {
+                                    "value": "0.0",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteImmediateRestart": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteImmediateRestart",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-BOOLEAN-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteImmediateRestart": {
+                                    "value": "false",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteOsSchedulePoint": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteOsSchedulePoint",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-ENUMERATION-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteOsSchedulePoint": {
+                                    "value": "CONDITIONAL",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RtePositionInTask": {
                                     "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RtePositionInTask",
                                     "object_type": "DEFINITION-REF",
                                     "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
@@ -90,12 +135,12 @@
                                         }
                                     ]
                                 },
-                                "VALUE": {
+                                "VALUE-RtePositionInTask": {
                                     "value": "14",
                                     "object_type": "VALUE",
                                     "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
                                 },
-                                "DEFINITION-REF-ECUC-FOREIGN-REFERENCE-DEF": {
+                                "DEFINITION-REF-RteEventRef": {
                                     "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteEventRef",
                                     "object_type": "DEFINITION-REF",
                                     "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
@@ -105,7 +150,7 @@
                                         }
                                     ]
                                 },
-                                "VALUE-REF-TIMING-EVENT": {
+                                "VALUE-REF-RteEventRef": {
                                     "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSample_Provider_IB1/TE_DcmSample_Provider_TE1",
                                     "object_type": "VALUE-REF",
                                     "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
@@ -115,7 +160,7 @@
                                         }
                                     ]
                                 },
-                                "DEFINITION-REF-ECUC-REFERENCE-DEF": {
+                                "DEFINITION-REF-RteMappedToTaskRef": {
                                     "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteMappedToTaskRef",
                                     "object_type": "DEFINITION-REF",
                                     "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
@@ -125,7 +170,7 @@
                                         }
                                     ]
                                 },
-                                "VALUE-REF": {
+                                "VALUE-REF-RteMappedToTaskRef": {
                                     "value": "/RB/UBK/Project/EcucModuleConfigurationValuess/Os/OS_1Q1_1000ms_Task",
                                     "object_type": "VALUE-REF",
                                     "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
@@ -141,7 +186,7 @@
                             "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Rte/CPT_DcmSample_Requester",
                             "object_type": "ECUC-CONTAINER-VALUE",
                             "outter_element_tag": "/CONTAINERS",
-                            "DEFINITION-REF-ECUC-PARAM-CONF-CONTAINER-DEF": {
+                            "DEFINITION-REF-RteSwComponentInstance": {
                                 "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance",
                                 "object_type": "DEFINITION-REF",
                                 "outter_element_tag": "",
@@ -151,7 +196,7 @@
                                     }
                                 ]
                             },
-                            "DEFINITION-REF-ECUC-FOREIGN-REFERENCE-DEF": {
+                            "DEFINITION-REF-RteSoftwareComponentInstanceRef": {
                                 "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteSoftwareComponentInstanceRef",
                                 "object_type": "DEFINITION-REF",
                                 "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
@@ -161,7 +206,7 @@
                                     }
                                 ]
                             },
-                            "VALUE-REF-SW-COMPONENT-PROTOTYPE": {
+                            "VALUE-REF-RteSoftwareComponentInstanceRef": {
                                 "value": "/RB/PT/PCT_MDG1_FlatView/SwComponentTypes/MDG1_FlatView/CPT_DcmSample_Requester",
                                 "object_type": "VALUE-REF",
                                 "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
@@ -175,7 +220,7 @@
                                 "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Rte/CPT_DcmSample_Requester/TE_DcmSample_Requester_TE1",
                                 "object_type": "ECUC-CONTAINER-VALUE",
                                 "outter_element_tag": "/SUB-CONTAINERS",
-                                "DEFINITION-REF-ECUC-PARAM-CONF-CONTAINER-DEF": {
+                                "DEFINITION-REF-RteEventToTaskMapping": {
                                     "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping",
                                     "object_type": "DEFINITION-REF",
                                     "outter_element_tag": "",
@@ -185,7 +230,52 @@
                                         }
                                     ]
                                 },
-                                "DEFINITION-REF-ECUC-INTEGER-PARAM-DEF": {
+                                "DEFINITION-REF-RteActivationOffset": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteActivationOffset",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-FLOAT-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteActivationOffset": {
+                                    "value": "0.0",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteImmediateRestart": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteImmediateRestart",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-BOOLEAN-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteImmediateRestart": {
+                                    "value": "false",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteOsSchedulePoint": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteOsSchedulePoint",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-ENUMERATION-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteOsSchedulePoint": {
+                                    "value": "CONDITIONAL",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RtePositionInTask": {
                                     "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RtePositionInTask",
                                     "object_type": "DEFINITION-REF",
                                     "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
@@ -195,12 +285,12 @@
                                         }
                                     ]
                                 },
-                                "VALUE": {
+                                "VALUE-RtePositionInTask": {
                                     "value": "15",
                                     "object_type": "VALUE",
                                     "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
                                 },
-                                "DEFINITION-REF-ECUC-FOREIGN-REFERENCE-DEF": {
+                                "DEFINITION-REF-RteEventRef": {
                                     "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteEventRef",
                                     "object_type": "DEFINITION-REF",
                                     "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
@@ -210,7 +300,7 @@
                                         }
                                     ]
                                 },
-                                "VALUE-REF-TIMING-EVENT": {
+                                "VALUE-REF-RteEventRef": {
                                     "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/IB_DcmSample_Requester_IB1/TE_DcmSample_Requester_TE1",
                                     "object_type": "VALUE-REF",
                                     "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
@@ -220,7 +310,7 @@
                                         }
                                     ]
                                 },
-                                "DEFINITION-REF-ECUC-REFERENCE-DEF": {
+                                "DEFINITION-REF-RteMappedToTaskRef": {
                                     "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteMappedToTaskRef",
                                     "object_type": "DEFINITION-REF",
                                     "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
@@ -230,7 +320,7 @@
                                         }
                                     ]
                                 },
-                                "VALUE-REF": {
+                                "VALUE-REF-RteMappedToTaskRef": {
                                     "value": "/RB/UBK/Project/EcucModuleConfigurationValuess/Os/OS_1Q1_1000ms_Task",
                                     "object_type": "VALUE-REF",
                                     "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
