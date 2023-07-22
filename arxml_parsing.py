@@ -2,6 +2,7 @@ import sys, os
 import json
 from lxml import etree
 import glob
+import shutil
 
 
 current_path = os.getcwd()
@@ -11,6 +12,8 @@ etree.register_namespace('ar', 'http://autosar.org/schema/r4.0')
 
 GEN_SWC_INCLUDE_FILE_PATH = "output/_gen/swb/includes/rtegen/swc/"
 GEN_SWC_SOURCE_FILE_PATH = "output/_gen/swb/src_files/rtegen/swc/"
+APPL_SWC_PATH = "application"
+ARXML_INPUT_PATH = "input/arxml"
 
 rte_port_api = {
     "Rte_Send": "Rte_Send",
@@ -341,6 +344,30 @@ def generateRteHeaderFileForComponent(root_json):
                 os.makedirs(GEN_SWC_INCLUDE_FILE_PATH)
             with open(GEN_SWC_INCLUDE_FILE_PATH + header_file_name, 'w') as f:
                 writeToHdrFileTheAntiReIncludeWrapperStart(f)
+                writeToHdrFileIncludeBlock(f)
+                
+                writExternStart(f)
+                for receive_data in receive_data_point_by_value_api_list:
+                    if receive_data["component_name"] == obj_name:
+                        f.write("extern " + receive_data["port_api_type"] + " " + \
+                                receive_data["port_api_header"] + "_" + \
+                                receive_data["port_api_p"] + "_" + \
+                                receive_data["port_api_o"] + \
+                                "(" + receive_data["port_api_arg_type"] + " " + \
+                                receive_data["port_api_arg_value"] + "); " + \
+                                "\n" \
+                        )
+                for send_data in send_data_point_by_value_api_list:
+                    if send_data["component_name"] == obj_name:
+                        f.write("extern " + "Std_ReturnType" + " " + \
+                                send_data["port_api_header"] + "_" + \
+                                send_data["port_api_p"] + "_" + \
+                                send_data["port_api_o"] + \
+                                "(" + send_data["port_api_arg_type"] + " " + \
+                                send_data["port_api_arg_value"] + "); " + \
+                                "\n" \
+                        )
+                writExternEnd(f)
                 
                 for receive_data in receive_data_point_by_value_api_list:
                     if receive_data["component_name"] == obj_name:
@@ -596,6 +623,21 @@ def updateTaskInfoList(rte_root_obj):
             if task_key == task_info["task_name"]:
                 task_info["priority"] = task_value["VALUE-OsTaskPriority"]["value"]
 
+
+def writExternStart(c_file):
+    c_file.write('#ifdef __cplusplus\n')
+    c_file.write('extern "C" {\n')
+    c_file.write('#endif')
+    c_file.write("\n\n")
+
+def writExternEnd(c_file):
+    c_file.write("\n")
+    c_file.write('#ifdef __cplusplus\n')
+    c_file.write('}\n')
+    c_file.write('#endif')
+    c_file.write("\n\n")
+
+
 def writeToScrFileIncludeBlock(c_file):
     # include_files = getFilesByExtension(GEN_SWC_INCLUDE_FILE_PATH, 'h')
     # for include_file in include_files:
@@ -735,7 +777,9 @@ def generateRteMainSourceFile(rte_root_obj):
     file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "Rte.c", 'w')
 
     writeToScrFileIncludeBlock(file_obj)
+    writExternStart(file_obj)
     writeToScrDateApi(file_obj, rte_root_obj, connector_list, receive_data_point_by_value_api_list, send_data_point_by_value_api_list)
+    writExternEnd(file_obj)
     
     file_obj.close()
 
@@ -756,6 +800,8 @@ def generateRteEventToTaskMappingSourceFile(rte_root_obj):
         os.makedirs(GEN_SWC_SOURCE_FILE_PATH)
 
     file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "RTE_Event_To_Task_Mapping.c", 'w')
+    
+    writExternStart(file_obj)
 
     for os_task in os_tasks.items():
         for funciton in os_task[1]:
@@ -777,6 +823,7 @@ def generateRteEventToTaskMappingSourceFile(rte_root_obj):
         file_obj.write("}")
         file_obj.write("\n\n")
     
+    writExternEnd(file_obj)
     file_obj.close()
     
     
@@ -786,17 +833,19 @@ def generateRteOsTaskDefinition(rte_root_obj):
     if not os.path.exists(GEN_SWC_SOURCE_FILE_PATH):
         os.makedirs(GEN_SWC_SOURCE_FILE_PATH)
 
-    file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "main.c", 'w')
+    file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "main.cpp", 'w')
     
+    file_obj.write('#include "Arduino.h"\n')
     file_obj.write('#include "freertos/FreeRTOS.h"\n')
-    file_obj.write('#include "freertos/FreeRTOS.h"')
     file_obj.write("\n\n")
     
+    writExternStart(file_obj)
     for task_info in task_info_list:
         task_name = task_info["task_name"]
         file_obj.write("extern void " + task_name + "();")
         file_obj.write("\n")
     file_obj.write("\n")
+    writExternEnd(file_obj)
     
     for task_info in task_info_list:
         file_obj.write("void " + task_info["os_task_name"] + "( void * pvParameters )\n")
@@ -819,18 +868,54 @@ def generateRteOsTaskDefinition(rte_root_obj):
         file_obj.write("}")
         file_obj.write("\n")
     file_obj.write("\n")
-    
-    file_obj.write("void setup() {\n")
-    file_obj.write("void setup() {\n")
         
+    setup_create_task = ""
     for task_info in task_info_list:
-        file_obj.write('\txTaskCreate(' + task_info["os_task_name"] + ', "' + task_info["os_task_name"] + '", 1000, NULL, ' + ');')
-        file_obj.write("\n")
+        setup_create_task = setup_create_task + '\txTaskCreate(' + task_info["os_task_name"] + ', "' + task_info["os_task_name"] + '", 1000, NULL, ' + task_info["priority"] + ', NULL);\n'
     file_obj.write("\n")
     
+    file_obj.write(""" 
+void setup() {
+  // put your setup code here, to run once:
+  """ + setup_create_task + """
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+}   
+""")
     file_obj.close()
 
+def copyFilesWithExtension(source_folder, destination_folder, extension):
+    # Create the destination folder if it doesn't exist
+    if not os.path.exists(destination_folder):
+        os.makedirs(destination_folder)
+    for root, _, files in os.walk(source_folder):
+        for file in files:
+            source_file_path = os.path.join(root, file)
+            # Check if the file is a regular file and has the desired extension
+            if os.path.isfile(source_file_path) and file.endswith(extension):
+                destination_file_path = os.path.join(destination_folder, file)
+                shutil.copy2(source_file_path, destination_file_path)
+                
+
+def deleteFilesInFolder(folder_path):
+    # Get a list of all files in the folder
+    files = os.listdir(folder_path)
+    for file in files:
+        file_path = os.path.join(folder_path, file)
+        # Check if the file is a regular file and then delete it
+        if os.path.isfile(file_path):
+            os.remove(file_path)
+
+
 if __name__ == "__main__":
+    
+    if not os.path.exists(ARXML_INPUT_PATH):
+        os.makedirs(ARXML_INPUT_PATH)
+    deleteFilesInFolder(ARXML_INPUT_PATH)
+    copyFilesWithExtension(APPL_SWC_PATH, ARXML_INPUT_PATH, "arxml")
+    
     input_arxml_path = current_path + "\\input\\arxml"
     output_json_path = current_path + "/output/json"
 
@@ -853,3 +938,16 @@ if __name__ == "__main__":
     generateRteMainSourceFile(root_json)
     generateRteEventToTaskMappingSourceFile(root_json)
     generateRteOsTaskDefinition(root_json)
+    
+    
+    if not os.path.exists("include"):
+        os.makedirs("include")
+    if not os.path.exists("src"):
+        os.makedirs("src")
+    deleteFilesInFolder("include")
+    deleteFilesInFolder("src")
+    copyFilesWithExtension(APPL_SWC_PATH, "include", "h")
+    copyFilesWithExtension(APPL_SWC_PATH, "src", "c")
+    copyFilesWithExtension(GEN_SWC_INCLUDE_FILE_PATH, "include", "h")
+    copyFilesWithExtension(GEN_SWC_SOURCE_FILE_PATH, "src", "c")
+    copyFilesWithExtension(GEN_SWC_SOURCE_FILE_PATH, "src", "cpp")

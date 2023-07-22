@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+<ADMIN-DATA>
+</ADMIN-DATA>
+<AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>RB</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>UBK</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Project</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>EcucModuleConfigurationValuess</SHORT-NAME>
+                  <ELEMENTS>
+                    <ECUC-MODULE-CONFIGURATION-VALUES>
+                      <SHORT-NAME>CanTrcv</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="FWD">
+                            <SD GID="FWD_INFO">&lt;0::CanTrcv_Forward.mwe#CanTrcv_Forward</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <DEFINITION-REF DEST="ECUC-MODULE-DEF">/AUTOSAR_CanTrcv/EcucModuleDefs/CanTrcv</DEFINITION-REF>
+                      <CONTAINERS>
+                        <ECUC-CONTAINER-VALUE>
+                          <SHORT-NAME>esc_stack_cfg</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="FWD">
+                                <SD GID="FWD_INFO">&lt;2::esc_stack_process.pm#esc_stack_Forward</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg</DEFINITION-REF>
+                          <SUB-CONTAINERS>
+                            <ECUC-CONTAINER-VALUE>
+                              <SHORT-NAME>esc_stackDTtable</SHORT-NAME>
+                              <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackDTtable</DEFINITION-REF>
+                              <SUB-CONTAINERS>
+                                <ECUC-CONTAINER-VALUE>
+                                  <SHORT-NAME>esc_stack_EventList_OS_1000ms_Task</SHORT-NAME>
+                                  <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry</DEFINITION-REF>
+                                  <PARAMETER-VALUES>
+                                    <ECUC-TEXTUAL-PARAM-VALUE S="esc_stack_process.pm#esc_stack_Forward">
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_EventType</DEFINITION-REF>
+                                      <VALUE>T</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE S="esc_stack_process.pm#esc_stack_Forward">
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskCycle</DEFINITION-REF>
+                                      <VALUE>1000</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE S="esc_stack_process.pm#esc_stack_Forward">
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskMessRaster</DEFINITION-REF>
+                                      <VALUE>1000ms</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                    <ECUC-TEXTUAL-PARAM-VALUE S="esc_stack_process.pm#esc_stack_Forward">
+                                      <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_VirtualTaskName</DEFINITION-REF>
+                                      <VALUE>OS_1000ms_Task</VALUE>
+                                    </ECUC-TEXTUAL-PARAM-VALUE>
+                                  </PARAMETER-VALUES>
+                                  <SUB-CONTAINERS>
+                                    <ECUC-CONTAINER-VALUE>
+                                      <SHORT-NAME>esc_stack_Event_1Q1_1000ms_T</SHORT-NAME>
+                                      <DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr</DEFINITION-REF>
+                                      <PARAMETER-VALUES>
+                                        <ECUC-TEXTUAL-PARAM-VALUE S="esc_stack_process.pm#esc_stack_Forward">
+                                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_Pop_Event</DEFINITION-REF>
+                                          <VALUE>T_ESC_PopSampTime_Proc_1Q1_1000ms</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                        <ECUC-TEXTUAL-PARAM-VALUE S="esc_stack_process.pm#esc_stack_Forward">
+                                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_Push_Event</DEFINITION-REF>
+                                          <VALUE>T_ESC_PushSampTime_TSync_Proc_1Q1_1000ms</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                        <ECUC-TEXTUAL-PARAM-VALUE S="esc_stack_process.pm#esc_stack_Forward">
+                                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_task_AppID</DEFINITION-REF>
+                                          <VALUE>OsApp_1_Q_1</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                        <ECUC-TEXTUAL-PARAM-VALUE S="esc_stack_process.pm#esc_stack_Forward">
+                                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_task_EcucCoreID</DEFINITION-REF>
+                                          <VALUE>1</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                        <ECUC-TEXTUAL-PARAM-VALUE S="esc_stack_process.pm#esc_stack_Forward">
+                                          <DEFINITION-REF DEST="ECUC-STRING-PARAM-DEF">/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_taskname</DEFINITION-REF>
+                                          <VALUE>OS_1Q1_1000ms_Task</VALUE>
+                                        </ECUC-TEXTUAL-PARAM-VALUE>
+                                      </PARAMETER-VALUES>
+                                    </ECUC-CONTAINER-VALUE>
+                                  </SUB-CONTAINERS>
+                                </ECUC-CONTAINER-VALUE>
+                              </SUB-CONTAINERS>
+                            </ECUC-CONTAINER-VALUE>
+                          </SUB-CONTAINERS>
+                        </ECUC-CONTAINER-VALUE>
+                      </CONTAINERS>
+                    </ECUC-MODULE-CONFIGURATION-VALUES>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

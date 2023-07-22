@@ -1,8 +1,0 @@
-
-#ifndef RTE_DCMSAMPLE_PROVIDER_H
-#define RTE_DCMSAMPLE_PROVIDER_H
-
-#define Rte_DRead_RP_DcmSample_Provider_RP1_VDP_DcmSample_Requester_Var1() Rte_DRead_DcmSample_Provider_RP_DcmSample_Provider_RP1_VDP_DcmSample_Requester_Var1() 
-#define Rte_Write_PP_DcmSample_Provider_PP1_VDP_DcmSample_Provider_Var1(data) Rte_Write_DcmSample_Provider_PP_DcmSample_Provider_PP1_VDP_DcmSample_Provider_Var1(data) 
-
-#endif // RTE_DCMSAMPLE_PROVIDER
