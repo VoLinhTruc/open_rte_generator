@@ -1,4 +1,179 @@
 {
+    "DTMS_ASW1_1": {
+        "object_path": "/RB/PT/PCT_ASW1/DataTypeMappingSets/DTMS_ASW1_1",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW1/ImplementationDataTypes/IDT_ASW1_uint32",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
+    "DTMS_ASW1_2": {
+        "object_path": "/RB/PT/PCT_ASW1/DataTypeMappingSets/DTMS_ASW1_2",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW2/ImplementationDataTypes/IDT_ASW2_uint32",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
+    "DTMS_ASW1_3": {
+        "object_path": "/RB/PT/PCT_ASW1/DataTypeMappingSets/DTMS_ASW1_3",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW3/ApplicationDataTypes/ADT_ASW3_uint32",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW3/ImplementationDataTypes/IDT_ASW3_uint32",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
+    "DTMS_ASW2_1": {
+        "object_path": "/RB/PT/PCT_ASW2/DataTypeMappingSets/DTMS_ASW2_1",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW2/ImplementationDataTypes/IDT_ASW2_uint32",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
+    "DTMS_ASW2_2": {
+        "object_path": "/RB/PT/PCT_ASW2/DataTypeMappingSets/DTMS_ASW2_2",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW1/ImplementationDataTypes/IDT_ASW1_uint32",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
+    "DTMS_ASW3_1": {
+        "object_path": "/RB/PT/PCT_ASW3/DataTypeMappingSets/DTMS_ASW3_1",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW3/ApplicationDataTypes/ADT_ASW3_uint32",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW3/ImplementationDataTypes/IDT_ASW3_uint32",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
+    "DTMS_ASW3_2": {
+        "object_path": "/RB/PT/PCT_ASW3/DataTypeMappingSets/DTMS_ASW3_2",
+        "object_type": "DATA-TYPE-MAPPING-SET",
+        "outter_element_tag": "/ELEMENTS",
+        "APPLICATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+            "object_type": "APPLICATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                }
+            ]
+        },
+        "IMPLEMENTATION-DATA-TYPE-REF": {
+            "value": "/RB/PT/PCT_ASW1/ImplementationDataTypes/IDT_ASW1_uint32",
+            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+            "attributes": [
+                {
+                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                }
+            ]
+        }
+    },
     "DTMS_DcmSample_Provider": {
         "object_path": "/RB/PT/PCT_DcmSample_Provider/DataTypeMappingSets/DTMS_DcmSample_Provider",
         "object_type": "DATA-TYPE-MAPPING-SET",

@@ -28,5 +28,50 @@
                 }
             ]
         }
+    },
+    "CPT_ASW1": {
+        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW1",
+        "object_type": "SW-COMPONENT-PROTOTYPE",
+        "outter_element_tag": "/COMPONENTS",
+        "TYPE-TREF": {
+            "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1",
+            "object_type": "TYPE-TREF",
+            "outter_element_tag": "",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-SW-COMPONENT-TYPE"
+                }
+            ]
+        }
+    },
+    "CPT_ASW2": {
+        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW2",
+        "object_type": "SW-COMPONENT-PROTOTYPE",
+        "outter_element_tag": "/COMPONENTS",
+        "TYPE-TREF": {
+            "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2",
+            "object_type": "TYPE-TREF",
+            "outter_element_tag": "",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-SW-COMPONENT-TYPE"
+                }
+            ]
+        }
+    },
+    "CPT_ASW3": {
+        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW3",
+        "object_type": "SW-COMPONENT-PROTOTYPE",
+        "outter_element_tag": "/COMPONENTS",
+        "TYPE-TREF": {
+            "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW3",
+            "object_type": "TYPE-TREF",
+            "outter_element_tag": "",
+            "attributes": [
+                {
+                    "DEST": "APPLICATION-SW-COMPONENT-TYPE"
+                }
+            ]
+        }
     }
 }

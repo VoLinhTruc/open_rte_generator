@@ -3,6 +3,7 @@ import json
 from lxml import etree
 import glob
 import shutil
+import copy
 
 
 current_path = os.getcwd()
@@ -14,6 +15,9 @@ GEN_SWC_INCLUDE_FILE_PATH = "output/_gen/swb/includes/rtegen/swc/"
 GEN_SWC_SOURCE_FILE_PATH = "output/_gen/swb/src_files/rtegen/swc/"
 APPL_SWC_PATH = "application"
 ARXML_INPUT_PATH = "input/arxml"
+OUTPUT_JSON_PATH = "output\json"
+OUTPUT_JSON_EXTRACT_PATH = "output\json\object_extract"
+RTOS_STACK_DEPTH = 2000
 
 rte_port_api = {
     "Rte_Send": "Rte_Send",
@@ -109,7 +113,7 @@ def genJsonFromXml(xml_ele, json_obj, json_object_path = '', outter_element_tag 
             outter_element_tag = backup_outter_element_tag
     else:
         if (getElementTagWithoutNameSpace(xml_ele) != "SHORT-NAME"):
-            # Additional process to get DEFINITION-REF and VALUE corresponse to the còniguration correctly   
+            # Additional process to get DEFINITION-REF and VALUE corresponse to the cofiguration correctly   
             additional_element_tag = ""
             if getElementTagWithoutNameSpace(xml_ele) == "DEFINITION-REF":
                 additional_element_tag = "-" + xml_ele.text.split("/")[-1]
@@ -224,10 +228,12 @@ def getObjectByType(obj, key, objects={}):
     elif isinstance(obj, list):
         for item in obj:
             getObjectByType(item, key, objects)
+            
     return objects
 
 def getSWComponents(obj):
-    return getObjectByType(obj, "APPLICATION-SW-COMPONENT-TYPE", {})
+    x = getObjectByType(obj, "APPLICATION-SW-COMPONENT-TYPE", {})
+    return x
 
 def getClientServerInterfaces(obj):
     return getObjectByType(obj, "CLIENT-SERVER-INTERFACE", {})
@@ -324,6 +330,8 @@ def generateStdTypeHeaderFile():
     file_obj = open(GEN_SWC_INCLUDE_FILE_PATH + "Std_Types.h", 'w')
     writeToHdrFileTheAntiReIncludeWrapperStart(file_obj)
     file_obj.write("typedef unsigned char   uint8;")
+    file_obj.write("\n")
+    file_obj.write("typedef unsigned long   uint32;")
     file_obj.write("\n")
     file_obj.write("typedef uint8           Std_ReturnType;")
     file_obj.write("\n\n")    
@@ -601,20 +609,21 @@ def updateTaskInfoList(rte_root_obj):
         cycle_time = 0
         if type(task_value) is dict and "object_path" in task_value:
             os_task_name = task_key
-        if "VALUE-esc_TaskCycle" in task_value:
-            cycle_time = task_value["VALUE-esc_TaskCycle"]["value"]
-        if type(task_value) is dict:
-            for task_properties in task_value.items():
-                task_properties_key = task_properties[0]
-                task_properties_value = task_properties[1]
-                if "VALUE-esc_stack_taskname" in task_properties_value:
-                    task_name = task_properties_value["VALUE-esc_stack_taskname"]["value"]
-        
-        if os_task_name != "" and task_name != "" and cycle_time != 0:
-            task_info["os_task_name"] = os_task_name
-            task_info["task_name"] = task_name
-            task_info["cycle_time"] = cycle_time
-            task_info_list.append(task_info)
+            if "VALUE-esc_TaskCycle" in task_value:
+                cycle_time = task_value["VALUE-esc_TaskCycle"]["value"]
+            if type(task_value) is dict:
+                for task_properties in task_value.items():
+                    task_properties_key = task_properties[0]
+                    task_properties_value = task_properties[1]
+                    if "VALUE-esc_stack_taskname" in task_properties_value:
+                        task_name = task_properties_value["VALUE-esc_stack_taskname"]["value"]
+            
+            if os_task_name != "" and task_name != "" and cycle_time != 0:
+                task_info["os_task_name"] = os_task_name
+                task_info["task_name"] = task_name
+                task_info["cycle_time"] = cycle_time
+                task_info_list.append(task_info.copy())
+                
     os = getJsonObjectFromRefPath(rte_root_obj, "/RB/UBK/Project/EcucModuleConfigurationValuess/Os")
     for task in os.items():
         task_key = task[0]
@@ -852,7 +861,7 @@ def generateRteOsTaskDefinition(rte_root_obj):
         file_obj.write("{")
         file_obj.write("\n")
         file_obj.write("\tTickType_t xLastWakeTime;\n")
-        file_obj.write("\tconst TickType_t xFrequency = " + str(int(int(task_info["cycle_time"])/1000)) + ";\n")
+        file_obj.write("\tconst TickType_t xFrequency = " + str(int(int(task_info["cycle_time"]))) + ";\n")
         file_obj.write("\n")
         file_obj.write("\tfor(;;)")
         file_obj.write("\n")
@@ -871,7 +880,8 @@ def generateRteOsTaskDefinition(rte_root_obj):
         
     setup_create_task = ""
     for task_info in task_info_list:
-        setup_create_task = setup_create_task + '\txTaskCreate(' + task_info["os_task_name"] + ', "' + task_info["os_task_name"] + '", 1000, NULL, ' + task_info["priority"] + ', NULL);\n'
+        setup_create_task = setup_create_task + '\txTaskCreate(' + task_info["os_task_name"] + ', "' + task_info["os_task_name"] + '", ' + str(RTOS_STACK_DEPTH) + ', NULL, ' + task_info["priority"] + ', NULL);\n'
+        pass
     file_obj.write("\n")
     
     file_obj.write(""" 
@@ -914,6 +924,8 @@ if __name__ == "__main__":
     if not os.path.exists(ARXML_INPUT_PATH):
         os.makedirs(ARXML_INPUT_PATH)
     deleteFilesInFolder(ARXML_INPUT_PATH)
+    deleteFilesInFolder(OUTPUT_JSON_PATH)
+    deleteFilesInFolder(OUTPUT_JSON_EXTRACT_PATH)
     copyFilesWithExtension(APPL_SWC_PATH, ARXML_INPUT_PATH, "arxml")
     
     input_arxml_path = current_path + "\\input\\arxml"
@@ -951,3 +963,6 @@ if __name__ == "__main__":
     copyFilesWithExtension(GEN_SWC_INCLUDE_FILE_PATH, "include", "h")
     copyFilesWithExtension(GEN_SWC_SOURCE_FILE_PATH, "src", "c")
     copyFilesWithExtension(GEN_SWC_SOURCE_FILE_PATH, "src", "cpp")
+    
+    # for item in receive_data_point_by_value_api_list:
+    # writeToLogFile(json.dumps(receive_data_point_by_value_api_list, indent=4))

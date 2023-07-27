@@ -146,6 +146,101 @@
                                     }
                                 ]
                             }
+                        },
+                        "OS_1Q1_10ms_Task": {
+                            "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Os/OS_1Q1_10ms_Task",
+                            "object_type": "ECUC-CONTAINER-VALUE",
+                            "outter_element_tag": "/CONTAINERS",
+                            "DEFINITION-REF-OsTask": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                    }
+                                ]
+                            },
+                            "DEFINITION-REF-OsTaskActivation": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask/OsTaskActivation",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-INTEGER-PARAM-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-OsTaskActivation": {
+                                "value": "1",
+                                "object_type": "VALUE",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                            },
+                            "DEFINITION-REF-OsTaskCanCallSchedule": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask/OsTaskCanCallSchedule",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-BOOLEAN-PARAM-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-OsTaskCanCallSchedule": {
+                                "value": "true",
+                                "object_type": "VALUE",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                            },
+                            "DEFINITION-REF-OsTaskPriority": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask/OsTaskPriority",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-INTEGER-PARAM-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-OsTaskPriority": {
+                                "value": "20",
+                                "object_type": "VALUE",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                            },
+                            "DEFINITION-REF-OsTaskSchedule": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask/OsTaskSchedule",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-ENUMERATION-PARAM-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-OsTaskSchedule": {
+                                "value": "FULL",
+                                "object_type": "VALUE",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                            },
+                            "DEFINITION-REF-OsTaskAccessingApplication": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask/OsTaskAccessingApplication",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-REFERENCE-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-REF-OsTaskAccessingApplication": {
+                                "value": "/RB/UBK/Project/EcucModuleConfigurationValuess/Os/OsApp_0_Q_1",
+                                "object_type": "VALUE-REF",
+                                "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-CONTAINER-VALUE"
+                                    }
+                                ]
+                            }
                         }
                     }
                 }

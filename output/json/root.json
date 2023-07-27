@@ -10,6 +10,1046 @@
             "object_path": "/RB/PT",
             "object_type": "AR-PACKAGE",
             "outter_element_tag": "/AR-PACKAGES",
+            "PCT_ASW1": {
+                "object_path": "/RB/PT/PCT_ASW1",
+                "object_type": "AR-PACKAGE",
+                "outter_element_tag": "/AR-PACKAGES",
+                "SwComponentTypes": {
+                    "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "ASW1": {
+                        "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1",
+                        "object_type": "APPLICATION-SW-COMPONENT-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "PP_ASW1_PP1": {
+                            "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/PP_ASW1_PP1",
+                            "object_type": "P-PORT-PROTOTYPE",
+                            "outter_element_tag": "/PORTS",
+                            "PROVIDED-INTERFACE-TREF": {
+                                "value": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW1_IF1",
+                                "object_type": "PROVIDED-INTERFACE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                                    }
+                                ]
+                            }
+                        },
+                        "RP_ASW1_RP1": {
+                            "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/RP_ASW1_RP1",
+                            "object_type": "R-PORT-PROTOTYPE",
+                            "outter_element_tag": "/PORTS",
+                            "REQUIRED-INTERFACE-TREF": {
+                                "value": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW2_IF1",
+                                "object_type": "REQUIRED-INTERFACE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                                    }
+                                ]
+                            }
+                        },
+                        "PP_ASW1_PP2": {
+                            "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/PP_ASW1_PP2",
+                            "object_type": "P-PORT-PROTOTYPE",
+                            "outter_element_tag": "/PORTS",
+                            "PROVIDED-INTERFACE-TREF": {
+                                "value": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW1_IF2",
+                                "object_type": "PROVIDED-INTERFACE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                                    }
+                                ]
+                            }
+                        },
+                        "RP_ASW1_RP2": {
+                            "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/RP_ASW1_RP2",
+                            "object_type": "R-PORT-PROTOTYPE",
+                            "outter_element_tag": "/PORTS",
+                            "REQUIRED-INTERFACE-TREF": {
+                                "value": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW3_IF1",
+                                "object_type": "REQUIRED-INTERFACE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                                    }
+                                ]
+                            }
+                        },
+                        "IB_ASW1_IB1": {
+                            "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/IB_ASW1_IB1",
+                            "object_type": "SWC-INTERNAL-BEHAVIOR",
+                            "outter_element_tag": "/INTERNAL-BEHAVIORS",
+                            "DATA-TYPE-MAPPING-REF": {
+                                "value": "/RB/PT/PCT_ASW1/DataTypeMappingSets/DTMS_ASW1_2",
+                                "object_type": "DATA-TYPE-MAPPING-REF",
+                                "outter_element_tag": "/DATA-TYPE-MAPPING-REFS",
+                                "attributes": [
+                                    {
+                                        "DEST": "DATA-TYPE-MAPPING-SET"
+                                    }
+                                ]
+                            },
+                            "TE_ASW1_TE1": {
+                                "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/IB_ASW1_IB1/TE_ASW1_TE1",
+                                "object_type": "TIMING-EVENT",
+                                "outter_element_tag": "/EVENTS",
+                                "START-ON-EVENT-REF": {
+                                    "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/IB_ASW1_IB1/RE_ASW1_RE1",
+                                    "object_type": "START-ON-EVENT-REF",
+                                    "outter_element_tag": "",
+                                    "attributes": [
+                                        {
+                                            "DEST": "RUNNABLE-ENTITY"
+                                        }
+                                    ]
+                                },
+                                "PERIOD": {
+                                    "value": "1.0",
+                                    "object_type": "PERIOD",
+                                    "outter_element_tag": ""
+                                }
+                            },
+                            "RE_ASW1_RE1": {
+                                "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/IB_ASW1_IB1/RE_ASW1_RE1",
+                                "object_type": "RUNNABLE-ENTITY",
+                                "outter_element_tag": "/RUNNABLES",
+                                "DRP_ASW1_DRP1": {
+                                    "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/IB_ASW1_IB1/RE_ASW1_RE1/DRP_ASW1_DRP1",
+                                    "object_type": "VARIABLE-ACCESS",
+                                    "outter_element_tag": "/DATA-RECEIVE-POINT-BY-VALUES",
+                                    "PORT-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/RP_ASW1_RP1",
+                                        "object_type": "PORT-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "R-PORT-PROTOTYPE"
+                                            }
+                                        ]
+                                    },
+                                    "TARGET-DATA-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW2_IF1/VDP_ASW2_Var1",
+                                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "DRP_ASW1_DRP2": {
+                                    "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/IB_ASW1_IB1/RE_ASW1_RE1/DRP_ASW1_DRP2",
+                                    "object_type": "VARIABLE-ACCESS",
+                                    "outter_element_tag": "/DATA-RECEIVE-POINT-BY-VALUES",
+                                    "PORT-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/RP_ASW1_RP2",
+                                        "object_type": "PORT-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "R-PORT-PROTOTYPE"
+                                            }
+                                        ]
+                                    },
+                                    "TARGET-DATA-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW3_IF1/VDP_ASW3_Var1",
+                                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "DSP_ASW1_DSP1": {
+                                    "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/IB_ASW1_IB1/RE_ASW1_RE1/DSP_ASW1_DSP1",
+                                    "object_type": "VARIABLE-ACCESS",
+                                    "outter_element_tag": "/DATA-SEND-POINTS",
+                                    "PORT-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/PP_ASW1_PP1",
+                                        "object_type": "PORT-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "P-PORT-PROTOTYPE"
+                                            }
+                                        ]
+                                    },
+                                    "TARGET-DATA-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW1_IF1/VDP_ASW1_Var1",
+                                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "DSP_ASW1_DSP2": {
+                                    "object_path": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/IB_ASW1_IB1/RE_ASW1_RE1/DSP_ASW1_DSP2",
+                                    "object_type": "VARIABLE-ACCESS",
+                                    "outter_element_tag": "/DATA-SEND-POINTS",
+                                    "PORT-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/PP_ASW1_PP2",
+                                        "object_type": "PORT-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "P-PORT-PROTOTYPE"
+                                            }
+                                        ]
+                                    },
+                                    "TARGET-DATA-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW1_IF2/VDP_ASW1_Var2",
+                                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "SYMBOL": {
+                                    "value": "ASW1_10ms",
+                                    "object_type": "SYMBOL",
+                                    "outter_element_tag": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "PortInterfaces": {
+                    "object_path": "/RB/PT/PCT_ASW1/PortInterfaces",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "IF_ASW1_IF1": {
+                        "object_path": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW1_IF1",
+                        "object_type": "SENDER-RECEIVER-INTERFACE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "IS-SERVICE": {
+                            "value": "false",
+                            "object_type": "IS-SERVICE",
+                            "outter_element_tag": ""
+                        },
+                        "VDP_ASW1_Var1": {
+                            "object_path": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW1_IF1/VDP_ASW1_Var1",
+                            "object_type": "VARIABLE-DATA-PROTOTYPE",
+                            "outter_element_tag": "/DATA-ELEMENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "IF_ASW2_IF1": {
+                        "object_path": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW2_IF1",
+                        "object_type": "SENDER-RECEIVER-INTERFACE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "IS-SERVICE": {
+                            "value": "false",
+                            "object_type": "IS-SERVICE",
+                            "outter_element_tag": ""
+                        },
+                        "VDP_ASW2_Var1": {
+                            "object_path": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW2_IF1/VDP_ASW2_Var1",
+                            "object_type": "VARIABLE-DATA-PROTOTYPE",
+                            "outter_element_tag": "/DATA-ELEMENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "IF_ASW1_IF2": {
+                        "object_path": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW1_IF2",
+                        "object_type": "SENDER-RECEIVER-INTERFACE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "IS-SERVICE": {
+                            "value": "false",
+                            "object_type": "IS-SERVICE",
+                            "outter_element_tag": ""
+                        },
+                        "VDP_ASW1_Var2": {
+                            "object_path": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW1_IF2/VDP_ASW1_Var2",
+                            "object_type": "VARIABLE-DATA-PROTOTYPE",
+                            "outter_element_tag": "/DATA-ELEMENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "IF_ASW3_IF1": {
+                        "object_path": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW3_IF1",
+                        "object_type": "SENDER-RECEIVER-INTERFACE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "IS-SERVICE": {
+                            "value": "false",
+                            "object_type": "IS-SERVICE",
+                            "outter_element_tag": ""
+                        },
+                        "VDP_ASW3_Var1": {
+                            "object_path": "/RB/PT/PCT_ASW1/PortInterfaces/IF_ASW3_IF1/VDP_ASW3_Var1",
+                            "object_type": "VARIABLE-DATA-PROTOTYPE",
+                            "outter_element_tag": "/DATA-ELEMENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW3/ApplicationDataTypes/ADT_ASW3_uint32",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "ApplicationDataTypes": {
+                    "object_path": "/RB/PT/PCT_ASW1/ApplicationDataTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "ADT_ASW1_uint32": {
+                        "object_path": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+                        "object_type": "APPLICATION-PRIMITIVE-DATA-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "CATEGORY": {
+                            "value": "VALUE",
+                            "object_type": "CATEGORY",
+                            "outter_element_tag": ""
+                        },
+                        "SW-CALIBRATION-ACCESS": {
+                            "value": "READ-ONLY",
+                            "object_type": "SW-CALIBRATION-ACCESS",
+                            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL"
+                        }
+                    }
+                },
+                "ImplementationDataTypes": {
+                    "object_path": "/RB/PT/PCT_ASW1/ImplementationDataTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "IDT_ASW1_uint32": {
+                        "object_path": "/RB/PT/PCT_ASW1/ImplementationDataTypes/IDT_ASW1_uint32",
+                        "object_type": "IMPLEMENTATION-DATA-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "CATEGORY": {
+                            "value": "TYPE_REFERENCE",
+                            "object_type": "CATEGORY",
+                            "outter_element_tag": ""
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/AUTOSAR_Platform/ImplementationDataTypes/uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "DataTypeMappingSets": {
+                    "object_path": "/RB/PT/PCT_ASW1/DataTypeMappingSets",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "DTMS_ASW1_1": {
+                        "object_path": "/RB/PT/PCT_ASW1/DataTypeMappingSets/DTMS_ASW1_1",
+                        "object_type": "DATA-TYPE-MAPPING-SET",
+                        "outter_element_tag": "/ELEMENTS",
+                        "APPLICATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+                            "object_type": "APPLICATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                }
+                            ]
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW1/ImplementationDataTypes/IDT_ASW1_uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    },
+                    "DTMS_ASW1_2": {
+                        "object_path": "/RB/PT/PCT_ASW1/DataTypeMappingSets/DTMS_ASW1_2",
+                        "object_type": "DATA-TYPE-MAPPING-SET",
+                        "outter_element_tag": "/ELEMENTS",
+                        "APPLICATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32",
+                            "object_type": "APPLICATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                }
+                            ]
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW2/ImplementationDataTypes/IDT_ASW2_uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    },
+                    "DTMS_ASW1_3": {
+                        "object_path": "/RB/PT/PCT_ASW1/DataTypeMappingSets/DTMS_ASW1_3",
+                        "object_type": "DATA-TYPE-MAPPING-SET",
+                        "outter_element_tag": "/ELEMENTS",
+                        "APPLICATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW3/ApplicationDataTypes/ADT_ASW3_uint32",
+                            "object_type": "APPLICATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                }
+                            ]
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW3/ImplementationDataTypes/IDT_ASW3_uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "PCT_ASW2": {
+                "object_path": "/RB/PT/PCT_ASW2",
+                "object_type": "AR-PACKAGE",
+                "outter_element_tag": "/AR-PACKAGES",
+                "SwComponentTypes": {
+                    "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "ASW2": {
+                        "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2",
+                        "object_type": "APPLICATION-SW-COMPONENT-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "PP_ASW2_PP1": {
+                            "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/PP_ASW2_PP1",
+                            "object_type": "P-PORT-PROTOTYPE",
+                            "outter_element_tag": "/PORTS",
+                            "PROVIDED-INTERFACE-TREF": {
+                                "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF1",
+                                "object_type": "PROVIDED-INTERFACE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                                    }
+                                ]
+                            }
+                        },
+                        "RP_ASW2_RP1": {
+                            "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/RP_ASW2_RP1",
+                            "object_type": "R-PORT-PROTOTYPE",
+                            "outter_element_tag": "/PORTS",
+                            "REQUIRED-INTERFACE-TREF": {
+                                "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1",
+                                "object_type": "REQUIRED-INTERFACE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                                    }
+                                ]
+                            }
+                        },
+                        "IB_ASW2_IB1": {
+                            "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1",
+                            "object_type": "SWC-INTERNAL-BEHAVIOR",
+                            "outter_element_tag": "/INTERNAL-BEHAVIORS",
+                            "DATA-TYPE-MAPPING-REF": {
+                                "value": "/RB/PT/PCT_ASW2/DataTypeMappingSets/DTMS_ASW2_2",
+                                "object_type": "DATA-TYPE-MAPPING-REF",
+                                "outter_element_tag": "/DATA-TYPE-MAPPING-REFS",
+                                "attributes": [
+                                    {
+                                        "DEST": "DATA-TYPE-MAPPING-SET"
+                                    }
+                                ]
+                            },
+                            "TE_ASW2_TE1": {
+                                "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/TE_ASW2_TE1",
+                                "object_type": "TIMING-EVENT",
+                                "outter_element_tag": "/EVENTS",
+                                "START-ON-EVENT-REF": {
+                                    "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1",
+                                    "object_type": "START-ON-EVENT-REF",
+                                    "outter_element_tag": "",
+                                    "attributes": [
+                                        {
+                                            "DEST": "RUNNABLE-ENTITY"
+                                        }
+                                    ]
+                                },
+                                "PERIOD": {
+                                    "value": "1.0",
+                                    "object_type": "PERIOD",
+                                    "outter_element_tag": ""
+                                }
+                            },
+                            "RE_ASW2_RE1": {
+                                "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1",
+                                "object_type": "RUNNABLE-ENTITY",
+                                "outter_element_tag": "/RUNNABLES",
+                                "DRP_ASW2_DRP1": {
+                                    "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1/DRP_ASW2_DRP1",
+                                    "object_type": "VARIABLE-ACCESS",
+                                    "outter_element_tag": "/DATA-RECEIVE-POINT-BY-VALUES",
+                                    "PORT-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/RP_ASW2_RP1",
+                                        "object_type": "PORT-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "R-PORT-PROTOTYPE"
+                                            }
+                                        ]
+                                    },
+                                    "TARGET-DATA-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1/VDP_ASW1_Var1",
+                                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "DSP_ASW2_DSP1": {
+                                    "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1/DSP_ASW2_DSP1",
+                                    "object_type": "VARIABLE-ACCESS",
+                                    "outter_element_tag": "/DATA-SEND-POINTS",
+                                    "PORT-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/PP_ASW2_PP1",
+                                        "object_type": "PORT-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "P-PORT-PROTOTYPE"
+                                            }
+                                        ]
+                                    },
+                                    "TARGET-DATA-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF1/VDP_ASW2_Var1",
+                                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "SYMBOL": {
+                                    "value": "ASW2_10ms",
+                                    "object_type": "SYMBOL",
+                                    "outter_element_tag": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "PortInterfaces": {
+                    "object_path": "/RB/PT/PCT_ASW2/PortInterfaces",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "IF_ASW2_IF1": {
+                        "object_path": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF1",
+                        "object_type": "SENDER-RECEIVER-INTERFACE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "IS-SERVICE": {
+                            "value": "false",
+                            "object_type": "IS-SERVICE",
+                            "outter_element_tag": ""
+                        },
+                        "VDP_ASW2_Var1": {
+                            "object_path": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF1/VDP_ASW2_Var1",
+                            "object_type": "VARIABLE-DATA-PROTOTYPE",
+                            "outter_element_tag": "/DATA-ELEMENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "IF_ASW1_IF1": {
+                        "object_path": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1",
+                        "object_type": "SENDER-RECEIVER-INTERFACE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "IS-SERVICE": {
+                            "value": "false",
+                            "object_type": "IS-SERVICE",
+                            "outter_element_tag": ""
+                        },
+                        "VDP_ASW1_Var1": {
+                            "object_path": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1/VDP_ASW1_Var1",
+                            "object_type": "VARIABLE-DATA-PROTOTYPE",
+                            "outter_element_tag": "/DATA-ELEMENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "ApplicationDataTypes": {
+                    "object_path": "/RB/PT/PCT_ASW2/ApplicationDataTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "ADT_ASW2_uint32": {
+                        "object_path": "/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32",
+                        "object_type": "APPLICATION-PRIMITIVE-DATA-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "CATEGORY": {
+                            "value": "VALUE",
+                            "object_type": "CATEGORY",
+                            "outter_element_tag": ""
+                        },
+                        "SW-CALIBRATION-ACCESS": {
+                            "value": "READ-ONLY",
+                            "object_type": "SW-CALIBRATION-ACCESS",
+                            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL"
+                        }
+                    }
+                },
+                "ImplementationDataTypes": {
+                    "object_path": "/RB/PT/PCT_ASW2/ImplementationDataTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "IDT_ASW2_uint32": {
+                        "object_path": "/RB/PT/PCT_ASW2/ImplementationDataTypes/IDT_ASW2_uint32",
+                        "object_type": "IMPLEMENTATION-DATA-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "CATEGORY": {
+                            "value": "TYPE_REFERENCE",
+                            "object_type": "CATEGORY",
+                            "outter_element_tag": ""
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/AUTOSAR_Platform/ImplementationDataTypes/uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "DataTypeMappingSets": {
+                    "object_path": "/RB/PT/PCT_ASW2/DataTypeMappingSets",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "DTMS_ASW2_1": {
+                        "object_path": "/RB/PT/PCT_ASW2/DataTypeMappingSets/DTMS_ASW2_1",
+                        "object_type": "DATA-TYPE-MAPPING-SET",
+                        "outter_element_tag": "/ELEMENTS",
+                        "APPLICATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32",
+                            "object_type": "APPLICATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                }
+                            ]
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW2/ImplementationDataTypes/IDT_ASW2_uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    },
+                    "DTMS_ASW2_2": {
+                        "object_path": "/RB/PT/PCT_ASW2/DataTypeMappingSets/DTMS_ASW2_2",
+                        "object_type": "DATA-TYPE-MAPPING-SET",
+                        "outter_element_tag": "/ELEMENTS",
+                        "APPLICATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+                            "object_type": "APPLICATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                }
+                            ]
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW1/ImplementationDataTypes/IDT_ASW1_uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "PCT_ASW3": {
+                "object_path": "/RB/PT/PCT_ASW3",
+                "object_type": "AR-PACKAGE",
+                "outter_element_tag": "/AR-PACKAGES",
+                "SwComponentTypes": {
+                    "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "ASW3": {
+                        "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3",
+                        "object_type": "APPLICATION-SW-COMPONENT-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "PP_ASW3_PP1": {
+                            "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/PP_ASW3_PP1",
+                            "object_type": "P-PORT-PROTOTYPE",
+                            "outter_element_tag": "/PORTS",
+                            "PROVIDED-INTERFACE-TREF": {
+                                "value": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW3_IF1",
+                                "object_type": "PROVIDED-INTERFACE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                                    }
+                                ]
+                            }
+                        },
+                        "RP_ASW3_RP1": {
+                            "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/RP_ASW3_RP1",
+                            "object_type": "R-PORT-PROTOTYPE",
+                            "outter_element_tag": "/PORTS",
+                            "REQUIRED-INTERFACE-TREF": {
+                                "value": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW1_IF2",
+                                "object_type": "REQUIRED-INTERFACE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                                    }
+                                ]
+                            }
+                        },
+                        "IB_ASW3_IB1": {
+                            "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/IB_ASW3_IB1",
+                            "object_type": "SWC-INTERNAL-BEHAVIOR",
+                            "outter_element_tag": "/INTERNAL-BEHAVIORS",
+                            "DATA-TYPE-MAPPING-REF": {
+                                "value": "/RB/PT/PCT_ASW3/DataTypeMappingSets/DTMS_ASW3_2",
+                                "object_type": "DATA-TYPE-MAPPING-REF",
+                                "outter_element_tag": "/DATA-TYPE-MAPPING-REFS",
+                                "attributes": [
+                                    {
+                                        "DEST": "DATA-TYPE-MAPPING-SET"
+                                    }
+                                ]
+                            },
+                            "TE_ASW3_TE1": {
+                                "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/IB_ASW3_IB1/TE_ASW3_TE1",
+                                "object_type": "TIMING-EVENT",
+                                "outter_element_tag": "/EVENTS",
+                                "START-ON-EVENT-REF": {
+                                    "value": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/IB_ASW3_IB1/RE_ASW3_RE1",
+                                    "object_type": "START-ON-EVENT-REF",
+                                    "outter_element_tag": "",
+                                    "attributes": [
+                                        {
+                                            "DEST": "RUNNABLE-ENTITY"
+                                        }
+                                    ]
+                                },
+                                "PERIOD": {
+                                    "value": "1.0",
+                                    "object_type": "PERIOD",
+                                    "outter_element_tag": ""
+                                }
+                            },
+                            "RE_ASW3_RE1": {
+                                "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/IB_ASW3_IB1/RE_ASW3_RE1",
+                                "object_type": "RUNNABLE-ENTITY",
+                                "outter_element_tag": "/RUNNABLES",
+                                "DRP_ASW3_DRP1": {
+                                    "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/IB_ASW3_IB1/RE_ASW3_RE1/DRP_ASW3_DRP1",
+                                    "object_type": "VARIABLE-ACCESS",
+                                    "outter_element_tag": "/DATA-RECEIVE-POINT-BY-VALUES",
+                                    "PORT-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/RP_ASW3_RP1",
+                                        "object_type": "PORT-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "R-PORT-PROTOTYPE"
+                                            }
+                                        ]
+                                    },
+                                    "TARGET-DATA-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW1_IF2/VDP_ASW1_Var2",
+                                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "DSP_ASW3_DSP1": {
+                                    "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/IB_ASW3_IB1/RE_ASW3_RE1/DSP_ASW3_DSP1",
+                                    "object_type": "VARIABLE-ACCESS",
+                                    "outter_element_tag": "/DATA-SEND-POINTS",
+                                    "PORT-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/PP_ASW3_PP1",
+                                        "object_type": "PORT-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "P-PORT-PROTOTYPE"
+                                            }
+                                        ]
+                                    },
+                                    "TARGET-DATA-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW3_IF1/VDP_ASW3_Var1",
+                                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "SYMBOL": {
+                                    "value": "ASW3_10ms",
+                                    "object_type": "SYMBOL",
+                                    "outter_element_tag": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "PortInterfaces": {
+                    "object_path": "/RB/PT/PCT_ASW3/PortInterfaces",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "IF_ASW3_IF1": {
+                        "object_path": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW3_IF1",
+                        "object_type": "SENDER-RECEIVER-INTERFACE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "IS-SERVICE": {
+                            "value": "false",
+                            "object_type": "IS-SERVICE",
+                            "outter_element_tag": ""
+                        },
+                        "VDP_ASW3_Var1": {
+                            "object_path": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW3_IF1/VDP_ASW3_Var1",
+                            "object_type": "VARIABLE-DATA-PROTOTYPE",
+                            "outter_element_tag": "/DATA-ELEMENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW3/ApplicationDataTypes/ADT_ASW3_uint32",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "IF_ASW1_IF2": {
+                        "object_path": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW1_IF2",
+                        "object_type": "SENDER-RECEIVER-INTERFACE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "IS-SERVICE": {
+                            "value": "false",
+                            "object_type": "IS-SERVICE",
+                            "outter_element_tag": ""
+                        },
+                        "VDP_ASW1_Var2": {
+                            "object_path": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW1_IF2/VDP_ASW1_Var2",
+                            "object_type": "VARIABLE-DATA-PROTOTYPE",
+                            "outter_element_tag": "/DATA-ELEMENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "ApplicationDataTypes": {
+                    "object_path": "/RB/PT/PCT_ASW3/ApplicationDataTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "ADT_ASW3_uint32": {
+                        "object_path": "/RB/PT/PCT_ASW3/ApplicationDataTypes/ADT_ASW3_uint32",
+                        "object_type": "APPLICATION-PRIMITIVE-DATA-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "CATEGORY": {
+                            "value": "VALUE",
+                            "object_type": "CATEGORY",
+                            "outter_element_tag": ""
+                        },
+                        "SW-CALIBRATION-ACCESS": {
+                            "value": "READ-ONLY",
+                            "object_type": "SW-CALIBRATION-ACCESS",
+                            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL"
+                        }
+                    }
+                },
+                "ImplementationDataTypes": {
+                    "object_path": "/RB/PT/PCT_ASW3/ImplementationDataTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "IDT_ASW3_uint32": {
+                        "object_path": "/RB/PT/PCT_ASW3/ImplementationDataTypes/IDT_ASW3_uint32",
+                        "object_type": "IMPLEMENTATION-DATA-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "CATEGORY": {
+                            "value": "TYPE_REFERENCE",
+                            "object_type": "CATEGORY",
+                            "outter_element_tag": ""
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/AUTOSAR_Platform/ImplementationDataTypes/uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "DataTypeMappingSets": {
+                    "object_path": "/RB/PT/PCT_ASW3/DataTypeMappingSets",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "DTMS_ASW3_1": {
+                        "object_path": "/RB/PT/PCT_ASW3/DataTypeMappingSets/DTMS_ASW3_1",
+                        "object_type": "DATA-TYPE-MAPPING-SET",
+                        "outter_element_tag": "/ELEMENTS",
+                        "APPLICATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW3/ApplicationDataTypes/ADT_ASW3_uint32",
+                            "object_type": "APPLICATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                }
+                            ]
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW3/ImplementationDataTypes/IDT_ASW3_uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    },
+                    "DTMS_ASW3_2": {
+                        "object_path": "/RB/PT/PCT_ASW3/DataTypeMappingSets/DTMS_ASW3_2",
+                        "object_type": "DATA-TYPE-MAPPING-SET",
+                        "outter_element_tag": "/ELEMENTS",
+                        "APPLICATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+                            "object_type": "APPLICATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                }
+                            ]
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW1/ImplementationDataTypes/IDT_ASW1_uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
             "PCT_DcmSample_Provider": {
                 "object_path": "/RB/PT/PCT_DcmSample_Provider",
                 "object_type": "AR-PACKAGE",
@@ -602,6 +1642,51 @@
                                 ]
                             }
                         },
+                        "CPT_ASW1": {
+                            "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW1",
+                            "object_type": "SW-COMPONENT-PROTOTYPE",
+                            "outter_element_tag": "/COMPONENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-SW-COMPONENT-TYPE"
+                                    }
+                                ]
+                            }
+                        },
+                        "CPT_ASW2": {
+                            "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW2",
+                            "object_type": "SW-COMPONENT-PROTOTYPE",
+                            "outter_element_tag": "/COMPONENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-SW-COMPONENT-TYPE"
+                                    }
+                                ]
+                            }
+                        },
+                        "CPT_ASW3": {
+                            "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW3",
+                            "object_type": "SW-COMPONENT-PROTOTYPE",
+                            "outter_element_tag": "/COMPONENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW3",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-SW-COMPONENT-TYPE"
+                                    }
+                                ]
+                            }
+                        },
                         "ASC_CPT_DcmSample_Requester_PP_DcmSample_Requester_PP1_CPT_DcmSample_Provider_RP_DcmSample_Provider_RP1": {
                             "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/ASC_CPT_DcmSample_Requester_PP_DcmSample_Requester_PP1_CPT_DcmSample_Provider_RP_DcmSample_Provider_RP1",
                             "object_type": "ASSEMBLY-SW-CONNECTOR",
@@ -683,6 +1768,186 @@
                             },
                             "TARGET-R-PORT-REF": {
                                 "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/RP_DcmSample_Requester_RP1",
+                                "object_type": "TARGET-R-PORT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "R-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            }
+                        },
+                        "ASC_CPT_ASW1_PP_ASW1_PP1_CPT_ASW2_RP_ASW2_RP1": {
+                            "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/ASC_CPT_ASW1_PP_ASW1_PP1_CPT_ASW2_RP_ASW2_RP1",
+                            "object_type": "ASSEMBLY-SW-CONNECTOR",
+                            "outter_element_tag": "/CONNECTORS",
+                            "CONTEXT-COMPONENT-REF-PROVIDER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW1",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-P-PORT-REF": {
+                                "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/PP_ASW1_PP1",
+                                "object_type": "TARGET-P-PORT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "P-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "CONTEXT-COMPONENT-REF-REQUESTER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW2",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-R-PORT-REF": {
+                                "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/RP_ASW2_RP1",
+                                "object_type": "TARGET-R-PORT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "R-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            }
+                        },
+                        "ASC_CPT_ASW2_PP_ASW2_PP1_CPT_ASW1_RP_ASW1_RP1": {
+                            "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/ASC_CPT_ASW2_PP_ASW2_PP1_CPT_ASW1_RP_ASW1_RP1",
+                            "object_type": "ASSEMBLY-SW-CONNECTOR",
+                            "outter_element_tag": "/CONNECTORS",
+                            "CONTEXT-COMPONENT-REF-PROVIDER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW2",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-P-PORT-REF": {
+                                "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/PP_ASW2_PP1",
+                                "object_type": "TARGET-P-PORT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "P-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "CONTEXT-COMPONENT-REF-REQUESTER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW1",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-R-PORT-REF": {
+                                "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/RP_ASW1_RP1",
+                                "object_type": "TARGET-R-PORT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "R-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            }
+                        },
+                        "ASC_CPT_ASW1_PP_ASW1_PP2_CPT_ASW3_RP_ASW3_RP1": {
+                            "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/ASC_CPT_ASW1_PP_ASW1_PP2_CPT_ASW3_RP_ASW3_RP1",
+                            "object_type": "ASSEMBLY-SW-CONNECTOR",
+                            "outter_element_tag": "/CONNECTORS",
+                            "CONTEXT-COMPONENT-REF-PROVIDER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW1",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-P-PORT-REF": {
+                                "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/PP_ASW1_PP2",
+                                "object_type": "TARGET-P-PORT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "P-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "CONTEXT-COMPONENT-REF-REQUESTER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW3",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-R-PORT-REF": {
+                                "value": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/RP_ASW3_RP1",
+                                "object_type": "TARGET-R-PORT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "R-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            }
+                        },
+                        "ASC_CPT_ASW3_PP_ASW3_PP1_CPT_ASW1_RP_ASW1_RP2": {
+                            "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/ASC_CPT_ASW3_PP_ASW3_PP1_CPT_ASW1_RP_ASW1_RP2",
+                            "object_type": "ASSEMBLY-SW-CONNECTOR",
+                            "outter_element_tag": "/CONNECTORS",
+                            "CONTEXT-COMPONENT-REF-PROVIDER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW3",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-P-PORT-REF": {
+                                "value": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/PP_ASW3_PP1",
+                                "object_type": "TARGET-P-PORT-REF",
+                                "outter_element_tag": "/PROVIDER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "P-PORT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "CONTEXT-COMPONENT-REF-REQUESTER": {
+                                "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW1",
+                                "object_type": "CONTEXT-COMPONENT-REF",
+                                "outter_element_tag": "/REQUESTER-IREF",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TARGET-R-PORT-REF": {
+                                "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/RP_ASW1_RP2",
                                 "object_type": "TARGET-R-PORT-REF",
                                 "outter_element_tag": "/REQUESTER-IREF",
                                 "attributes": [
@@ -934,6 +2199,171 @@
                                             "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
                                         }
                                     }
+                                },
+                                "esc_stack_EventList_OS_10ms_Task": {
+                                    "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/CanTrcv/esc_stack_cfg/esc_stackDTtable/esc_stack_EventList_OS_10ms_Task",
+                                    "object_type": "ECUC-CONTAINER-VALUE",
+                                    "outter_element_tag": "/SUB-CONTAINERS",
+                                    "DEFINITION-REF-esc_stackEventGen_Entry": {
+                                        "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry",
+                                        "object_type": "DEFINITION-REF",
+                                        "outter_element_tag": "",
+                                        "attributes": [
+                                            {
+                                                "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                            }
+                                        ]
+                                    },
+                                    "DEFINITION-REF-esc_EventType": {
+                                        "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_EventType",
+                                        "object_type": "DEFINITION-REF",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                        "attributes": [
+                                            {
+                                                "DEST": "ECUC-STRING-PARAM-DEF"
+                                            }
+                                        ]
+                                    },
+                                    "VALUE-esc_EventType": {
+                                        "value": "T",
+                                        "object_type": "VALUE",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                    },
+                                    "DEFINITION-REF-esc_TaskCycle": {
+                                        "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskCycle",
+                                        "object_type": "DEFINITION-REF",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                        "attributes": [
+                                            {
+                                                "DEST": "ECUC-STRING-PARAM-DEF"
+                                            }
+                                        ]
+                                    },
+                                    "VALUE-esc_TaskCycle": {
+                                        "value": "10",
+                                        "object_type": "VALUE",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                    },
+                                    "DEFINITION-REF-esc_TaskMessRaster": {
+                                        "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskMessRaster",
+                                        "object_type": "DEFINITION-REF",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                        "attributes": [
+                                            {
+                                                "DEST": "ECUC-STRING-PARAM-DEF"
+                                            }
+                                        ]
+                                    },
+                                    "VALUE-esc_TaskMessRaster": {
+                                        "value": "10ms",
+                                        "object_type": "VALUE",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                    },
+                                    "DEFINITION-REF-esc_VirtualTaskName": {
+                                        "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_VirtualTaskName",
+                                        "object_type": "DEFINITION-REF",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                        "attributes": [
+                                            {
+                                                "DEST": "ECUC-STRING-PARAM-DEF"
+                                            }
+                                        ]
+                                    },
+                                    "VALUE-esc_VirtualTaskName": {
+                                        "value": "OS_10ms_Task",
+                                        "object_type": "VALUE",
+                                        "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                    },
+                                    "esc_stack_Event_1Q1_10ms_T": {
+                                        "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/CanTrcv/esc_stack_cfg/esc_stackDTtable/esc_stack_EventList_OS_10ms_Task/esc_stack_Event_1Q1_10ms_T",
+                                        "object_type": "ECUC-CONTAINER-VALUE",
+                                        "outter_element_tag": "/SUB-CONTAINERS",
+                                        "DEFINITION-REF-esc_TaskListArr": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "DEFINITION-REF-esc_stack_Pop_Event": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_Pop_Event",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-STRING-PARAM-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "VALUE-esc_stack_Pop_Event": {
+                                            "value": "T_ESC_PopSampTime_Proc_1Q1_10ms",
+                                            "object_type": "VALUE",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                        },
+                                        "DEFINITION-REF-esc_stack_Push_Event": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_Push_Event",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-STRING-PARAM-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "VALUE-esc_stack_Push_Event": {
+                                            "value": "T_ESC_PushSampTime_TSync_Proc_1Q1_10ms",
+                                            "object_type": "VALUE",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                        },
+                                        "DEFINITION-REF-esc_stack_task_AppID": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_task_AppID",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-STRING-PARAM-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "VALUE-esc_stack_task_AppID": {
+                                            "value": "OsApp_1_Q_1",
+                                            "object_type": "VALUE",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                        },
+                                        "DEFINITION-REF-esc_stack_task_EcucCoreID": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_task_EcucCoreID",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-STRING-PARAM-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "VALUE-esc_stack_task_EcucCoreID": {
+                                            "value": "1",
+                                            "object_type": "VALUE",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                        },
+                                        "DEFINITION-REF-esc_stack_taskname": {
+                                            "value": "/AUTOSAR_ESC_Stack/EcucModuleDefs/ESC_Stack/esc_stack_cfg/esc_stackEventGen/esc_stackEventGen_Entry/esc_TaskListArr/esc_stack_taskname",
+                                            "object_type": "DEFINITION-REF",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                            "attributes": [
+                                                {
+                                                    "DEST": "ECUC-STRING-PARAM-DEF"
+                                                }
+                                            ]
+                                        },
+                                        "VALUE-esc_stack_taskname": {
+                                            "value": "OS_1Q1_10ms_Task",
+                                            "object_type": "VALUE",
+                                            "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -1058,6 +2488,101 @@
                             },
                             "VALUE-REF-OsTaskResourceRef": {
                                 "value": "/RB/UBK/Project/EcucModuleConfigurationValuess/Os/OS_RES_COOP_ASW1",
+                                "object_type": "VALUE-REF",
+                                "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-CONTAINER-VALUE"
+                                    }
+                                ]
+                            }
+                        },
+                        "OS_1Q1_10ms_Task": {
+                            "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Os/OS_1Q1_10ms_Task",
+                            "object_type": "ECUC-CONTAINER-VALUE",
+                            "outter_element_tag": "/CONTAINERS",
+                            "DEFINITION-REF-OsTask": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                    }
+                                ]
+                            },
+                            "DEFINITION-REF-OsTaskActivation": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask/OsTaskActivation",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-INTEGER-PARAM-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-OsTaskActivation": {
+                                "value": "1",
+                                "object_type": "VALUE",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                            },
+                            "DEFINITION-REF-OsTaskCanCallSchedule": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask/OsTaskCanCallSchedule",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-BOOLEAN-PARAM-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-OsTaskCanCallSchedule": {
+                                "value": "true",
+                                "object_type": "VALUE",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                            },
+                            "DEFINITION-REF-OsTaskPriority": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask/OsTaskPriority",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-INTEGER-PARAM-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-OsTaskPriority": {
+                                "value": "20",
+                                "object_type": "VALUE",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                            },
+                            "DEFINITION-REF-OsTaskSchedule": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask/OsTaskSchedule",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-ENUMERATION-PARAM-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-OsTaskSchedule": {
+                                "value": "FULL",
+                                "object_type": "VALUE",
+                                "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                            },
+                            "DEFINITION-REF-OsTaskAccessingApplication": {
+                                "value": "/AUTOSAR_Os/EcucModuleDefs/Os/OsTask/OsTaskAccessingApplication",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-REFERENCE-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-REF-OsTaskAccessingApplication": {
+                                "value": "/RB/UBK/Project/EcucModuleConfigurationValuess/Os/OsApp_0_Q_1",
                                 "object_type": "VALUE-REF",
                                 "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
                                 "attributes": [
@@ -1381,6 +2906,456 @@
                                     ]
                                 }
                             }
+                        },
+                        "CPT_ASW1": {
+                            "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Rte/CPT_ASW1",
+                            "object_type": "ECUC-CONTAINER-VALUE",
+                            "outter_element_tag": "/CONTAINERS",
+                            "DEFINITION-REF-RteSwComponentInstance": {
+                                "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                    }
+                                ]
+                            },
+                            "DEFINITION-REF-RteSoftwareComponentInstanceRef": {
+                                "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteSoftwareComponentInstanceRef",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-FOREIGN-REFERENCE-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-REF-RteSoftwareComponentInstanceRef": {
+                                "value": "/RB/PT/PCT_MDG1_FlatView/SwComponentTypes/MDG1_FlatView/CPT_ASW1",
+                                "object_type": "VALUE-REF",
+                                "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TE_ASW1_TE1": {
+                                "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Rte/CPT_ASW1/TE_ASW1_TE1",
+                                "object_type": "ECUC-CONTAINER-VALUE",
+                                "outter_element_tag": "/SUB-CONTAINERS",
+                                "DEFINITION-REF-RteEventToTaskMapping": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                        }
+                                    ]
+                                },
+                                "DEFINITION-REF-RteActivationOffset": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteActivationOffset",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-FLOAT-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteActivationOffset": {
+                                    "value": "0.0",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteImmediateRestart": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteImmediateRestart",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-BOOLEAN-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteImmediateRestart": {
+                                    "value": "false",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteOsSchedulePoint": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteOsSchedulePoint",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-ENUMERATION-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteOsSchedulePoint": {
+                                    "value": "CONDITIONAL",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RtePositionInTask": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RtePositionInTask",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-INTEGER-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RtePositionInTask": {
+                                    "value": "16",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteEventRef": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteEventRef",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-FOREIGN-REFERENCE-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-REF-RteEventRef": {
+                                    "value": "/RB/PT/PCT_ASW1/SwComponentTypes/ASW1/IB_ASW1_IB1/TE_ASW1_TE1",
+                                    "object_type": "VALUE-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "TIMING-EVENT"
+                                        }
+                                    ]
+                                },
+                                "DEFINITION-REF-RteMappedToTaskRef": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteMappedToTaskRef",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-REFERENCE-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-REF-RteMappedToTaskRef": {
+                                    "value": "/RB/UBK/Project/EcucModuleConfigurationValuess/Os/OS_1Q1_10ms_Task",
+                                    "object_type": "VALUE-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-CONTAINER-VALUE"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "CPT_ASW2": {
+                            "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Rte/CPT_ASW2",
+                            "object_type": "ECUC-CONTAINER-VALUE",
+                            "outter_element_tag": "/CONTAINERS",
+                            "DEFINITION-REF-RteSwComponentInstance": {
+                                "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                    }
+                                ]
+                            },
+                            "DEFINITION-REF-RteSoftwareComponentInstanceRef": {
+                                "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteSoftwareComponentInstanceRef",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-FOREIGN-REFERENCE-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-REF-RteSoftwareComponentInstanceRef": {
+                                "value": "/RB/PT/PCT_MDG1_FlatView/SwComponentTypes/MDG1_FlatView/CPT_ASW2",
+                                "object_type": "VALUE-REF",
+                                "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TE_ASW2_TE1": {
+                                "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Rte/CPT_ASW2/TE_ASW2_TE1",
+                                "object_type": "ECUC-CONTAINER-VALUE",
+                                "outter_element_tag": "/SUB-CONTAINERS",
+                                "DEFINITION-REF-RteEventToTaskMapping": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                        }
+                                    ]
+                                },
+                                "DEFINITION-REF-RteActivationOffset": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteActivationOffset",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-FLOAT-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteActivationOffset": {
+                                    "value": "0.0",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteImmediateRestart": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteImmediateRestart",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-BOOLEAN-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteImmediateRestart": {
+                                    "value": "false",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteOsSchedulePoint": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteOsSchedulePoint",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-ENUMERATION-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteOsSchedulePoint": {
+                                    "value": "CONDITIONAL",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RtePositionInTask": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RtePositionInTask",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-INTEGER-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RtePositionInTask": {
+                                    "value": "17",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteEventRef": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteEventRef",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-FOREIGN-REFERENCE-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-REF-RteEventRef": {
+                                    "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/TE_ASW2_TE1",
+                                    "object_type": "VALUE-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "TIMING-EVENT"
+                                        }
+                                    ]
+                                },
+                                "DEFINITION-REF-RteMappedToTaskRef": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteMappedToTaskRef",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-REFERENCE-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-REF-RteMappedToTaskRef": {
+                                    "value": "/RB/UBK/Project/EcucModuleConfigurationValuess/Os/OS_1Q1_10ms_Task",
+                                    "object_type": "VALUE-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-CONTAINER-VALUE"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "CPT_ASW3": {
+                            "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Rte/CPT_ASW3",
+                            "object_type": "ECUC-CONTAINER-VALUE",
+                            "outter_element_tag": "/CONTAINERS",
+                            "DEFINITION-REF-RteSwComponentInstance": {
+                                "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                    }
+                                ]
+                            },
+                            "DEFINITION-REF-RteSoftwareComponentInstanceRef": {
+                                "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteSoftwareComponentInstanceRef",
+                                "object_type": "DEFINITION-REF",
+                                "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "ECUC-FOREIGN-REFERENCE-DEF"
+                                    }
+                                ]
+                            },
+                            "VALUE-REF-RteSoftwareComponentInstanceRef": {
+                                "value": "/RB/PT/PCT_MDG1_FlatView/SwComponentTypes/MDG1_FlatView/CPT_ASW3",
+                                "object_type": "VALUE-REF",
+                                "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                "attributes": [
+                                    {
+                                        "DEST": "SW-COMPONENT-PROTOTYPE"
+                                    }
+                                ]
+                            },
+                            "TE_ASW3_TE1": {
+                                "object_path": "/RB/UBK/Project/EcucModuleConfigurationValuess/Rte/CPT_ASW3/TE_ASW3_TE1",
+                                "object_type": "ECUC-CONTAINER-VALUE",
+                                "outter_element_tag": "/SUB-CONTAINERS",
+                                "DEFINITION-REF-RteEventToTaskMapping": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-PARAM-CONF-CONTAINER-DEF"
+                                        }
+                                    ]
+                                },
+                                "DEFINITION-REF-RteActivationOffset": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteActivationOffset",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-FLOAT-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteActivationOffset": {
+                                    "value": "0.0",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteImmediateRestart": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteImmediateRestart",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-BOOLEAN-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteImmediateRestart": {
+                                    "value": "false",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteOsSchedulePoint": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteOsSchedulePoint",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-ENUMERATION-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RteOsSchedulePoint": {
+                                    "value": "NONE",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-TEXTUAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RtePositionInTask": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RtePositionInTask",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-INTEGER-PARAM-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-RtePositionInTask": {
+                                    "value": "28",
+                                    "object_type": "VALUE",
+                                    "outter_element_tag": "/PARAMETER-VALUES/ECUC-NUMERICAL-PARAM-VALUE"
+                                },
+                                "DEFINITION-REF-RteEventRef": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteEventRef",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-FOREIGN-REFERENCE-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-REF-RteEventRef": {
+                                    "value": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/IB_ASW3_IB1/TE_ASW3_TE1",
+                                    "object_type": "VALUE-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "TIMING-EVENT"
+                                        }
+                                    ]
+                                },
+                                "DEFINITION-REF-RteMappedToTaskRef": {
+                                    "value": "/AUTOSAR_Rte/EcucModuleDefs/Rte/RteSwComponentInstance/RteEventToTaskMapping/RteMappedToTaskRef",
+                                    "object_type": "DEFINITION-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-REFERENCE-DEF"
+                                        }
+                                    ]
+                                },
+                                "VALUE-REF-RteMappedToTaskRef": {
+                                    "value": "/RB/UBK/Project/EcucModuleConfigurationValuess/Os/OS_1Q1_10ms_Task",
+                                    "object_type": "VALUE-REF",
+                                    "outter_element_tag": "/REFERENCE-VALUES/ECUC-REFERENCE-VALUE",
+                                    "attributes": [
+                                        {
+                                            "DEST": "ECUC-CONTAINER-VALUE"
+                                        }
+                                    ]
+                                }
+                            }
                         }
                     }
                 }
@@ -1391,515 +3366,5 @@
         "value": "\n",
         "object_type": "ADMIN-DATA",
         "outter_element_tag": ""
-    },
-    "ADT_DcmSample_Provider_uint8": {
-        "object_path": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSample_Provider_uint8",
-        "object_type": "APPLICATION-PRIMITIVE-DATA-TYPE",
-        "outter_element_tag": "/ELEMENTS",
-        "CATEGORY": {
-            "value": "VALUE",
-            "object_type": "CATEGORY",
-            "outter_element_tag": ""
-        },
-        "SW-CALIBRATION-ACCESS": {
-            "value": "READ-ONLY",
-            "object_type": "SW-CALIBRATION-ACCESS",
-            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL"
-        }
-    },
-    "ADT_DcmSample_Requester_uint8": {
-        "object_path": "/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSample_Requester_uint8",
-        "object_type": "APPLICATION-PRIMITIVE-DATA-TYPE",
-        "outter_element_tag": "/ELEMENTS",
-        "CATEGORY": {
-            "value": "VALUE",
-            "object_type": "CATEGORY",
-            "outter_element_tag": ""
-        },
-        "SW-CALIBRATION-ACCESS": {
-            "value": "READ-ONLY",
-            "object_type": "SW-CALIBRATION-ACCESS",
-            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL"
-        }
-    },
-    "CPT_DcmSample_Provider": {
-        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Provider",
-        "object_type": "SW-COMPONENT-PROTOTYPE",
-        "outter_element_tag": "/COMPONENTS",
-        "TYPE-TREF": {
-            "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider",
-            "object_type": "TYPE-TREF",
-            "outter_element_tag": "",
-            "attributes": [
-                {
-                    "DEST": "APPLICATION-SW-COMPONENT-TYPE"
-                }
-            ]
-        }
-    },
-    "CPT_DcmSample_Requester": {
-        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Requester",
-        "object_type": "SW-COMPONENT-PROTOTYPE",
-        "outter_element_tag": "/COMPONENTS",
-        "TYPE-TREF": {
-            "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester",
-            "object_type": "TYPE-TREF",
-            "outter_element_tag": "",
-            "attributes": [
-                {
-                    "DEST": "APPLICATION-SW-COMPONENT-TYPE"
-                }
-            ]
-        }
-    },
-    "ASC_CPT_DcmSample_Requester_PP_DcmSample_Requester_PP1_CPT_DcmSample_Provider_RP_DcmSample_Provider_RP1": {
-        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/ASC_CPT_DcmSample_Requester_PP_DcmSample_Requester_PP1_CPT_DcmSample_Provider_RP_DcmSample_Provider_RP1",
-        "object_type": "ASSEMBLY-SW-CONNECTOR",
-        "outter_element_tag": "/CONNECTORS",
-        "CONTEXT-COMPONENT-REF-PROVIDER": {
-            "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Requester",
-            "object_type": "CONTEXT-COMPONENT-REF",
-            "outter_element_tag": "/PROVIDER-IREF",
-            "attributes": [
-                {
-                    "DEST": "SW-COMPONENT-PROTOTYPE"
-                }
-            ]
-        },
-        "TARGET-P-PORT-REF": {
-            "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/PP_DcmSample_Requester_PP1",
-            "object_type": "TARGET-P-PORT-REF",
-            "outter_element_tag": "/PROVIDER-IREF",
-            "attributes": [
-                {
-                    "DEST": "P-PORT-PROTOTYPE"
-                }
-            ]
-        },
-        "CONTEXT-COMPONENT-REF-REQUESTER": {
-            "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Provider",
-            "object_type": "CONTEXT-COMPONENT-REF",
-            "outter_element_tag": "/REQUESTER-IREF",
-            "attributes": [
-                {
-                    "DEST": "SW-COMPONENT-PROTOTYPE"
-                }
-            ]
-        },
-        "TARGET-R-PORT-REF": {
-            "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/RP_DcmSample_Provider_RP1",
-            "object_type": "TARGET-R-PORT-REF",
-            "outter_element_tag": "/REQUESTER-IREF",
-            "attributes": [
-                {
-                    "DEST": "R-PORT-PROTOTYPE"
-                }
-            ]
-        }
-    },
-    "ASC_CPT_DcmSample_Provider_PP_DcmSample_Provider_PP1_CPT_DcmSample_Requester_RP_DcmSample_Requester_RP1": {
-        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/ASC_CPT_DcmSample_Provider_PP_DcmSample_Provider_PP1_CPT_DcmSample_Requester_RP_DcmSample_Requester_RP1",
-        "object_type": "ASSEMBLY-SW-CONNECTOR",
-        "outter_element_tag": "/CONNECTORS",
-        "CONTEXT-COMPONENT-REF-PROVIDER": {
-            "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Provider",
-            "object_type": "CONTEXT-COMPONENT-REF",
-            "outter_element_tag": "/PROVIDER-IREF",
-            "attributes": [
-                {
-                    "DEST": "SW-COMPONENT-PROTOTYPE"
-                }
-            ]
-        },
-        "TARGET-P-PORT-REF": {
-            "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/PP_DcmSample_Provider_PP1",
-            "object_type": "TARGET-P-PORT-REF",
-            "outter_element_tag": "/PROVIDER-IREF",
-            "attributes": [
-                {
-                    "DEST": "P-PORT-PROTOTYPE"
-                }
-            ]
-        },
-        "CONTEXT-COMPONENT-REF-REQUESTER": {
-            "value": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Requester",
-            "object_type": "CONTEXT-COMPONENT-REF",
-            "outter_element_tag": "/REQUESTER-IREF",
-            "attributes": [
-                {
-                    "DEST": "SW-COMPONENT-PROTOTYPE"
-                }
-            ]
-        },
-        "TARGET-R-PORT-REF": {
-            "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/RP_DcmSample_Requester_RP1",
-            "object_type": "TARGET-R-PORT-REF",
-            "outter_element_tag": "/REQUESTER-IREF",
-            "attributes": [
-                {
-                    "DEST": "R-PORT-PROTOTYPE"
-                }
-            ]
-        }
-    },
-    "DTMS_DcmSample_Provider": {
-        "object_path": "/RB/PT/PCT_DcmSample_Provider/DataTypeMappingSets/DTMS_DcmSample_Provider",
-        "object_type": "DATA-TYPE-MAPPING-SET",
-        "outter_element_tag": "/ELEMENTS",
-        "APPLICATION-DATA-TYPE-REF": {
-            "value": "/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSample_Requester_uint8",
-            "object_type": "APPLICATION-DATA-TYPE-REF",
-            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
-            "attributes": [
-                {
-                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
-                }
-            ]
-        },
-        "IMPLEMENTATION-DATA-TYPE-REF": {
-            "value": "/RB/PT/PCT_DcmSample_Requester/ImplementationDataTypes/IDT_DcmSample_Requester_uint8",
-            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
-            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
-            "attributes": [
-                {
-                    "DEST": "IMPLEMENTATION-DATA-TYPE"
-                }
-            ]
-        }
-    },
-    "DTMS_DcmSample_Requester": {
-        "object_path": "/RB/PT/PCT_DcmSample_Requester/DataTypeMappingSets/DTMS_DcmSample_Requester",
-        "object_type": "DATA-TYPE-MAPPING-SET",
-        "outter_element_tag": "/ELEMENTS",
-        "APPLICATION-DATA-TYPE-REF": {
-            "value": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSample_Provider_uint8",
-            "object_type": "APPLICATION-DATA-TYPE-REF",
-            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
-            "attributes": [
-                {
-                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
-                }
-            ]
-        },
-        "IMPLEMENTATION-DATA-TYPE-REF": {
-            "value": "/RB/PT/PCT_DcmSample_Provider/ImplementationDataTypes/IDT_DcmSample_Provider_uint8",
-            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
-            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
-            "attributes": [
-                {
-                    "DEST": "IMPLEMENTATION-DATA-TYPE"
-                }
-            ]
-        }
-    },
-    "IF_DcmSample_Provider_IF1": {
-        "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Provider_IF1",
-        "object_type": "SENDER-RECEIVER-INTERFACE",
-        "outter_element_tag": "/ELEMENTS",
-        "IS-SERVICE": {
-            "value": "false",
-            "object_type": "IS-SERVICE",
-            "outter_element_tag": ""
-        },
-        "VDP_DcmSample_Provider_Var1": {
-            "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Provider_IF1/VDP_DcmSample_Provider_Var1",
-            "object_type": "VARIABLE-DATA-PROTOTYPE",
-            "outter_element_tag": "/DATA-ELEMENTS",
-            "TYPE-TREF": {
-                "value": "/RB/PT/PCT_DcmSample_Provider/ApplicationDataTypes/ADT_DcmSample_Provider_uint8",
-                "object_type": "TYPE-TREF",
-                "outter_element_tag": "",
-                "attributes": [
-                    {
-                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
-                    }
-                ]
-            }
-        }
-    },
-    "IF_DcmSample_Requester_IF1": {
-        "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_IF1",
-        "object_type": "SENDER-RECEIVER-INTERFACE",
-        "outter_element_tag": "/ELEMENTS",
-        "IS-SERVICE": {
-            "value": "false",
-            "object_type": "IS-SERVICE",
-            "outter_element_tag": ""
-        },
-        "VDP_DcmSample_Requester_Var1": {
-            "object_path": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_IF1/VDP_DcmSample_Requester_Var1",
-            "object_type": "VARIABLE-DATA-PROTOTYPE",
-            "outter_element_tag": "/DATA-ELEMENTS",
-            "TYPE-TREF": {
-                "value": "/RB/PT/PCT_DcmSample_Requester/ApplicationDataTypes/ADT_DcmSample_Requester_uint8",
-                "object_type": "TYPE-TREF",
-                "outter_element_tag": "",
-                "attributes": [
-                    {
-                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
-                    }
-                ]
-            }
-        }
-    },
-    "DcmSample_Provider": {
-        "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider",
-        "object_type": "APPLICATION-SW-COMPONENT-TYPE",
-        "outter_element_tag": "/ELEMENTS",
-        "PP_DcmSample_Provider_PP1": {
-            "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/PP_DcmSample_Provider_PP1",
-            "object_type": "P-PORT-PROTOTYPE",
-            "outter_element_tag": "/PORTS",
-            "PROVIDED-INTERFACE-TREF": {
-                "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_IF1",
-                "object_type": "PROVIDED-INTERFACE-TREF",
-                "outter_element_tag": "",
-                "attributes": [
-                    {
-                        "DEST": "SENDER-RECEIVER-INTERFACE"
-                    }
-                ]
-            }
-        },
-        "RP_DcmSample_Provider_RP1": {
-            "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/RP_DcmSample_Provider_RP1",
-            "object_type": "R-PORT-PROTOTYPE",
-            "outter_element_tag": "/PORTS",
-            "REQUIRED-INTERFACE-TREF": {
-                "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Requester_IF1",
-                "object_type": "REQUIRED-INTERFACE-TREF",
-                "outter_element_tag": "",
-                "attributes": [
-                    {
-                        "DEST": "SENDER-RECEIVER-INTERFACE"
-                    }
-                ]
-            }
-        },
-        "IB_DcmSample_Provider_IB1": {
-            "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSample_Provider_IB1",
-            "object_type": "SWC-INTERNAL-BEHAVIOR",
-            "outter_element_tag": "/INTERNAL-BEHAVIORS",
-            "DATA-TYPE-MAPPING-REF": {
-                "value": "/RB/PT/PCT_DcmSample_Provider/DataTypeMappingSets/DTMS_DcmSample_Provider",
-                "object_type": "DATA-TYPE-MAPPING-REF",
-                "outter_element_tag": "/DATA-TYPE-MAPPING-REFS",
-                "attributes": [
-                    {
-                        "DEST": "DATA-TYPE-MAPPING-SET"
-                    }
-                ]
-            },
-            "TE_DcmSample_Provider_TE1": {
-                "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSample_Provider_IB1/TE_DcmSample_Provider_TE1",
-                "object_type": "TIMING-EVENT",
-                "outter_element_tag": "/EVENTS",
-                "START-ON-EVENT-REF": {
-                    "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSample_Provider_IB1/RE_DcmSample_Provider_RE1",
-                    "object_type": "START-ON-EVENT-REF",
-                    "outter_element_tag": "",
-                    "attributes": [
-                        {
-                            "DEST": "RUNNABLE-ENTITY"
-                        }
-                    ]
-                },
-                "PERIOD": {
-                    "value": "1.0",
-                    "object_type": "PERIOD",
-                    "outter_element_tag": ""
-                }
-            },
-            "RE_DcmSample_Provider_RE1": {
-                "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSample_Provider_IB1/RE_DcmSample_Provider_RE1",
-                "object_type": "RUNNABLE-ENTITY",
-                "outter_element_tag": "/RUNNABLES",
-                "DRP_DcmSample_Provider_DRP1": {
-                    "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSample_Provider_IB1/RE_DcmSample_Provider_RE1/DRP_DcmSample_Provider_DRP1",
-                    "object_type": "VARIABLE-ACCESS",
-                    "outter_element_tag": "/DATA-RECEIVE-POINT-BY-VALUES",
-                    "PORT-PROTOTYPE-REF": {
-                        "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/RP_DcmSample_Provider_RP1",
-                        "object_type": "PORT-PROTOTYPE-REF",
-                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
-                        "attributes": [
-                            {
-                                "DEST": "R-PORT-PROTOTYPE"
-                            }
-                        ]
-                    },
-                    "TARGET-DATA-PROTOTYPE-REF": {
-                        "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Requester_IF1/VDP_DcmSample_Requester_Var1",
-                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
-                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
-                        "attributes": [
-                            {
-                                "DEST": "VARIABLE-DATA-PROTOTYPE"
-                            }
-                        ]
-                    }
-                },
-                "DSP_DcmSample_Provider_DSP1": {
-                    "object_path": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/IB_DcmSample_Provider_IB1/RE_DcmSample_Provider_RE1/DSP_DcmSample_Provider_DSP1",
-                    "object_type": "VARIABLE-ACCESS",
-                    "outter_element_tag": "/DATA-SEND-POINTS",
-                    "PORT-PROTOTYPE-REF": {
-                        "value": "/RB/PT/PCT_DcmSample_Provider/SwComponentTypes/DcmSample_Provider/PP_DcmSample_Provider_PP1",
-                        "object_type": "PORT-PROTOTYPE-REF",
-                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
-                        "attributes": [
-                            {
-                                "DEST": "P-PORT-PROTOTYPE"
-                            }
-                        ]
-                    },
-                    "TARGET-DATA-PROTOTYPE-REF": {
-                        "value": "/RB/PT/PCT_DcmSample_Provider/PortInterfaces/IF_DcmSample_Provider_IF1/VDP_DcmSample_Provider_Var1",
-                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
-                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
-                        "attributes": [
-                            {
-                                "DEST": "VARIABLE-DATA-PROTOTYPE"
-                            }
-                        ]
-                    }
-                },
-                "SYMBOL": {
-                    "value": "DcmSample_Provider_1000ms",
-                    "object_type": "SYMBOL",
-                    "outter_element_tag": ""
-                }
-            }
-        }
-    },
-    "DcmSample_Requester": {
-        "object_path": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester",
-        "object_type": "APPLICATION-SW-COMPONENT-TYPE",
-        "outter_element_tag": "/ELEMENTS",
-        "PP_DcmSample_Requester_PP1": {
-            "object_path": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/PP_DcmSample_Requester_PP1",
-            "object_type": "P-PORT-PROTOTYPE",
-            "outter_element_tag": "/PORTS",
-            "PROVIDED-INTERFACE-TREF": {
-                "value": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_IF1",
-                "object_type": "PROVIDED-INTERFACE-TREF",
-                "outter_element_tag": "",
-                "attributes": [
-                    {
-                        "DEST": "SENDER-RECEIVER-INTERFACE"
-                    }
-                ]
-            }
-        },
-        "RP_DcmSample_Requester_RP1": {
-            "object_path": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/RP_DcmSample_Requester_RP1",
-            "object_type": "R-PORT-PROTOTYPE",
-            "outter_element_tag": "/PORTS",
-            "REQUIRED-INTERFACE-TREF": {
-                "value": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Provider_IF1",
-                "object_type": "REQUIRED-INTERFACE-TREF",
-                "outter_element_tag": "",
-                "attributes": [
-                    {
-                        "DEST": "SENDER-RECEIVER-INTERFACE"
-                    }
-                ]
-            }
-        },
-        "IB_DcmSample_Requester_IB1": {
-            "object_path": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/IB_DcmSample_Requester_IB1",
-            "object_type": "SWC-INTERNAL-BEHAVIOR",
-            "outter_element_tag": "/INTERNAL-BEHAVIORS",
-            "DATA-TYPE-MAPPING-REF": {
-                "value": "/RB/PT/PCT_DcmSample_Requester/DataTypeMappingSets/DTMS_DcmSample_Requester",
-                "object_type": "DATA-TYPE-MAPPING-REF",
-                "outter_element_tag": "/DATA-TYPE-MAPPING-REFS",
-                "attributes": [
-                    {
-                        "DEST": "DATA-TYPE-MAPPING-SET"
-                    }
-                ]
-            },
-            "TE_DcmSample_Requester_TE1": {
-                "object_path": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/IB_DcmSample_Requester_IB1/TE_DcmSample_Requester_TE1",
-                "object_type": "TIMING-EVENT",
-                "outter_element_tag": "/EVENTS",
-                "START-ON-EVENT-REF": {
-                    "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/IB_DcmSample_Requester_IB1/RE_DcmSample_Requester_RE1",
-                    "object_type": "START-ON-EVENT-REF",
-                    "outter_element_tag": "",
-                    "attributes": [
-                        {
-                            "DEST": "RUNNABLE-ENTITY"
-                        }
-                    ]
-                },
-                "PERIOD": {
-                    "value": "1.0",
-                    "object_type": "PERIOD",
-                    "outter_element_tag": ""
-                }
-            },
-            "RE_DcmSample_Requester_RE1": {
-                "object_path": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/IB_DcmSample_Requester_IB1/RE_DcmSample_Requester_RE1",
-                "object_type": "RUNNABLE-ENTITY",
-                "outter_element_tag": "/RUNNABLES",
-                "DRP_DcmSample_Requester_DRP1": {
-                    "object_path": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/IB_DcmSample_Requester_IB1/RE_DcmSample_Requester_RE1/DRP_DcmSample_Requester_DRP1",
-                    "object_type": "VARIABLE-ACCESS",
-                    "outter_element_tag": "/DATA-RECEIVE-POINT-BY-VALUES",
-                    "PORT-PROTOTYPE-REF": {
-                        "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/RP_DcmSample_Requester_RP1",
-                        "object_type": "PORT-PROTOTYPE-REF",
-                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
-                        "attributes": [
-                            {
-                                "DEST": "R-PORT-PROTOTYPE"
-                            }
-                        ]
-                    },
-                    "TARGET-DATA-PROTOTYPE-REF": {
-                        "value": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Provider_IF1/VDP_DcmSample_Provider_Var1",
-                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
-                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
-                        "attributes": [
-                            {
-                                "DEST": "VARIABLE-DATA-PROTOTYPE"
-                            }
-                        ]
-                    }
-                },
-                "DSP_DcmSample_Requester_DSP1": {
-                    "object_path": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/IB_DcmSample_Requester_IB1/RE_DcmSample_Requester_RE1/DSP_DcmSample_Requester_DSP1",
-                    "object_type": "VARIABLE-ACCESS",
-                    "outter_element_tag": "/DATA-SEND-POINTS",
-                    "PORT-PROTOTYPE-REF": {
-                        "value": "/RB/PT/PCT_DcmSample_Requester/SwComponentTypes/DcmSample_Requester/PP_DcmSample_Requester_PP1",
-                        "object_type": "PORT-PROTOTYPE-REF",
-                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
-                        "attributes": [
-                            {
-                                "DEST": "P-PORT-PROTOTYPE"
-                            }
-                        ]
-                    },
-                    "TARGET-DATA-PROTOTYPE-REF": {
-                        "value": "/RB/PT/PCT_DcmSample_Requester/PortInterfaces/IF_DcmSample_Requester_IF1/VDP_DcmSample_Requester_Var1",
-                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
-                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
-                        "attributes": [
-                            {
-                                "DEST": "VARIABLE-DATA-PROTOTYPE"
-                            }
-                        ]
-                    }
-                },
-                "SYMBOL": {
-                    "value": "DcmSample_Requester_1000ms",
-                    "object_type": "SYMBOL",
-                    "outter_element_tag": ""
-                }
-            }
-        }
     }
 }

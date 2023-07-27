@@ -1,0 +1,310 @@
+{
+    "xmlns": "http://autosar.org/schema/r4.0",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "schemaLocation": "http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd",
+    "RB": {
+        "object_path": "/RB",
+        "object_type": "AR-PACKAGE",
+        "outter_element_tag": "/AR-PACKAGES",
+        "PT": {
+            "object_path": "/RB/PT",
+            "object_type": "AR-PACKAGE",
+            "outter_element_tag": "/AR-PACKAGES",
+            "PCT_ASW2": {
+                "object_path": "/RB/PT/PCT_ASW2",
+                "object_type": "AR-PACKAGE",
+                "outter_element_tag": "/AR-PACKAGES",
+                "SwComponentTypes": {
+                    "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "ASW2": {
+                        "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2",
+                        "object_type": "APPLICATION-SW-COMPONENT-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "PP_ASW2_PP1": {
+                            "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/PP_ASW2_PP1",
+                            "object_type": "P-PORT-PROTOTYPE",
+                            "outter_element_tag": "/PORTS",
+                            "PROVIDED-INTERFACE-TREF": {
+                                "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF1",
+                                "object_type": "PROVIDED-INTERFACE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                                    }
+                                ]
+                            }
+                        },
+                        "RP_ASW2_RP1": {
+                            "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/RP_ASW2_RP1",
+                            "object_type": "R-PORT-PROTOTYPE",
+                            "outter_element_tag": "/PORTS",
+                            "REQUIRED-INTERFACE-TREF": {
+                                "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1",
+                                "object_type": "REQUIRED-INTERFACE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                                    }
+                                ]
+                            }
+                        },
+                        "IB_ASW2_IB1": {
+                            "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1",
+                            "object_type": "SWC-INTERNAL-BEHAVIOR",
+                            "outter_element_tag": "/INTERNAL-BEHAVIORS",
+                            "DATA-TYPE-MAPPING-REF": {
+                                "value": "/RB/PT/PCT_ASW2/DataTypeMappingSets/DTMS_ASW2_2",
+                                "object_type": "DATA-TYPE-MAPPING-REF",
+                                "outter_element_tag": "/DATA-TYPE-MAPPING-REFS",
+                                "attributes": [
+                                    {
+                                        "DEST": "DATA-TYPE-MAPPING-SET"
+                                    }
+                                ]
+                            },
+                            "TE_ASW2_TE1": {
+                                "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/TE_ASW2_TE1",
+                                "object_type": "TIMING-EVENT",
+                                "outter_element_tag": "/EVENTS",
+                                "START-ON-EVENT-REF": {
+                                    "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1",
+                                    "object_type": "START-ON-EVENT-REF",
+                                    "outter_element_tag": "",
+                                    "attributes": [
+                                        {
+                                            "DEST": "RUNNABLE-ENTITY"
+                                        }
+                                    ]
+                                },
+                                "PERIOD": {
+                                    "value": "1.0",
+                                    "object_type": "PERIOD",
+                                    "outter_element_tag": ""
+                                }
+                            },
+                            "RE_ASW2_RE1": {
+                                "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1",
+                                "object_type": "RUNNABLE-ENTITY",
+                                "outter_element_tag": "/RUNNABLES",
+                                "DRP_ASW2_DRP1": {
+                                    "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1/DRP_ASW2_DRP1",
+                                    "object_type": "VARIABLE-ACCESS",
+                                    "outter_element_tag": "/DATA-RECEIVE-POINT-BY-VALUES",
+                                    "PORT-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/RP_ASW2_RP1",
+                                        "object_type": "PORT-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "R-PORT-PROTOTYPE"
+                                            }
+                                        ]
+                                    },
+                                    "TARGET-DATA-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1/VDP_ASW1_Var1",
+                                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "DSP_ASW2_DSP1": {
+                                    "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1/DSP_ASW2_DSP1",
+                                    "object_type": "VARIABLE-ACCESS",
+                                    "outter_element_tag": "/DATA-SEND-POINTS",
+                                    "PORT-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/PP_ASW2_PP1",
+                                        "object_type": "PORT-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "P-PORT-PROTOTYPE"
+                                            }
+                                        ]
+                                    },
+                                    "TARGET-DATA-PROTOTYPE-REF": {
+                                        "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF1/VDP_ASW2_Var1",
+                                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                                        "attributes": [
+                                            {
+                                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "SYMBOL": {
+                                    "value": "ASW2_10ms",
+                                    "object_type": "SYMBOL",
+                                    "outter_element_tag": ""
+                                }
+                            }
+                        }
+                    }
+                },
+                "PortInterfaces": {
+                    "object_path": "/RB/PT/PCT_ASW2/PortInterfaces",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "IF_ASW2_IF1": {
+                        "object_path": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF1",
+                        "object_type": "SENDER-RECEIVER-INTERFACE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "IS-SERVICE": {
+                            "value": "false",
+                            "object_type": "IS-SERVICE",
+                            "outter_element_tag": ""
+                        },
+                        "VDP_ASW2_Var1": {
+                            "object_path": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF1/VDP_ASW2_Var1",
+                            "object_type": "VARIABLE-DATA-PROTOTYPE",
+                            "outter_element_tag": "/DATA-ELEMENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "IF_ASW1_IF1": {
+                        "object_path": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1",
+                        "object_type": "SENDER-RECEIVER-INTERFACE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "IS-SERVICE": {
+                            "value": "false",
+                            "object_type": "IS-SERVICE",
+                            "outter_element_tag": ""
+                        },
+                        "VDP_ASW1_Var1": {
+                            "object_path": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1/VDP_ASW1_Var1",
+                            "object_type": "VARIABLE-DATA-PROTOTYPE",
+                            "outter_element_tag": "/DATA-ELEMENTS",
+                            "TYPE-TREF": {
+                                "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+                                "object_type": "TYPE-TREF",
+                                "outter_element_tag": "",
+                                "attributes": [
+                                    {
+                                        "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "ApplicationDataTypes": {
+                    "object_path": "/RB/PT/PCT_ASW2/ApplicationDataTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "ADT_ASW2_uint32": {
+                        "object_path": "/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32",
+                        "object_type": "APPLICATION-PRIMITIVE-DATA-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "CATEGORY": {
+                            "value": "VALUE",
+                            "object_type": "CATEGORY",
+                            "outter_element_tag": ""
+                        },
+                        "SW-CALIBRATION-ACCESS": {
+                            "value": "READ-ONLY",
+                            "object_type": "SW-CALIBRATION-ACCESS",
+                            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL"
+                        }
+                    }
+                },
+                "ImplementationDataTypes": {
+                    "object_path": "/RB/PT/PCT_ASW2/ImplementationDataTypes",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "IDT_ASW2_uint32": {
+                        "object_path": "/RB/PT/PCT_ASW2/ImplementationDataTypes/IDT_ASW2_uint32",
+                        "object_type": "IMPLEMENTATION-DATA-TYPE",
+                        "outter_element_tag": "/ELEMENTS",
+                        "CATEGORY": {
+                            "value": "TYPE_REFERENCE",
+                            "object_type": "CATEGORY",
+                            "outter_element_tag": ""
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/AUTOSAR_Platform/ImplementationDataTypes/uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/SW-DATA-DEF-PROPS/SW-DATA-DEF-PROPS-VARIANTS/SW-DATA-DEF-PROPS-CONDITIONAL",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "DataTypeMappingSets": {
+                    "object_path": "/RB/PT/PCT_ASW2/DataTypeMappingSets",
+                    "object_type": "AR-PACKAGE",
+                    "outter_element_tag": "/AR-PACKAGES",
+                    "DTMS_ASW2_1": {
+                        "object_path": "/RB/PT/PCT_ASW2/DataTypeMappingSets/DTMS_ASW2_1",
+                        "object_type": "DATA-TYPE-MAPPING-SET",
+                        "outter_element_tag": "/ELEMENTS",
+                        "APPLICATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32",
+                            "object_type": "APPLICATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                }
+                            ]
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW2/ImplementationDataTypes/IDT_ASW2_uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    },
+                    "DTMS_ASW2_2": {
+                        "object_path": "/RB/PT/PCT_ASW2/DataTypeMappingSets/DTMS_ASW2_2",
+                        "object_type": "DATA-TYPE-MAPPING-SET",
+                        "outter_element_tag": "/ELEMENTS",
+                        "APPLICATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32",
+                            "object_type": "APPLICATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "APPLICATION-PRIMITIVE-DATA-TYPE"
+                                }
+                            ]
+                        },
+                        "IMPLEMENTATION-DATA-TYPE-REF": {
+                            "value": "/RB/PT/PCT_ASW1/ImplementationDataTypes/IDT_ASW1_uint32",
+                            "object_type": "IMPLEMENTATION-DATA-TYPE-REF",
+                            "outter_element_tag": "/DATA-TYPE-MAPS/DATA-TYPE-MAP",
+                            "attributes": [
+                                {
+                                    "DEST": "IMPLEMENTATION-DATA-TYPE"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

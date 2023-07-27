@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>RB</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>PT</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>PCT_ASW2</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SwComponentTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <APPLICATION-SW-COMPONENT-TYPE>
+                      <SHORT-NAME>ASW2</SHORT-NAME>
+                      <PORTS>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>PP_ASW2_PP1</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF1</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE>
+                          <SHORT-NAME>RP_ASW2_RP1</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                      </PORTS>
+                      <INTERNAL-BEHAVIORS>
+                        <SWC-INTERNAL-BEHAVIOR>
+                          <SHORT-NAME>IB_ASW2_IB1</SHORT-NAME>
+                          <DATA-TYPE-MAPPING-REFS>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/RB/PT/PCT_ASW2/DataTypeMappingSets/DTMS_ASW2_1</DATA-TYPE-MAPPING-REF>
+                            <DATA-TYPE-MAPPING-REF DEST="DATA-TYPE-MAPPING-SET">/RB/PT/PCT_ASW2/DataTypeMappingSets/DTMS_ASW2_2</DATA-TYPE-MAPPING-REF>
+                          </DATA-TYPE-MAPPING-REFS>
+                          <EVENTS>
+                            <TIMING-EVENT>
+                              <SHORT-NAME>TE_ASW2_TE1</SHORT-NAME>
+                              <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1</START-ON-EVENT-REF>
+                              <PERIOD>1.0</PERIOD>
+                            </TIMING-EVENT>
+                          </EVENTS>
+                          <RUNNABLES>
+                            <RUNNABLE-ENTITY>
+                              <SHORT-NAME>RE_ASW2_RE1</SHORT-NAME>
+                              <DATA-RECEIVE-POINT-BY-VALUES>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>DRP_ASW2_DRP1</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/RP_ASW2_RP1</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1/VDP_ASW1_Var1</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-RECEIVE-POINT-BY-VALUES>
+                              <DATA-SEND-POINTS>
+                                <VARIABLE-ACCESS>
+                                  <SHORT-NAME>DSP_ASW2_DSP1</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/PP_ASW2_PP1</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF1/VDP_ASW2_Var1</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                              </DATA-SEND-POINTS>
+                              <SYMBOL>ASW2_10ms</SYMBOL>
+                            </RUNNABLE-ENTITY>
+                          </RUNNABLES>
+                        </SWC-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </APPLICATION-SW-COMPONENT-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>PortInterfaces</SHORT-NAME>
+                  <ELEMENTS>
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>IF_ASW2_IF1</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>VDP_ASW2_Var1</SHORT-NAME>
+                          <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>IF_ASW1_IF1</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>VDP_ASW1_Var1</SHORT-NAME>
+                          <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>ApplicationDataTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <APPLICATION-PRIMITIVE-DATA-TYPE>
+                      <SHORT-NAME>ADT_ASW2_uint32</SHORT-NAME>
+                      <CATEGORY>VALUE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <SW-CALIBRATION-ACCESS>READ-ONLY</SW-CALIBRATION-ACCESS>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </APPLICATION-PRIMITIVE-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE>
+                      <SHORT-NAME>IDT_ASW2_uint32</SHORT-NAME>
+                      <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                      <SW-DATA-DEF-PROPS>
+                        <SW-DATA-DEF-PROPS-VARIANTS>
+                          <SW-DATA-DEF-PROPS-CONDITIONAL>
+                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                          </SW-DATA-DEF-PROPS-CONDITIONAL>
+                        </SW-DATA-DEF-PROPS-VARIANTS>
+                      </SW-DATA-DEF-PROPS>
+                    </IMPLEMENTATION-DATA-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataTypeMappingSets</SHORT-NAME>
+                  <ELEMENTS>
+                    <DATA-TYPE-MAPPING-SET>
+                      <SHORT-NAME>DTMS_ASW2_1</SHORT-NAME>
+                      <DATA-TYPE-MAPS>
+                        <DATA-TYPE-MAP>
+                          <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32</APPLICATION-DATA-TYPE-REF>
+                          <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/RB/PT/PCT_ASW2/ImplementationDataTypes/IDT_ASW2_uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                        </DATA-TYPE-MAP>
+                      </DATA-TYPE-MAPS>
+                    </DATA-TYPE-MAPPING-SET>
+                    <DATA-TYPE-MAPPING-SET>
+                      <SHORT-NAME>DTMS_ASW2_2</SHORT-NAME>
+                      <DATA-TYPE-MAPS>
+                        <DATA-TYPE-MAP>
+                          <APPLICATION-DATA-TYPE-REF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32</APPLICATION-DATA-TYPE-REF>
+                          <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/RB/PT/PCT_ASW1/ImplementationDataTypes/IDT_ASW1_uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                        </DATA-TYPE-MAP>
+                      </DATA-TYPE-MAPS>
+                    </DATA-TYPE-MAPPING-SET>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
