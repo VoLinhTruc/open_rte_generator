@@ -46,11 +46,21 @@
 ***************************************************************************************************
 </RBHead>*/
 
-#include "ASW1.h"
+#include "ASW3.h"
 
-void ASW1_10ms()
+void ASW3_10ms()
 {
-    static IDT_ASW1_uint32 temp = 0;
-    Rte_Write_PP_ASW1_PP1_VDP_ASW1_Var1(temp);
-    temp++;
+    static uint8 first_cycle_run_done = ASW3_FIRST_CYCLE_RUN_NOT_DONE;
+
+    if (first_cycle_run_done == ASW3_FIRST_CYCLE_RUN_NOT_DONE)
+    {
+        // Implementation for the first cycle
+
+        first_cycle_run_done = ASW3_FIRST_CYCLE_RUN_DONE;
+    }
+    else
+    {
+        // Cyclelic implementation
+
+    }
 }

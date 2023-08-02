@@ -52,6 +52,9 @@
 #include "Rte_Type.h"
 #include "Rte_ASW1.h"
 
+#define ASW1_FIRST_CYCLE_RUN_NOT_DONE   0x00
+#define ASW1_FIRST_CYCLE_RUN_DONE       0x01
+
 
 #endif /* ASW1_H */
 

@@ -4,17 +4,8 @@
 
 #include "Rte_Type.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 extern IDT_DcmSample_Provider_uint8 Rte_DRead_DcmSample_Requester_RP_DcmSample_Requester_RP1_VDP_DcmSample_Provider_Var1(void ); 
 extern Std_ReturnType Rte_Write_DcmSample_Requester_PP_DcmSample_Requester_PP1_VDP_DcmSample_Requester_Var1(IDT_DcmSample_Requester_uint8 data); 
-
-#ifdef __cplusplus
-}
-#endif
-
 #define Rte_DRead_RP_DcmSample_Requester_RP1_VDP_DcmSample_Provider_Var1() Rte_DRead_DcmSample_Requester_RP_DcmSample_Requester_RP1_VDP_DcmSample_Provider_Var1() 
 #define Rte_Write_PP_DcmSample_Requester_PP1_VDP_DcmSample_Requester_Var1(data) Rte_Write_DcmSample_Requester_PP_DcmSample_Requester_PP1_VDP_DcmSample_Requester_Var1(data) 
 

@@ -1,10 +1,6 @@
 #include "Rte.h"
 #include "Rte_Type.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 Std_ReturnType Rte_Write_ASW1_PP_ASW1_PP1_VDP_ASW1_Var1(IDT_ASW1_uint32 data)
         {
             Std_ReturnType rtn;
@@ -137,8 +133,3 @@ IDT_DcmSample_Provider_uint8 Rte_DRead_DcmSample_Requester_RP_DcmSample_Requeste
             return rtn;
         }
                 
-
-#ifdef __cplusplus
-}
-#endif
-

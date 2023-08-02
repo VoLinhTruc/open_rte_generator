@@ -50,7 +50,17 @@
 
 void ASW2_10ms()
 {
-    static IDT_ASW2_uint32 temp = 0;
-    Rte_Write_PP_ASW2_PP1_VDP_ASW2_Var1(temp);
-    temp+=2;
+    static uint8 first_cycle_run_done = ASW2_FIRST_CYCLE_RUN_NOT_DONE;
+
+    if (first_cycle_run_done == ASW2_FIRST_CYCLE_RUN_NOT_DONE)
+    {
+        // Implementation for the first cycle
+
+        first_cycle_run_done = ASW2_FIRST_CYCLE_RUN_DONE;
+    }
+    else
+    {
+        // Cyclelic implementation
+
+    }
 }

@@ -46,11 +46,29 @@
 ***************************************************************************************************
 </RBHead>*/
 
-#include "ASW3.h"
+#include "Arduino.h"
+#include "ASW1.h"
 
-void ASW3_10ms()
+void ASW1_10ms()
 {
-    static IDT_ASW3_uint32 temp = 0;
-    Rte_Write_PP_ASW3_PP1_VDP_ASW3_Var1(temp);
-    temp+=2;
+    static uint8 first_cycle_run_done = ASW1_FIRST_CYCLE_RUN_NOT_DONE;
+
+    if (first_cycle_run_done == ASW1_FIRST_CYCLE_RUN_NOT_DONE)
+    {
+        // Implementation for the first cycle
+        Serial.begin(115200);
+        first_cycle_run_done = ASW1_FIRST_CYCLE_RUN_DONE;
+    }
+    else
+    {
+        // Cyclelic implementation
+        static uint8 counter_for_1_second = 0;
+        counter_for_1_second = ++counter_for_1_second % 1000;
+        if (counter_for_1_second == 0)
+        {
+            Serial.print("ASW1");
+            Serial.print("\t");
+            Serial.print(counter_for_1_second);
+        }
+    }
 }

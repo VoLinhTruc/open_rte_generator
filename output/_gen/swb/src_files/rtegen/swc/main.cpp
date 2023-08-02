@@ -2,17 +2,8 @@
 #include "freertos/FreeRTOS.h"
 
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 extern void OS_1Q1_1000ms_Task();
 extern void OS_1Q1_10ms_Task();
-
-
-#ifdef __cplusplus
-}
-#endif
 
 void esc_stack_EventList_OS_1000ms_Task( void * pvParameters )
 {

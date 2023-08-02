@@ -634,17 +634,19 @@ def updateTaskInfoList(rte_root_obj):
 
 
 def writExternStart(c_file):
-    c_file.write('#ifdef __cplusplus\n')
-    c_file.write('extern "C" {\n')
-    c_file.write('#endif')
-    c_file.write("\n\n")
+    # c_file.write('#ifdef __cplusplus\n')
+    # c_file.write('extern "C" {\n')
+    # c_file.write('#endif')
+    # c_file.write("\n\n")
+    pass
 
 def writExternEnd(c_file):
-    c_file.write("\n")
-    c_file.write('#ifdef __cplusplus\n')
-    c_file.write('}\n')
-    c_file.write('#endif')
-    c_file.write("\n\n")
+    # c_file.write("\n")
+    # c_file.write('#ifdef __cplusplus\n')
+    # c_file.write('}\n')
+    # c_file.write('#endif')
+    # c_file.write("\n\n")
+    pass
 
 
 def writeToScrFileIncludeBlock(c_file):
@@ -783,7 +785,7 @@ def generateRteMainSourceFile(rte_root_obj):
     if not os.path.exists(GEN_SWC_SOURCE_FILE_PATH):
         os.makedirs(GEN_SWC_SOURCE_FILE_PATH)
 
-    file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "Rte.c", 'w')
+    file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "Rte.cpp", 'w')
 
     writeToScrFileIncludeBlock(file_obj)
     writExternStart(file_obj)
@@ -808,7 +810,7 @@ def generateRteEventToTaskMappingSourceFile(rte_root_obj):
     if not os.path.exists(GEN_SWC_SOURCE_FILE_PATH):
         os.makedirs(GEN_SWC_SOURCE_FILE_PATH)
 
-    file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "RTE_Event_To_Task_Mapping.c", 'w')
+    file_obj = open(GEN_SWC_SOURCE_FILE_PATH + "RTE_Event_To_Task_Mapping.cpp", 'w')
     
     writExternStart(file_obj)
 
@@ -959,9 +961,9 @@ if __name__ == "__main__":
     deleteFilesInFolder("include")
     deleteFilesInFolder("src")
     copyFilesWithExtension(APPL_SWC_PATH, "include", "h")
-    copyFilesWithExtension(APPL_SWC_PATH, "src", "c")
+    copyFilesWithExtension(APPL_SWC_PATH, "src", "cpp")
     copyFilesWithExtension(GEN_SWC_INCLUDE_FILE_PATH, "include", "h")
-    copyFilesWithExtension(GEN_SWC_SOURCE_FILE_PATH, "src", "c")
+    # copyFilesWithExtension(GEN_SWC_SOURCE_FILE_PATH, "src", "c")
     copyFilesWithExtension(GEN_SWC_SOURCE_FILE_PATH, "src", "cpp")
     
     # for item in receive_data_point_by_value_api_list:
