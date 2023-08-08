@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Car Control</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .gameboy {
+      border: 2px solid #222;
+      border-radius: 10px;
+      background-color: #ccc;
+      width: 240px;
+      padding: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+    
+    .button {
+      width: 45px;
+      height: 45px;
+      background-color: #444;
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    .slider-container {
+      margin: 10px 0;
+    }
+    
+    .slider {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 15px;
+      border-radius: 5px;
+      background-color: #ddd;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+    
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #444;
+      cursor: pointer;
+    }
+    
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #444;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="gameboy">
+    <div class="button-container">
+      <button class="button" onclick="sendCommand('up')">↑</button>
+    </div>
+    <div class="button-container">
+      <button class="button" onclick="sendCommand('left')">←</button>
+      <button class="button" onclick="sendCommand('right')">→</button>
+    </div>
+    <div class="button-container">
+      <button class="button" onclick="sendCommand('down')">↓</button>
+    </div>
+    <div class="slider-container">
+      <input type="range" min="0" max="100" value="50" class="slider" id="speedSlider" oninput="updateSpeed()">
+    </div>
+  </div>
+  
+  <script>
+    function sendCommand(command) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/' + command, true);
+      xhr.send();
+    }
+    
+    function updateSpeed() {
+      var speedSlider = document.getElementById('speedSlider');
+      var speed = speedSlider.value;
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '/speed?value=' + speed, true);
+      xhr.send();
+    }
+  </script>
+</body>
+</html>
