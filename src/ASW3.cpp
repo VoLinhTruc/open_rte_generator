@@ -46,6 +46,7 @@
 ***************************************************************************************************
 </RBHead>*/
 
+#include "Arduino.h"
 #include "ASW3.h"
 
 void ASW3_10ms()
@@ -61,6 +62,18 @@ void ASW3_10ms()
     else
     {
         // Cyclelic implementation
-
+        static uint8 counter_for_1_second = 0;
+        counter_for_1_second = ++counter_for_1_second % 300;
+        if (counter_for_1_second == 0)
+        {
+            static uint32 asw3_counter = 0;
+            asw3_counter++;
+            Rte_Write_PP_ASW3_PP1_VDP_ASW3_Var1(asw3_counter*3);
+            
+            Serial.print("ASW3 receive from ASW1");
+            Serial.print(" ");
+            Serial.print(Rte_DRead_RP_ASW3_RP1_VDP_ASW1_Var2());
+            Serial.println();
+        }
     }
 }

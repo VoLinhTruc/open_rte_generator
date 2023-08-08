@@ -63,12 +63,22 @@ void ASW1_10ms()
     {
         // Cyclelic implementation
         static uint8 counter_for_1_second = 0;
-        counter_for_1_second = ++counter_for_1_second % 1000;
+        counter_for_1_second = ++counter_for_1_second % 100;
         if (counter_for_1_second == 0)
         {
-            Serial.print("ASW1");
+            static uint32 asw1_counter = 0;
+            asw1_counter++;
+            Rte_Write_PP_ASW1_PP1_VDP_ASW1_Var1(asw1_counter*22);
+            Rte_Write_PP_ASW1_PP2_VDP_ASW1_Var2(asw1_counter*33);
+            
+            Serial.print("ASW2");
+            Serial.print(" ");
+            Serial.print(Rte_DRead_RP_ASW1_RP1_VDP_ASW2_Var1());
             Serial.print("\t");
-            Serial.print(counter_for_1_second);
+            Serial.print("ASW3");
+            Serial.print(" ");
+            Serial.print(Rte_DRead_RP_ASW1_RP2_VDP_ASW3_Var1());
+            Serial.println();
         }
     }
 }
