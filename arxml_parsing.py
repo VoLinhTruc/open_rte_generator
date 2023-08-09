@@ -17,7 +17,7 @@ APPL_SWC_PATH = "application"
 ARXML_INPUT_PATH = "input/arxml"
 OUTPUT_JSON_PATH = "output\json"
 OUTPUT_JSON_EXTRACT_PATH = "output\json\object_extract"
-RTOS_STACK_DEPTH = 2000
+RTOS_STACK_DEPTH = 5000
 
 rte_port_api = {
     "Rte_Send": "Rte_Send",

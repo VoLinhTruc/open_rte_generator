@@ -34,8 +34,8 @@ void esc_stack_EventList_OS_10ms_Task( void * pvParameters )
  
 void setup() {
   // put your setup code here, to run once:
-  	xTaskCreate(esc_stack_EventList_OS_1000ms_Task, "esc_stack_EventList_OS_1000ms_Task", 2000, NULL, 4, NULL);
-	xTaskCreate(esc_stack_EventList_OS_10ms_Task, "esc_stack_EventList_OS_10ms_Task", 2000, NULL, 20, NULL);
+  	xTaskCreate(esc_stack_EventList_OS_1000ms_Task, "esc_stack_EventList_OS_1000ms_Task", 5000, NULL, 4, NULL);
+	xTaskCreate(esc_stack_EventList_OS_10ms_Task, "esc_stack_EventList_OS_10ms_Task", 5000, NULL, 20, NULL);
 
 }
 
