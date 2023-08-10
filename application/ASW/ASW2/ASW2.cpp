@@ -74,12 +74,18 @@ void ASW2_10ms()
             uint8 direction = (uint8)((received_date & 0x0000FF00) >> 8);
             uint8 speed = (uint8)(received_date & 0x000000FF);
             
+            uint32 distance;
+            distance = Rte_DRead_RP_ASW2_RP2_VDP_ASW3_Var2();
+
             Serial.print("ASW2 receive from ASW1");
             Serial.print(" ");
             Serial.print(direction);
             Serial.print(" ");
             Serial.print(speed);
+            Serial.print(" ");
+            Serial.print(distance);
             Serial.println();
+
         }
     }
 }

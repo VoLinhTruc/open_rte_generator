@@ -1,6 +1,6 @@
 {
     "CPT_DcmSample_Provider": {
-        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Provider",
+        "object_path": "/SwComponentTypes/ASW_TopLvlComposition/CPT_DcmSample_Provider",
         "object_type": "SW-COMPONENT-PROTOTYPE",
         "outter_element_tag": "/COMPONENTS",
         "TYPE-TREF": {
@@ -15,7 +15,7 @@
         }
     },
     "CPT_DcmSample_Requester": {
-        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_DcmSample_Requester",
+        "object_path": "/SwComponentTypes/ASW_TopLvlComposition/CPT_DcmSample_Requester",
         "object_type": "SW-COMPONENT-PROTOTYPE",
         "outter_element_tag": "/COMPONENTS",
         "TYPE-TREF": {
@@ -30,7 +30,7 @@
         }
     },
     "CPT_ASW1": {
-        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW1",
+        "object_path": "/SwComponentTypes/ASW_TopLvlComposition/CPT_ASW1",
         "object_type": "SW-COMPONENT-PROTOTYPE",
         "outter_element_tag": "/COMPONENTS",
         "TYPE-TREF": {
@@ -45,7 +45,7 @@
         }
     },
     "CPT_ASW2": {
-        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW2",
+        "object_path": "/SwComponentTypes/ASW_TopLvlComposition/CPT_ASW2",
         "object_type": "SW-COMPONENT-PROTOTYPE",
         "outter_element_tag": "/COMPONENTS",
         "TYPE-TREF": {
@@ -60,11 +60,11 @@
         }
     },
     "CPT_ASW3": {
-        "object_path": "/RB/PT/PCT_TopLvlComposition/SwComponentTypes/TopLvlComposition/CPT_ASW3",
+        "object_path": "/SwComponentTypes/ASW_TopLvlComposition/CPT_ASW3",
         "object_type": "SW-COMPONENT-PROTOTYPE",
         "outter_element_tag": "/COMPONENTS",
         "TYPE-TREF": {
-            "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW3",
+            "value": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3",
             "object_type": "TYPE-TREF",
             "outter_element_tag": "",
             "attributes": [

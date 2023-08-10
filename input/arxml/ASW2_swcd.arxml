@@ -15,6 +15,13 @@
                   <ELEMENTS>
                     <APPLICATION-SW-COMPONENT-TYPE>
                       <SHORT-NAME>ASW2</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="Master">
+                            <SD>true</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
                       <PORTS>
                         <P-PORT-PROTOTYPE>
                           <SHORT-NAME>PP_ASW2_PP1</SHORT-NAME>
@@ -23,6 +30,14 @@
                         <R-PORT-PROTOTYPE>
                           <SHORT-NAME>RP_ASW2_RP1</SHORT-NAME>
                           <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1</REQUIRED-INTERFACE-TREF>
+                        </R-PORT-PROTOTYPE>
+                        <P-PORT-PROTOTYPE>
+                          <SHORT-NAME>PP_ASW2_PP2</SHORT-NAME>
+                          <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF2</PROVIDED-INTERFACE-TREF>
+                        </P-PORT-PROTOTYPE>
+                        <R-PORT-PROTOTYPE UUID="e817e801-e351-4c5b-850c-22306b9609bc">
+                          <SHORT-NAME>RP_ASW2_RP2</SHORT-NAME>
+                          <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW3_IF2</REQUIRED-INTERFACE-TREF>
                         </R-PORT-PROTOTYPE>
                       </PORTS>
                       <INTERNAL-BEHAVIORS>
@@ -52,6 +67,15 @@
                                     </AUTOSAR-VARIABLE-IREF>
                                   </ACCESSED-VARIABLE>
                                 </VARIABLE-ACCESS>
+                                <VARIABLE-ACCESS UUID="8326dd25-05de-4424-919b-3fcc41308969">
+                                  <SHORT-NAME>DRP_ASW2_DRP2</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/RP_ASW2_RP2</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW3_IF2/VDP_ASW3_Var2</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
                               </DATA-RECEIVE-POINT-BY-VALUES>
                               <DATA-SEND-POINTS>
                                 <VARIABLE-ACCESS>
@@ -60,6 +84,15 @@
                                     <AUTOSAR-VARIABLE-IREF>
                                       <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/PP_ASW2_PP1</PORT-PROTOTYPE-REF>
                                       <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF1/VDP_ASW2_Var1</TARGET-DATA-PROTOTYPE-REF>
+                                    </AUTOSAR-VARIABLE-IREF>
+                                  </ACCESSED-VARIABLE>
+                                </VARIABLE-ACCESS>
+                                <VARIABLE-ACCESS UUID="2af3d93b-5f5c-47fe-b948-ea579095cbba">
+                                  <SHORT-NAME>DSP_ASW2_DSP2</SHORT-NAME>
+                                  <ACCESSED-VARIABLE>
+                                    <AUTOSAR-VARIABLE-IREF>
+                                      <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/PP_ASW2_PP2</PORT-PROTOTYPE-REF>
+                                      <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF2/VDP_ASW2_Var2</TARGET-DATA-PROTOTYPE-REF>
                                     </AUTOSAR-VARIABLE-IREF>
                                   </ACCESSED-VARIABLE>
                                 </VARIABLE-ACCESS>
@@ -92,6 +125,26 @@
                         <VARIABLE-DATA-PROTOTYPE>
                           <SHORT-NAME>VDP_ASW1_Var1</SHORT-NAME>
                           <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/RB/PT/PCT_ASW1/ApplicationDataTypes/ADT_ASW1_uint32</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>IF_ASW2_IF2</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>VDP_ASW2_Var2</SHORT-NAME>
+                          <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/RB/PT/PCT_ASW2/ApplicationDataTypes/ADT_ASW2_uint32</TYPE-TREF>
+                        </VARIABLE-DATA-PROTOTYPE>
+                      </DATA-ELEMENTS>
+                    </SENDER-RECEIVER-INTERFACE>
+                    <SENDER-RECEIVER-INTERFACE>
+                      <SHORT-NAME>IF_ASW3_IF2</SHORT-NAME>
+                      <IS-SERVICE>false</IS-SERVICE>
+                      <DATA-ELEMENTS>
+                        <VARIABLE-DATA-PROTOTYPE>
+                          <SHORT-NAME>VDP_ASW3_Var2</SHORT-NAME>
+                          <TYPE-TREF DEST="APPLICATION-PRIMITIVE-DATA-TYPE">/RB/PT/PCT_ASW3/ApplicationDataTypes/ADT_ASW3_uint32</TYPE-TREF>
                         </VARIABLE-DATA-PROTOTYPE>
                       </DATA-ELEMENTS>
                     </SENDER-RECEIVER-INTERFACE>

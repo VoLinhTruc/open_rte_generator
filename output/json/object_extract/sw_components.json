@@ -213,6 +213,11 @@
         "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2",
         "object_type": "APPLICATION-SW-COMPONENT-TYPE",
         "outter_element_tag": "/ELEMENTS",
+        "SD": {
+            "value": "true",
+            "object_type": "SD",
+            "outter_element_tag": "/ADMIN-DATA/SDGS/SDG"
+        },
         "PP_ASW2_PP1": {
             "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/PP_ASW2_PP1",
             "object_type": "P-PORT-PROTOTYPE",
@@ -234,6 +239,36 @@
             "outter_element_tag": "/PORTS",
             "REQUIRED-INTERFACE-TREF": {
                 "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW1_IF1",
+                "object_type": "REQUIRED-INTERFACE-TREF",
+                "outter_element_tag": "",
+                "attributes": [
+                    {
+                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                    }
+                ]
+            }
+        },
+        "PP_ASW2_PP2": {
+            "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/PP_ASW2_PP2",
+            "object_type": "P-PORT-PROTOTYPE",
+            "outter_element_tag": "/PORTS",
+            "PROVIDED-INTERFACE-TREF": {
+                "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF2",
+                "object_type": "PROVIDED-INTERFACE-TREF",
+                "outter_element_tag": "",
+                "attributes": [
+                    {
+                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                    }
+                ]
+            }
+        },
+        "RP_ASW2_RP2": {
+            "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/RP_ASW2_RP2",
+            "object_type": "R-PORT-PROTOTYPE",
+            "outter_element_tag": "/PORTS",
+            "REQUIRED-INTERFACE-TREF": {
+                "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW3_IF2",
                 "object_type": "REQUIRED-INTERFACE-TREF",
                 "outter_element_tag": "",
                 "attributes": [
@@ -306,6 +341,31 @@
                         ]
                     }
                 },
+                "DRP_ASW2_DRP2": {
+                    "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1/DRP_ASW2_DRP2",
+                    "object_type": "VARIABLE-ACCESS",
+                    "outter_element_tag": "/DATA-RECEIVE-POINT-BY-VALUES",
+                    "PORT-PROTOTYPE-REF": {
+                        "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/RP_ASW2_RP2",
+                        "object_type": "PORT-PROTOTYPE-REF",
+                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                        "attributes": [
+                            {
+                                "DEST": "R-PORT-PROTOTYPE"
+                            }
+                        ]
+                    },
+                    "TARGET-DATA-PROTOTYPE-REF": {
+                        "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW3_IF2/VDP_ASW3_Var2",
+                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                        "attributes": [
+                            {
+                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                            }
+                        ]
+                    }
+                },
                 "DSP_ASW2_DSP1": {
                     "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1/DSP_ASW2_DSP1",
                     "object_type": "VARIABLE-ACCESS",
@@ -331,6 +391,31 @@
                         ]
                     }
                 },
+                "DSP_ASW2_DSP2": {
+                    "object_path": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/IB_ASW2_IB1/RE_ASW2_RE1/DSP_ASW2_DSP2",
+                    "object_type": "VARIABLE-ACCESS",
+                    "outter_element_tag": "/DATA-SEND-POINTS",
+                    "PORT-PROTOTYPE-REF": {
+                        "value": "/RB/PT/PCT_ASW2/SwComponentTypes/ASW2/PP_ASW2_PP2",
+                        "object_type": "PORT-PROTOTYPE-REF",
+                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                        "attributes": [
+                            {
+                                "DEST": "P-PORT-PROTOTYPE"
+                            }
+                        ]
+                    },
+                    "TARGET-DATA-PROTOTYPE-REF": {
+                        "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF2/VDP_ASW2_Var2",
+                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                        "attributes": [
+                            {
+                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                            }
+                        ]
+                    }
+                },
                 "SYMBOL": {
                     "value": "ASW2_10ms",
                     "object_type": "SYMBOL",
@@ -343,6 +428,11 @@
         "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3",
         "object_type": "APPLICATION-SW-COMPONENT-TYPE",
         "outter_element_tag": "/ELEMENTS",
+        "SD": {
+            "value": "true",
+            "object_type": "SD",
+            "outter_element_tag": "/ADMIN-DATA/SDGS/SDG"
+        },
         "PP_ASW3_PP1": {
             "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/PP_ASW3_PP1",
             "object_type": "P-PORT-PROTOTYPE",
@@ -364,6 +454,36 @@
             "outter_element_tag": "/PORTS",
             "REQUIRED-INTERFACE-TREF": {
                 "value": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW1_IF2",
+                "object_type": "REQUIRED-INTERFACE-TREF",
+                "outter_element_tag": "",
+                "attributes": [
+                    {
+                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                    }
+                ]
+            }
+        },
+        "PP_ASW3_PP2": {
+            "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/PP_ASW3_PP2",
+            "object_type": "P-PORT-PROTOTYPE",
+            "outter_element_tag": "/PORTS",
+            "PROVIDED-INTERFACE-TREF": {
+                "value": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW3_IF2",
+                "object_type": "PROVIDED-INTERFACE-TREF",
+                "outter_element_tag": "",
+                "attributes": [
+                    {
+                        "DEST": "SENDER-RECEIVER-INTERFACE"
+                    }
+                ]
+            }
+        },
+        "RP_ASW3_RP2": {
+            "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/RP_ASW3_RP2",
+            "object_type": "R-PORT-PROTOTYPE",
+            "outter_element_tag": "/PORTS",
+            "REQUIRED-INTERFACE-TREF": {
+                "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF2",
                 "object_type": "REQUIRED-INTERFACE-TREF",
                 "outter_element_tag": "",
                 "attributes": [
@@ -436,6 +556,31 @@
                         ]
                     }
                 },
+                "DRP_ASW3_DRP2": {
+                    "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/IB_ASW3_IB1/RE_ASW3_RE1/DRP_ASW3_DRP2",
+                    "object_type": "VARIABLE-ACCESS",
+                    "outter_element_tag": "/DATA-RECEIVE-POINT-BY-VALUES",
+                    "PORT-PROTOTYPE-REF": {
+                        "value": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/RP_ASW3_RP2",
+                        "object_type": "PORT-PROTOTYPE-REF",
+                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                        "attributes": [
+                            {
+                                "DEST": "R-PORT-PROTOTYPE"
+                            }
+                        ]
+                    },
+                    "TARGET-DATA-PROTOTYPE-REF": {
+                        "value": "/RB/PT/PCT_ASW2/PortInterfaces/IF_ASW2_IF2/VDP_ASW2_Var2",
+                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                        "attributes": [
+                            {
+                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                            }
+                        ]
+                    }
+                },
                 "DSP_ASW3_DSP1": {
                     "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/IB_ASW3_IB1/RE_ASW3_RE1/DSP_ASW3_DSP1",
                     "object_type": "VARIABLE-ACCESS",
@@ -452,6 +597,31 @@
                     },
                     "TARGET-DATA-PROTOTYPE-REF": {
                         "value": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW3_IF1/VDP_ASW3_Var1",
+                        "object_type": "TARGET-DATA-PROTOTYPE-REF",
+                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                        "attributes": [
+                            {
+                                "DEST": "VARIABLE-DATA-PROTOTYPE"
+                            }
+                        ]
+                    }
+                },
+                "DSP_ASW3_DSP2": {
+                    "object_path": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/IB_ASW3_IB1/RE_ASW3_RE1/DSP_ASW3_DSP2",
+                    "object_type": "VARIABLE-ACCESS",
+                    "outter_element_tag": "/DATA-SEND-POINTS",
+                    "PORT-PROTOTYPE-REF": {
+                        "value": "/RB/PT/PCT_ASW3/SwComponentTypes/ASW3/PP_ASW3_PP2",
+                        "object_type": "PORT-PROTOTYPE-REF",
+                        "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
+                        "attributes": [
+                            {
+                                "DEST": "P-PORT-PROTOTYPE"
+                            }
+                        ]
+                    },
+                    "TARGET-DATA-PROTOTYPE-REF": {
+                        "value": "/RB/PT/PCT_ASW3/PortInterfaces/IF_ASW3_IF2/VDP_ASW3_Var2",
                         "object_type": "TARGET-DATA-PROTOTYPE-REF",
                         "outter_element_tag": "/ACCESSED-VARIABLE/AUTOSAR-VARIABLE-IREF",
                         "attributes": [
