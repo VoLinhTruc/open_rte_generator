@@ -707,7 +707,7 @@ def writeToScrDateApi(c_file, rte_root_obj, connector_list, receive_data_list, s
         funciton_definition = \
         """""" + receive_data["api"] + """
         {
-            IDT_DcmSample_Provider_uint8 rtn;
+            """ + receive_data["port_api_type"] + """ rtn;
 
             rtn = """ + receive_data["final_variable_name"] + """;
 
@@ -723,7 +723,7 @@ def writeToHdrFileDataDefinition(c_file, receive_data_list, send_data_list):
         c_file.write(data_definition)
         c_file.write("\n")
     for send_data in send_data_list:
-        data_definition = send_data["port_api_type"] + " " +  send_data["final_variable_name"] + ";"
+        data_definition = send_data["port_api_arg_type"] + " " +  send_data["final_variable_name"] + ";"
         c_file.write(data_definition)
         c_file.write("\n")
     c_file.write("\n")

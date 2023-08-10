@@ -81,7 +81,7 @@ Std_ReturnType Rte_Write_DcmSample_Requester_PP_DcmSample_Requester_PP1_VDP_DcmS
                 
 IDT_ASW2_uint32 Rte_DRead_ASW1_RP_ASW1_RP1_VDP_ASW2_Var1(void )
         {
-            IDT_DcmSample_Provider_uint8 rtn;
+            IDT_ASW2_uint32 rtn;
 
             rtn = ASW1_RP_ASW1_RP1_VDP_ASW2_Var1;
 
@@ -90,7 +90,7 @@ IDT_ASW2_uint32 Rte_DRead_ASW1_RP_ASW1_RP1_VDP_ASW2_Var1(void )
                 
 IDT_ASW3_uint32 Rte_DRead_ASW1_RP_ASW1_RP2_VDP_ASW3_Var1(void )
         {
-            IDT_DcmSample_Provider_uint8 rtn;
+            IDT_ASW3_uint32 rtn;
 
             rtn = ASW1_RP_ASW1_RP2_VDP_ASW3_Var1;
 
@@ -99,7 +99,7 @@ IDT_ASW3_uint32 Rte_DRead_ASW1_RP_ASW1_RP2_VDP_ASW3_Var1(void )
                 
 IDT_ASW1_uint32 Rte_DRead_ASW2_RP_ASW2_RP1_VDP_ASW1_Var1(void )
         {
-            IDT_DcmSample_Provider_uint8 rtn;
+            IDT_ASW1_uint32 rtn;
 
             rtn = ASW2_RP_ASW2_RP1_VDP_ASW1_Var1;
 
@@ -108,7 +108,7 @@ IDT_ASW1_uint32 Rte_DRead_ASW2_RP_ASW2_RP1_VDP_ASW1_Var1(void )
                 
 IDT_ASW1_uint32 Rte_DRead_ASW3_RP_ASW3_RP1_VDP_ASW1_Var2(void )
         {
-            IDT_DcmSample_Provider_uint8 rtn;
+            IDT_ASW1_uint32 rtn;
 
             rtn = ASW3_RP_ASW3_RP1_VDP_ASW1_Var2;
 
@@ -117,7 +117,7 @@ IDT_ASW1_uint32 Rte_DRead_ASW3_RP_ASW3_RP1_VDP_ASW1_Var2(void )
                 
 IDT_DcmSample_Requester_uint8 Rte_DRead_DcmSample_Provider_RP_DcmSample_Provider_RP1_VDP_DcmSample_Requester_Var1(void )
         {
-            IDT_DcmSample_Provider_uint8 rtn;
+            IDT_DcmSample_Requester_uint8 rtn;
 
             rtn = DcmSample_Provider_RP_DcmSample_Provider_RP1_VDP_DcmSample_Requester_Var1;
 
