@@ -47,7 +47,10 @@
 </RBHead>*/
 
 #include "Arduino.h"
+#include "MotorDriver.h"
 #include "ASW2.h"
+
+MotorDriver m;
 
 void ASW2_10ms()
 {
@@ -56,6 +59,7 @@ void ASW2_10ms()
     if (first_cycle_run_done == ASW2_FIRST_CYCLE_RUN_NOT_DONE)
     {
         // Implementation for the first cycle
+        m.begin();
 
         first_cycle_run_done = ASW2_FIRST_CYCLE_RUN_DONE;
     }
@@ -73,7 +77,8 @@ void ASW2_10ms()
             uint32 received_date = Rte_DRead_RP_ASW2_RP1_VDP_ASW1_Var1();
             uint8 direction = (uint8)((received_date & 0x0000FF00) >> 8);
             uint8 speed = (uint8)(received_date & 0x000000FF);
-            
+            speed = speed*2;
+
             uint32 distance;
             distance = Rte_DRead_RP_ASW2_RP2_VDP_ASW3_Var2();
 
@@ -86,6 +91,34 @@ void ASW2_10ms()
             Serial.print(distance);
             Serial.println();
 
+            if (direction == 0) // move forward
+            {
+                m.motor(1,FORWARD,speed);
+                m.motor(2,FORWARD,speed);
+            }
+            else if (direction == 1) // rotate right
+            {
+                m.motor(1,BACKWARD,speed);
+                m.motor(2,FORWARD,speed);
+            }
+            else if (direction == 2) // move backward
+            {
+                if (distance > 50) // 50mm
+                {
+                    m.motor(1,BACKWARD,speed);
+                    m.motor(2,BACKWARD,speed);
+                }
+                else
+                {
+                    m.motor(1,BACKWARD,0);
+                    m.motor(2,BACKWARD,0);
+                }
+            }
+            else if (direction == 3) // rotate left
+            {
+                m.motor(1,FORWARD,speed);
+                m.motor(2,BACKWARD,speed);
+            }
         }
     }
 }
