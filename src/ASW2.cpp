@@ -75,21 +75,26 @@ void ASW2_10ms()
             Rte_Write_PP_ASW2_PP1_VDP_ASW2_Var1(asw2_counter*2);
             
             uint32 received_date = Rte_DRead_RP_ASW2_RP1_VDP_ASW1_Var1();
+            
+            Serial.println("ASW2_RP1_VDP_ASW1_Var1: " + String(received_date));
+            
             uint8 direction = (uint8)((received_date & 0x0000FF00) >> 8);
             uint8 speed = (uint8)(received_date & 0x000000FF);
             speed = speed*2;
 
             uint32 distance;
             distance = Rte_DRead_RP_ASW2_RP2_VDP_ASW3_Var2();
+            
+            Serial.println("ASW2_RP2_VDP_ASW3_Var2: " + String(distance));
 
-            Serial.print("ASW2 receive from ASW1");
-            Serial.print(" ");
-            Serial.print(direction);
-            Serial.print(" ");
-            Serial.print(speed);
-            Serial.print(" ");
-            Serial.print(distance);
-            Serial.println();
+            // Serial.print("ASW2 receive from ASW1");
+            // Serial.print(" ");
+            // Serial.print(direction);
+            // Serial.print(" ");
+            // Serial.print(speed);
+            // Serial.print(" ");
+            // Serial.print(distance);
+            // Serial.println();
 
             if (direction == 0) // move forward
             {

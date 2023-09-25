@@ -80,6 +80,9 @@ void ASW3_10ms()
             uint32 distance;
             distance = SRF.getMillimeter();
             Rte_Write_PP_ASW3_PP2_VDP_ASW3_Var2(distance);
+            
+            Serial.println("ASW3_PP2_VDP_ASW3_Var2: " + String(distance));
+
             // Serial.print("ASW3 receive from ASW1");
             // Serial.print(" ");
             // Serial.print(Rte_DRead_RP_ASW3_RP1_VDP_ASW1_Var2());

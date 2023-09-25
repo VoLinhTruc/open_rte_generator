@@ -112,7 +112,7 @@ void ASW1_10ms()
             uint32 substring_start_index = client_response.indexOf("?") + 1;
             uint32 substring_end_index = client_response.indexOf(" ", substring_start_index);
             String extracted_value = client_response.substring(substring_start_index, substring_end_index);
-            Serial.println(extracted_value);
+            // Serial.println(extracted_value);
             static uint8 direction = 0; // 0:up, 1:right, 2:down, 3:left
             static uint8 speed = 0;
             if (extracted_value == "up")
@@ -140,6 +140,8 @@ void ASW1_10ms()
 
             uint32 value_to_other_ASW = (uint32)0 | ((uint32)direction << 8) | (uint32)speed;
             Rte_Write_PP_ASW1_PP1_VDP_ASW1_Var1(value_to_other_ASW);
+
+            Serial.println("ASW1_PP1_VDP_ASW1_Var1: " + String(value_to_other_ASW));
         }
 
         // static uint8 counter_for_1_second = 0;
